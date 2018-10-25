@@ -1,0 +1,2 @@
+# softlab
+static site
