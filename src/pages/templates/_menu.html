@@ -1,16 +1,16 @@
 {% set
   items = [
     {
-      title : 'Main page',
-      url: 'main-page.html'
+      title : 'Обучение',
+      url: '#'
     },
     {
-      title: 'News',
-      url: 'news.html'
+      title: 'Event',
+      url: '#'
     }
   ]
 %}
-<nav class="menu">
+<nav class="menu" role="navigation">
   <ul class="menu__inner">
   {% for item in items %}
     <li class="menu-item{% if item.url == page.url %} active{% endif %}">

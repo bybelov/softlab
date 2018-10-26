@@ -1,15 +1,20 @@
 {% extends "extends/_base.html" %}
 
 {% block content %}
+{% include "templates/_slider.html" %}
 <!-- begin main -->
-<main class="main">
+<main class="main" role="main">
+  {% include "templates/_lines.html" %}
+
   <div class="container">
 
-    <h1 class="page__title">{{ page.title }}</h1>
-    {% include 'templates/_breadcrumbs.html' %}
+    <h1>Softlab – студия креативных решений для вашего бренда</h1>
 
 
   </div>
 </main>
+<aside role="complementary">
+
+</aside>
 <!-- end main -->
 {% endblock %}

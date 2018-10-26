@@ -21,7 +21,7 @@ $danger:       material-color(red, 500) !default;
 $light:        material-color(gray, 200) !default;
 $dark:         material-color(blue-grey, 800) !default;
 $muted:        material-color(gray, 600) !default;
-$headings:     material-color(indigo, 900) !default;
+$headings:     #464d53 !default;
 
 
 // BODY
@@ -131,3 +131,12 @@ $kbd-bg:                     $dark !default;
 $pre-color:                  $dark !default;
 
 $dt-font-weight:             font-weight(bold) !default;
+
+
+// Gradient
+
+$gr-1: linear-gradient(56deg, #835eff, #ff008d) !default;
+$gr-1-transparent: linear-gradient(to bottom, transparent 0%,rgba(131,94,255,1) 100%) !default;
+
+// layout
+$container-max-width: 1320px !default;
