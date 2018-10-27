@@ -1,19 +1,20 @@
 .lines {
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
-  left: calc((100% - (#{$container-max-width} - 40px) ) / 2);
+  left: calc((100% - (#{$container-max-width} + 6px) ) / 2);
   width: 100%;
-  max-width: $container-max-width;
+  max-width: ($container-max-width + 6px);
   z-index: 0;
-  height: 100%;
+  padding: 0 20px;
+  overflow: hidden;
 }
 .line{
   width: 1px;
   height: 100%;
-  background: rgba(255, 255, 255,.2);
+  background-color: rgba(255, 255, 255,.2);
   position: relative;
   &:before,
   &:after{
@@ -22,29 +23,33 @@
     opacity: .3;
     height: 100%;
     z-index: 1;
+    background-attachment: fixed;
   }
   &:before{
-    top: 40px;
+    background-position: 0 40px;
     left: -3px;
     width: 7px;
-    background: repeating-linear-gradient(180deg,#fff,#fff 1px,transparent 1px,transparent 300px);
+    background-image: repeating-linear-gradient(180deg,#fff,#fff 1px,transparent 1px,transparent 300px);
   }
   &:after{
-    top: 37px;
+    background-position: 0 37px;
     left: 0;
     width: 1px;
-    background: repeating-linear-gradient(180deg, #fff,#fff 7px,transparent 1px,transparent 300px);
+    background-image: repeating-linear-gradient(180deg, #fff,#fff 7px,transparent 1px,transparent 300px);
   }
 }
 
 .main{
+  .lines{
+    position: absolute;
+  }
   .line{
-    background: rgba(175, 195, 211,.2);
+    background-color: rgba(175, 195, 211,.2);
     &:before{
-      background: repeating-linear-gradient(180deg,#afc3d3,#afc3d3 1px,transparent 1px,transparent 300px);
+      background-image: repeating-linear-gradient(180deg,#afc3d3,#afc3d3 1px,transparent 1px,transparent 300px);
     }
     &:after{
-      background: repeating-linear-gradient(180deg, #afc3d3,#afc3d3 7px,transparent 1px,transparent 300px);
+      background-image: repeating-linear-gradient(180deg, #afc3d3,#afc3d3 7px,transparent 1px,transparent 300px);
     }
   }
 }

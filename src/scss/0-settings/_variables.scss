@@ -18,7 +18,7 @@ $success:      material-color(green, 500) !default;
 $info:         material-color(light-blue, 500) !default;
 $warning:      material-color(orange, 500) !default;
 $danger:       material-color(red, 500) !default;
-$light:        material-color(gray, 200) !default;
+$light:        #83919c !default;
 $dark:         material-color(blue-grey, 800) !default;
 $muted:        material-color(gray, 600) !default;
 $headings:     #464d53 !default;
@@ -136,7 +136,7 @@ $dt-font-weight:             font-weight(bold) !default;
 // Gradient
 
 $gr-1: linear-gradient(56deg, #835eff, #ff008d) !default;
-$gr-1-transparent: linear-gradient(to bottom, transparent 0%,rgba(131,94,255,1) 100%) !default;
+$gr-12: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(131,94,255, 1) 100%) !default;
 
 // layout
 $container-max-width: 1320px !default;

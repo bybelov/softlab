@@ -1,4 +1,5 @@
 import './vendor';
+import $ from 'jquery';
 import maskInput from 'vanilla-text-mask';
 
 window.onload = function () {
@@ -16,4 +17,16 @@ window.onload = function () {
 
   }
 
+  // $('.scrollbar-macosx').scrollbar();
+
 }
+
+$(window).scroll(function() {    
+  var scroll = $(window).scrollTop();
+  if (scroll > 300) {
+    $("body").addClass("header--fixed");
+  }
+  else {
+    $("body").removeClass("header--fixed");
+  }
+});

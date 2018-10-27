@@ -15,7 +15,7 @@
 
 /* 4 Vendor */
 
-// @import "4-vendor/";
+// @import "4-vendor/jquery.scrollbar";
 
 /* 5 Elements */
 
@@ -34,6 +34,7 @@
 @import "6-components/sprites/svg-sprite";
 
 @import "6-components/lines";
+@import "6-components/hamburger";
 @import "6-components/layout";
 @import "6-components/header";
 @import "6-components/footer";

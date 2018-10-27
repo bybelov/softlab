@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "^3.3.1",
+    "jquery.scrollbar": "^0.2.11",
     "susy": "^3.0.5",
     "vanilla-text-mask": "^5.1.1"
   },
