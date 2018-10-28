@@ -1,24 +1,36 @@
 {% extends "extends/_base.html" %}
 
 {% block content %}
-{% include "templates/_slider.html" %}
+
 <!-- begin main -->
 <main class="main" role="main">
-  {% include "templates/_lines.html" %}
+  {% include "templates/_slider.html" %}
 
-  <div class="container">
+  <div class="main__content">
+      {% include "templates/_lines.html" %}
 
-    <h1>Softlab – студия креативных решений для вашего бренда</h1>
 
-    {% for i in range(0, 20) -%}
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum hic ipsam fugiat nulla, atque laborum dolore repudiandae sunt earum optio dolores quibusdam exercitationem mollitia nostrum reiciendis incidunt eveniet possimus dolorem?</p>
-    {%- endfor %}
+      <div class="container">
 
+        <div class="content">
+          
+          <section class="section intro">
+            <h1>Softlab – студия креативных решений для вашего бренда</h1>
+            <p class="lead">Проектируем и разрабатываем дизайн сайтов и мобильных приложений для эффективного продвижения ваших продуктов</p>
+            <p>Сюда необходим хорошенький текст, описывающий наши лучшие стороны. Сюда необходим хорошенький текст, описывающий наши лучшие стороны. Сюда необходим хорошенький текст, описывающий наши лучшие стороны. Сюда необходим хорошенький текст, описывающий наши лучшие стороны. Сюда необходим хорошенький текст, описывающий наши лучшие стороны.</p>
+            <p>Сюда необходим хорошенький текст, описывающий наши лучшие стороны. Сюда необходим хорошенький текст, описывающий наши лучшие стороны.</p>
+          </section>
+
+        </div>
+
+        <aside class="sidebar">
+
+        </aside>
+
+      </div>
 
   </div>
 </main>
-<aside role="complementary">
 
-</aside>
 <!-- end main -->
 {% endblock %}

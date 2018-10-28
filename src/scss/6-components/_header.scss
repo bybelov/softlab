@@ -29,14 +29,14 @@
 }
 .header {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
   transition: padding 0.25s ease-in-out;
   &__inner{
     height: 140px;
-    padding: 40px 0;
+    padding: 40px 20px;
     display: flex;
     align-items: flex-start;
     flex-direction: row;

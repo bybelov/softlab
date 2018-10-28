@@ -1,9 +1,9 @@
 import './vendor';
 import $ from 'jquery';
+import Swiper from 'swiper';
 import maskInput from 'vanilla-text-mask';
 
-window.onload = function () {
-
+$(document).ready(function(){
   let inputTel = document.querySelector('.tel');
 
   if (inputTel != null) {
@@ -17,9 +17,20 @@ window.onload = function () {
 
   }
 
-  // $('.scrollbar-macosx').scrollbar();
+  function slider(){
+    return new Swiper('.js-slider', {
+      spaceBetween: 0,
+      loop: true,
+      slidesPerView: 1,
+      pagination: {
+        el: '.js-slider-pagination',
+      },
+    });
+  }
+  slider();
 
-}
+  // $('.scrollbar-macosx').scrollbar();
+});
 
 $(window).scroll(function() {    
   var scroll = $(window).scrollTop();

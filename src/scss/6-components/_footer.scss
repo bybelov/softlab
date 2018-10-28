@@ -4,3 +4,15 @@
   color: $white;
   padding: 2rem 0;
 }
+
+.footer-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer-cell{
+  width: 33.33%;
+  a{
+    color: #fff;
+  }
+}

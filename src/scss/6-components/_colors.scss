@@ -1,0 +1,23 @@
+.color-1{
+  background-image: $gr-1;
+  // layout
+  .page{
+    &:before{
+      content: "";
+      height: 300px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: $gr-12;
+    }
+  }
+  // slider
+  .slider{
+    &__title{
+      a{
+        color: $pink-light;
+      }
+    }
+  }
+}

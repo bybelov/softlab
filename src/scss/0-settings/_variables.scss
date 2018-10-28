@@ -23,6 +23,10 @@ $dark:         material-color(blue-grey, 800) !default;
 $muted:        material-color(gray, 600) !default;
 $headings:     #464d53 !default;
 
+$pink-light: #ff3eda !default;
+$pink: #ff1db0 !default;
+$purple: #885afa !default;
+
 
 // BODY
 
@@ -47,8 +51,8 @@ $label-margin-bottom:      .5rem !default;
 
 // FONTS
 
-$font-family-base:      "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
-$font-family-headings:  "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-base:      "FuturaPT", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-headings:  "FuturaPT", "Helvetica Neue", Arial, sans-serif !default;
 $font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 $font-size: () !default;
@@ -56,8 +60,8 @@ $font-size: map-merge((
   sm:         (16px * .875),
   base:       16px,
   lg:         (16px * 1.25),
-  h1:         30px,
-  h2:         24px,
+  h1:         64px,
+  h2:         64px,
   h3:         20px,
   h4:         18px,
   h5:         16px,
@@ -89,7 +93,8 @@ $line-height: map-merge((
   base:       1.5,
   sm:         1.2,
   lg:         1.875,
-  headings:   1.2
+  headings:   1.2,
+  h1:         0.94
 ), $line-height);
 // example: line-height(base);
 
@@ -136,7 +141,7 @@ $dt-font-weight:             font-weight(bold) !default;
 // Gradient
 
 $gr-1: linear-gradient(56deg, #835eff, #ff008d) !default;
-$gr-12: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(131,94,255, 1) 100%) !default;
+$gr-12: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(131,94,255, 1) 100%) !default;
 
 // layout
 $container-max-width: 1320px !default;

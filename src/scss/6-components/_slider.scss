@@ -1,3 +1,22 @@
 .slider{
   height: 100vh;
+  position: relative;
+  &__item{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  &__title{
+    font-size: em(90px);
+    line-height: 1;
+    color: #fff;
+    font-weight: font-weight(medium);
+    a{
+      display: inline-block;
+      border-bottom: em(6px,90px) solid;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
 }
