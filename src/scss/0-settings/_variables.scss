@@ -23,7 +23,7 @@ $dark:         material-color(blue-grey, 800) !default;
 $muted:        material-color(gray, 600) !default;
 $headings:     #464d53 !default;
 
-$pink-light: #ff3eda !default;
+$pink-light: #ff3eda !default; // on slider
 $pink: #ff1db0 !default;
 $purple: #885afa !default;
 
@@ -62,7 +62,7 @@ $font-size: map-merge((
   lg:         (16px * 1.25),
   h1:         64px,
   h2:         64px,
-  h3:         20px,
+  h3:         28px,
   h4:         18px,
   h5:         16px,
   h6:         14px
@@ -92,7 +92,7 @@ $line-height: () !default;
 $line-height: map-merge((
   base:       1.5,
   sm:         1.2,
-  lg:         1.875,
+  lg:         1.63,
   headings:   1.2,
   h1:         0.94
 ), $line-height);

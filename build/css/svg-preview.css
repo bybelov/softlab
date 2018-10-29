@@ -13,9 +13,6 @@ body > svg {
   fill: inherit;
   stroke: inherit; }
 
-.icon-cart {
-  width: 1em; }
-
 .icon-check {
   width: 1em; }
 
@@ -35,10 +32,16 @@ body > svg {
   width: 1em; }
 
 .icon-facebook {
-  width: 1em; }
+  width: 0.52941em; }
 
 .icon-minus {
   width: 1em; }
+
+.icon-motion {
+  width: 1.04348em; }
+
+.icon-ok {
+  width: 0.64706em; }
 
 .icon-plus {
   width: 1em; }
@@ -47,4 +50,4 @@ body > svg {
   width: 1em; }
 
 .icon-vk {
-  width: 1em; }
+  width: 1.63636em; }

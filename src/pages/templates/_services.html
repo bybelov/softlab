@@ -1,0 +1,16 @@
+<section class="section">
+  <h2 class="section__title">{{ section.services }}</h2>
+  <div class="services">
+    {% for item in services %}
+    <div class="services__item">
+      <div class="services__icon">
+        <svg class="svg-icon icon-{{ item.icon }}">
+          <use xlink:href="#{{ item.icon }}"></use>
+        </svg>
+      </div>
+      <h3 class="services__title">{{ item.title }}</h3>
+      <div class="services__body">{{ item.body }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

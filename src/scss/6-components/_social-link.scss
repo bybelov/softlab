@@ -1,0 +1,27 @@
+.social-link{
+  position: relative;
+  margin-right: -14px;
+  &--light{
+    .social-link__item{
+      color: #fff;
+      fill: #fff;
+    }
+  }
+  &__item{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 8px 14px;
+    line-height: 0;
+    .svg-icon{
+      max-width: em(18px,17px);
+      font-size: em(17px);
+      transition: all ease-in-out 0.25s;
+    }
+    &:hover{
+      text-decoration: none;
+      .svg-icon{
+        transform: scale(1.2);
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 @import "1-tools/functions";
 @import "0-settings/variables";
+@import "0-settings/include-media";
 @import "1-tools/mixins";
 
 /* 2 Fonts  */
@@ -43,6 +44,9 @@
 @import "6-components/breadcrumb";
 @import "6-components/news";
 @import "6-components/slider";
+@import "6-components/social-link";
+@import "6-components/services";
+@import "6-components/cases";
 
 /* 7 Helpers */
 

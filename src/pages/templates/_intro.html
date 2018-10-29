@@ -1,0 +1,9 @@
+{% if intro.title %}
+<section class="section intro">
+  <h1>{{ intro.title }}</h1>
+  {% if intro.lead %}
+    <p class="lead">{{ intro.lead }}</p>
+  {% endif %}
+  {{ intro.body | safe }}
+</section>
+{% endif %}

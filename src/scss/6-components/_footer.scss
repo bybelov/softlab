@@ -2,7 +2,10 @@
   position: relative;
   margin-top: auto;
   color: $white;
-  padding: 2rem 0;
+  padding: 3rem 0;
+  p{
+    margin-bottom: 0; 
+  }
 }
 
 .footer-row{
@@ -14,5 +17,9 @@
   width: 33.33%;
   a{
     color: #fff;
+  }
+  .d-flex{
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
