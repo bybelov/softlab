@@ -7,6 +7,9 @@ body{
   flex-direction: column;
   min-height: 100vh;
   background-attachment: fixed;
+  @include media('<xs'){
+    font-size: 14px;
+  }
 }
 .page{
   position: relative;
@@ -32,17 +35,26 @@ body{
     }
     .container{
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
+      @include media('>lg'){
+        flex-direction: row;
+      }
     }
   }
 }
 
 .content{
   flex: 1;
-  width: 66.67%;
+  width: 100%;
+  @include media('>lg'){
+    width: 66.67%;
+  }
 }
 .sidebar{
-  width: 33.33%;
+  width: 100%;
+  @include media('>lg'){
+    width: 33.33%;
+  } 
 }
 
 .container{

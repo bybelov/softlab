@@ -42,7 +42,8 @@
 	],
 	"cases": [
 		{
-			"title": "Процессинговая компания Рукард",
+			"title": "Процессинговая<br>компания Рукард",
+			"titleClass": "text-white",
 			"picture": "group-10",
 			"tags": [
 				"UX/UI",
@@ -52,7 +53,7 @@
 			]
 		},
 		{
-			"title": "Электронный кошелек E-Wallet",
+			"title": "Электронный кошелек<br>E-Wallet",
 			"picture": "group-4",
 			"tags": [
 				"UX/UI",
@@ -62,8 +63,9 @@
 			]
 		},
 		{
-			"title": "HyperBank — самый быстрый и простой мультибанк",
+			"title": "HyperBank — самый быстрый<br>и простой мультибанк",
 			"picture": "group-6",
+			"titleClass": "text-white",
 			"tags": [
 				"UX/UI",
 				"Mobile",
@@ -72,7 +74,8 @@
 			]
 		},
 		{
-			"title": "Мгновенные переводы по всему миру от ChequePay",
+			"title": "Мгновенные переводы<br>по всему миру от ChequePay",
+			"titleClass": "text-white",
 			"picture": "group-5",
 			"tags": [
 				"UX/UI",
@@ -81,7 +84,7 @@
 			]
 		},
 		{
-			"title": "Тестирование сервисов, приложений и ПО",
+			"title": "Тестирование сервисов,<br>приложений и ПО",
 			"picture": "group-11",
 			"tags": [
 				"UX/UI",

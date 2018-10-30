@@ -5,20 +5,16 @@
     <div class="cases__item">
 
       <div class="case">
-        <h4 class="case__title">{{ item.title }}</h4>
         <div class="case__tags tags">
           {% for tag in item.tags %}
-          <a href="#" class="tags__item">{{ tag }}</a>
+            <a href="#" class="tags__item">{{ tag }}</a>
           {% endfor %}
         </div>
-        <figure class="case__figure">
-          <a href="#" class="case__link">
-            <img class="case__picture" src="images/demo/{{ item.picture }}.jpg" srcset="images/demo/{{ item.picture }}.jpg 1x, images/demo/{{ item.picture }}@2x.jpg 2x, images/demo/{{ item.picture }}@3x.jpg 3x">
-          </a>
-        </figure>
+        <a href="#" class="case__link">
+          <h4 class="case__title {{ item.titleClass }}">{{ item.title | safe }}</h4>
+          <div class="case__picture" style="background-image: url('images/demo/{{ item.picture }}.jpg')"></div>
+        </a>
       </div>
-
-
 
     </div>
     {% endfor %}
