@@ -111,7 +111,7 @@ $table-caption-color:    $muted !default;
 $input-color:         $body-color !default;
 $input-bg:            #ffffff !default;
 $input-bg-disabled:   #fafafa !default;
-$input-placeholder:   #b2b2b2 !default;
+$input-placeholder:   $tag-color !default;
 $input-border-color:  #d5d5d5 !default;
 $input-border-width:  1px !default;
 $input-border-radius: 2px !default;
@@ -119,8 +119,8 @@ $input-border-radius: 2px !default;
 $input-focus-border:  $primary !default;
 
 $input-font-size:     font-size(base) !default;
-$input-height-base:   40px !default;
-$input-padding:       6px 12px !default;
+$input-height-base:   30px !default;
+$input-padding:       4px 0 !default;
 
 
 // CODE

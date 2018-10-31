@@ -1,5 +1,12 @@
 .color-1{
-  background-image: $gr-1;
+
+  $primary: $pink ;
+  $primaryLight: $pink-light;
+  $primaryAccent: $purple;
+  $gradient: $gr-1;
+  $gradientPlus: $gr-12;
+
+  background-image: $gradient;
   // layout
   .page{
     &:before{
@@ -9,19 +16,26 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-image: $gr-12;
+      background-image: $gradientPlus;
     }
   }
   // slider
   .slider{
     &__title{
       a{
-        color: $pink-light;
+        color: $primaryLight;
       }
     }
   }
   // services
   .services__icon{
-    fill: $purple;
+    fill: $primaryAccent;
+  }
+  .services__title{
+    color: $primary;
+  }
+  // text
+  .text-primary{
+    color: $primary;
   }
 }
