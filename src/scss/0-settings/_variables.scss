@@ -27,6 +27,13 @@ $pink-light: #ff3eda !default; // on slider
 $pink: #ff1db0 !default;
 $purple: #885afa !default;
 
+// button gradient color
+$periwinkle: #835eff !default;
+$hot-pink: #ff008d !default;
+
+$btn-start: $periwinkle !default;
+$btn-end: $hot-pink !default;
+
 $tag-color: #afc3d3!default;
 
 // BODY
@@ -110,11 +117,15 @@ $table-caption-color:    $muted !default;
 
 $input-color:         $body-color !default;
 $input-bg:            #ffffff !default;
+$input-disabled:      #8d8d8d !default;
 $input-bg-disabled:   #fafafa !default;
 $input-placeholder:   $tag-color !default;
 $input-border-color:  #d5d5d5 !default;
 $input-border-width:  1px !default;
 $input-border-radius: 2px !default;
+
+$checkbox-color:      #5b5b5b !default;
+$radio-color:         #5b5b5b !default;
 
 $input-focus-border:  $primary !default;
 

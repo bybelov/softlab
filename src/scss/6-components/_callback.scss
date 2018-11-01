@@ -1,4 +1,9 @@
 .callback-form{
   position: relative;
   z-index: 1;
+  .form-group{
+    .btn{
+      margin-left: 30px;
+    }
+  }
 }

@@ -6,6 +6,9 @@
   $gradient: $gr-1;
   $gradientPlus: $gr-12;
 
+  $btn-start: $periwinkle;
+  $btn-end: $hot-pink;
+
   background-image: $gradient;
   // layout
   .page{
@@ -38,4 +41,31 @@
   .text-primary{
     color: $primary;
   }
+  // form
+  .checkbox__input{
+    &:checked {
+      ~ .checkbox__label {
+        &:before {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+  // animation
+  @keyframes press {
+    0% {
+      box-shadow: 0 0 0 0 lighten($primary, 10%);
+    }
+    50% {
+      box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , .35 );
+    }
+    100% {
+      box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , 0 );
+    }
+  }
+  // buttons
+  .btn-primary{
+    background-image: linear-gradient(to right, $btn-start 0%, $btn-end 100%);
+  }
+    
 }
