@@ -1,25 +1,12 @@
 import './vendor';
 import $ from 'jquery';
 import Swiper from 'swiper';
-import maskInput from 'vanilla-text-mask';
+
 
 $(document).ready(function () {
-  let inputTel = document.querySelector('.tel');
+  // let inputTel = document.querySelector('.tel');
 
-  if (inputTel != null) {
-
-    const phoneMask = ['+', '7', ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/];
-    inputTel.addEventListener('click', function(){
-      maskInput({
-        inputElement: inputTel,
-        mask: phoneMask,
-        keepCharPositions: true,
-        showMask: true
-      });
-    });
-
-
-  }
+  $(".tel").mask("+7 (999) 999-99-99");
 
   // states for input, textarea
   $('input, textarea').on('blur change keyup paste input', function () {

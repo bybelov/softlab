@@ -13,6 +13,8 @@
   "dependencies": {
     "include-media": "^1.4.9",
     "jquery": "^3.3.1",
+    "jquery-validation": "^1.18.0",
+    "jquery.maskedinput": "^1.4.1",
     "jquery.scrollbar": "^0.2.11",
     "susy": "^3.0.5",
     "swiper": "^4.4.1",

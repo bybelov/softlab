@@ -1,30 +1,37 @@
 <div class="callback-form">
   <h3 class="text-primary">Заказать услуги Дизайна</h3>
-  <form action="">
+  <form action="" id="callback">
     <div class="form-group">
-      <input id="f-name" type="text" name="name">
-      <label for="f-name">Имя</label>
-      <span class="form-group__bar"></span>
+      <div class="text-field">
+        <input id="f-name" type="text" name="name">
+        <label for="f-name">Имя</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
     <div class="form-group">
-      <input id="f-email" type="text" name="email">
-      <label for="f-email">E-mail</label>
-      <span class="form-group__bar"></span>
+      <div class="text-field">
+        <input id="f-email" type="text" name="email">
+        <label for="f-email">E-mail</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
     <div class="form-group">
-      <input id="f-phone" class="tel" type="text" name="phone">
-      <label for="f-phone">Телефон</label>
-      <span class="form-group__bar"></span>
+      <div class="text-field">
+        <input id="f-phone" class="tel" type="text" name="phone">
+        <label for="f-phone">Телефон</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
     <div class="form-group">
-      <textarea name="message" id="f-message" cols="30" rows="1"></textarea>
-      <label for="f-message">Сообщение</label>
-      <span class="form-group__bar"></span>
+      <div class="text-field">
+        <textarea name="message" id="f-message" cols="30" rows="1"></textarea>
+        <label for="f-message">Сообщение</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
     <div class="form-group">
-
       <label class="checkbox" for="privacy">
-        <input type="checkbox" class="checkbox__input" id="privacy" checked>
+        <input type="checkbox" class="checkbox__input" name="privacy" id="privacy">
         <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
       </label>
     </div>
@@ -33,3 +40,52 @@
     </div>
   </form>
 </div>
+<script>
+$(document).ready(function(){
+  $("#callback").validate( {
+    rules: {
+      phone: {
+        requiredphone: true,
+        minlengthphone: true
+      },
+      name: {
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      privacy: "required",
+    },
+    messages: {
+      phone:{
+        required: "Укажите номер телефона"
+      },
+      name: {
+        required: "Введите ваше имя"
+      },
+      email: "Введите корректный email адрес",
+      privacy: "Примите соглашение"
+    },
+    errorElement: "span",
+    errorPlacement: function ( error, element ) {
+      error.addClass("form-text");
+      if ( element.prop( "type" ) === "checkbox") {
+        error.insertAfter( element.parent( ".checkbox" ) );
+      }
+      else if( element.prop("type") === "radio"){
+        error.insertAfter( element.parent( ".radio" ) );
+      } else {
+        error.insertAfter( element.parent( ".text-field" ) );
+      }
+
+    },
+    highlight: function ( element, errorClass, validClass ) {
+      $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+    },
+  });
+});
+</script>

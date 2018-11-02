@@ -67,7 +67,7 @@ function createConfig(env) {
       ],
       alias: {
         // extensions: ['.js'],
-        vendor: path.resolve(__dirname, `/${config.src.vendor}`),
+        vendor: path.resolve(__dirname, `/${config.src.vendor}`)
       },
 
     },

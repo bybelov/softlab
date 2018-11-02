@@ -2,6 +2,34 @@
   margin: 36px 0;
   padding: 0;
   position: relative;
+  // state
+  &.active {
+    .checkbox__label{
+      color: $body-color;
+      bottom: auto !important;
+      font-size: 16px;
+    }
+    label {
+      color: $input-placeholder;
+      bottom: 100% !important;
+      font-size: 14px;
+      line-height: 1;
+    }
+    textarea {
+      ~ label {
+        bottom: 100%;
+      }
+    }
+  }
+}
+
+.form-text{
+  display: block;
+}
+
+.text-field{
+  padding: 0;
+  position: relative;
 
   label {
     color: $body-color;
@@ -68,27 +96,9 @@
     ~ label {
 
     }
-
     &:focus ~ label {
       bottom: 100%;
       margin-bottom: 0;
-    }
-
-
-  }
-
-  // state
-  &.active {
-    label {
-      color: $input-placeholder;
-      bottom: 100% !important;
-      font-size: 14px;
-      line-height: 1;
-    }
-    textarea {
-      ~ label {
-        bottom: 100%;
-      }
     }
   }
 }
@@ -116,15 +126,6 @@
   }
 }
 
-.form-group{
-  &.active{
-    .checkbox__label{
-      color: $body-color;
-      bottom: auto !important;
-      font-size: 16px;
-    }
-  }
-}
 // checkbox
 .checkbox{
   margin-bottom: 0;
