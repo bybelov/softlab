@@ -98,6 +98,9 @@ function createConfig(env) {
           options: {
             fix: true,
             cache: true,
+            camelcase: true,
+            emitErrors: false,
+            failOnHint: false
           },
         },
         // Позволяет выгрузить jquery в глобальную область видимости

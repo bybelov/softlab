@@ -4,5 +4,12 @@
     "node": true
   },
   "parser": "babel-eslint",
-  "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "globals": {
+    "window": true,
+    "document": true
+  }
 }
