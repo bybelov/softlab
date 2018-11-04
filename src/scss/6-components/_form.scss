@@ -2,6 +2,7 @@
   margin: 36px 0;
   padding: 0;
   position: relative;
+  z-index: 0;
   // state
   &.active {
     .checkbox__label{
@@ -13,7 +14,7 @@
       color: $input-placeholder;
       bottom: 100% !important;
       font-size: 14px;
-      line-height: 1;
+      // line-height: 1;
     }
     textarea {
       ~ label {
@@ -33,7 +34,7 @@
 
   label {
     color: $body-color;
-    line-height: $input-height-base;
+    // line-height: $input-height-base;
   }
 
   input[type="color"],
@@ -79,7 +80,7 @@
       color: $input-placeholder;
       bottom: 100%;
       font-size: 14px;
-      line-height: 1;
+      // line-height: 1;
     }
 
     &:focus ~ .form-group__bar:after,
@@ -185,7 +186,7 @@
   }
   &__label{
     display: block;
-    line-height: line-height(base);
+    // line-height: line-height(base);
     &:before{
       content: "";
       position: absolute;

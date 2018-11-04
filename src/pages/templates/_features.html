@@ -1,0 +1,8 @@
+<div class="features">
+  {% for item in features %}
+  <div class="features__item">
+    <h3 class="features__title">{{ item.title }}</h3>
+    <div class="features__body">{{ item.body }}</div>
+  </div>
+  {% endfor %}
+</div>

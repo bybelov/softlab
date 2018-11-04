@@ -1,11 +1,12 @@
 import './vendor';
 import $ from 'jquery';
 import Swiper from 'swiper';
+import './vendor/tabs';
 
 
 $(document).ready(function () {
-  // let inputTel = document.querySelector('.tel');
 
+  // phone mask
   $(".tel").mask("+7 (999) 999-99-99");
 
   // states for input, textarea
@@ -37,6 +38,19 @@ $(document).ready(function () {
   let textarea = document.querySelector('textarea');
   textarea.addEventListener('keydown', autosize);
 
+  // popup show
+  $('.js-hamburger').on('click', function(e) {
+    e.preventDefault();
+    $('body').toggleClass('popup-open');
+    $('.popup').toggleClass('show');
+  });
+  $('.js-popup-close').on('click', function(e) {
+    e.preventDefault();
+    $('body').removeClass('popup-open');
+    $('.popup').toggleClass('show');
+  });
+
+  // slider
   function slider() {
     return new Swiper('.js-slider', {
       spaceBetween: 0,
