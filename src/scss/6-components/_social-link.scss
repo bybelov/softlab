@@ -1,6 +1,9 @@
 .social-link{
   position: relative;
   margin-right: -14px;
+  @include media('<sm'){
+    margin-right: -10px;
+  }
   &--light{
     .social-link__item{
       color: #fff;
@@ -12,6 +15,10 @@
     vertical-align: middle;
     padding: 8px 14px;
     line-height: 0;
+    fill: $light;
+    @include media('<sm'){
+      padding: 8px 10px;
+    }
     .svg-icon{
       max-width: em(18px,17px);
       font-size: em(17px);

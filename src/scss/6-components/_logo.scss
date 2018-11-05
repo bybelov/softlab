@@ -1,0 +1,43 @@
+.logo{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  .icon-logo-circle{
+    display: inline-block;
+    font-size: 4rem;
+    width: 1em;
+    height: 1em;
+    margin-bottom: em(12px, 64px);
+  }
+  .icon-logo-text{
+    display: block;
+    font-size: 0.875rem;
+    width: 5.87em;
+    height: 1em;
+  }
+}
+.hlogo{
+  &__circle-1{
+    fill: #fff
+  }
+  &__circle-2{
+    fill: $pink-light;
+  }
+  &__circle-3{
+    fill: #fff
+  }
+}
+.ilogo{
+  &__text-1{
+    fill: #fff;
+    // fill: $headings;
+  }
+  &__text-2{
+    fill: $pink-light;
+    // fill:url(#logo-gradient);
+  }
+  &__text-3{
+    fill: #fff;
+    // fill: $headings;
+  }
+}

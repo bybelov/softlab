@@ -1,0 +1,15 @@
+.section{
+  padding: 50px 0;
+  @include media('<lg'){
+    padding: 30px 0;
+  }
+  @include media('<md'){
+    padding: 20px 0;
+  }
+  &.intro{
+    padding-top: 0;
+    @include media('>lg'){
+      padding-right: 2rem;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<div class="callback-form">
+  <form action="" id="callback2">
+    <div class="form-group">
+      <div class="text-field">
+        <input id="f2-name" type="text" name="name">
+        <label for="f2-name">Имя</label>
+        <span class="form-group__bar"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-field">
+        <input id="f2-email" type="text" name="email">
+        <label for="f2-email">E-mail</label>
+        <span class="form-group__bar"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-field">
+        <input id="f2-phone" class="tel" type="text" name="phone">
+        <label for="f2-phone">Телефон</label>
+        <span class="form-group__bar"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-field">
+        <textarea name="message" id="f2-message" cols="30" rows="1"></textarea>
+        <label for="f2-message">Сообщение</label>
+        <span class="form-group__bar"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="checkbox" for="privacy2">
+        <input type="checkbox" class="checkbox__input" name="privacy" id="privacy2">
+        <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
+      </label>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </div>
+  </form>
+</div>
+  <script>
+    $(document).ready(function () {
+      $("#callback2").validate({
+        rules: {
+          phone: {
+            requiredphone: true,
+            minlengthphone: true
+          },
+          name: {
+            required: true
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          privacy: "required",
+        },
+        messages: {
+          phone: {
+            required: "Укажите номер телефона"
+          },
+          name: {
+            required: "Введите ваше имя"
+          },
+          email: "Введите корректный email адрес",
+          privacy: "Примите соглашение"
+        },
+        errorElement: "span",
+        errorPlacement: function (error, element) {
+          error.addClass("form-text");
+          if (element.prop("type") === "checkbox") {
+            error.insertAfter(element.parent(".checkbox"));
+          } else if (element.prop("type") === "radio") {
+            error.insertAfter(element.parent(".radio"));
+          } else {
+            error.insertAfter(element.parent(".text-field"));
+          }
+
+        },
+        highlight: function (element, errorClass, validClass) {
+          $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
+        },
+      });
+    });
+  </script>

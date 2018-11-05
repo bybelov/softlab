@@ -20,3 +20,28 @@
     }
   }
 }
+
+.slider-footer{
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  padding-bottom: 30px;
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .social-link{
+    float: right;
+  }
+}
+.slider-scroll{
+  fill: #fff;
+  font-size: 28px;
+  animation-name: swing;
+  animation-duration: .8s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}

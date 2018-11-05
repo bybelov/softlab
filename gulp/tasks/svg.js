@@ -45,11 +45,23 @@ gulp.task('svg:main', () => {
     .pipe(svgmin({
       plugins: [{
         removeDoctype: true
-      }, {
+      },
+      {
+        cleanupIDs: false
+      },
+      {
+        removeHiddenElems: true,
+      },
+      {
+        removeUselessDefs: true
+      },
+      {
         removeComments: true
-      }, {
+      },
+      {
         removeStyleElement: true
-      }, {
+      },
+      {
         convertColors: {
           names2hex: false,
           rgb2hex: false

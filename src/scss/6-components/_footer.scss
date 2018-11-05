@@ -3,6 +3,20 @@
   margin-top: auto;
   color: $white;
   padding: 3rem 0;
+  @include media('<xs'){
+    padding: 10px 0;
+  }
+  @include media('<sm'){
+    padding: 1rem 0;
+  }
+  @include media('<md'){
+    padding: 1.5rem 0;
+  }
+  .container{
+    @include media('<md'){
+      padding: 0;
+    }
+  }
   p{
     margin-bottom: 0; 
   }
@@ -15,6 +29,31 @@
 }
 .footer-cell{
   width: 33.33%;
+  @include media('<xs'){
+    &:nth-child(3){
+      p{
+        display: none;
+      }
+      .social-link{
+        margin-left: auto;
+      }
+    }
+  }
+  @include media('<md'){
+    width: 30%;
+    &:nth-child(3){
+      width: 40%;
+    }
+  }
+  @include media('<680px'){
+    width: 50%;
+    &:nth-child(2){
+      display: none;
+    }
+    &:nth-child(3){
+      width: 50%;
+    }
+  }
   a{
     color: #fff;
   }

@@ -17,7 +17,10 @@
   font-size: 20px;
   font-weight: font-weight(normal);
   color: #fff;
-
+  @include media('<xs'){
+    padding: 8px 30px;
+    font-size: 16px;
+  }
   &:focus,
   &:hover {
     text-decoration: none;

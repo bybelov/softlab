@@ -1,0 +1,55 @@
+.tabs-nav {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  > li {
+    float: left;
+    margin-right: 30px;
+    &:last-child{
+      margin-right: 0;
+    }
+    @include media('<xs'){
+      margin-right: 20px;
+    }
+    > a {
+      float: left;
+      color: $light;
+      font-size: 1.125rem;
+      font-weight: font-weight(medium);
+      padding: 10px 0;
+      transition: all ease 0.25s;
+      &:hover {
+        color: $pink;
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+      > a,
+      > a:hover,
+      > a:focus {
+        color: $pink;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.tab-content {
+  float: left;
+  width: 100%;
+
+  > .tab-pane {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  > .active {
+    display: block;
+  }
+}

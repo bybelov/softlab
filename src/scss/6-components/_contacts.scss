@@ -1,0 +1,22 @@
+.contacts{
+  padding-top: 2rem;
+  @include media('<md'){
+    padding-top: 1rem;
+  }
+  &__info{
+    margin-bottom: 2rem;
+    line-height: 1.88;
+    @include media('<sm'){
+      line-height: 1.7;
+    }
+  }
+  &__map{
+    height: 300px;
+    @include media('<xs'){
+      height: 200px;
+      position: relative;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+}

@@ -3,16 +3,34 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  @include media('<xs'){
+    margin: 0 -10px;
+  }
+  @include media('<lg'){
+    margin-right: -20px;
+  }
   &__item{
     padding-right: 10px;
     padding-bottom: 10px;
+    width: 100%;
     @include media('>xs') {
       width: 50%;
     }
-    width: 100%;
+    @include media('<xs'){
+      padding-right: 0;
+    }
+    @include media('<lg'){
+      padding-right: 20px;
+    }
     &:nth-child(3n + 3){
       width: 100%;
       padding-right: 10px;
+      @include media('<xs'){
+        padding-right: 0;
+      }
+      @include media('<lg'){
+        padding-right: 20px;
+      }
       .case{
         padding-top: 45.058%;
       }
@@ -28,6 +46,9 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  @include media('<xs'){
+    padding-top: 70%;
+  }
   &__link{
 
   }
@@ -47,8 +68,20 @@
     top: 40px;
     left: 42px;
     font-size: 1.25rem;
-    @include media('<xs'){
+    @include media('<400px'){
       font-size: 16px;
+    }
+    @include media('<md'){
+      left: 30px;
+      top: 30px;
+    }
+    @include media('<sm'){
+      left: 20px;
+      top: 20px;
+    }
+    @include media('<400px'){
+      left: 10px;
+      top: 10px;
     }
   }
   &__tags{
@@ -56,6 +89,16 @@
     position: absolute;
     bottom: 20px;
     left: 42px;
+    @include media('<md'){
+      left: 30px;
+    }
+    @include media('<sm'){
+      left: 20px;
+    }
+    @include media('<400px'){
+      left: 10px;
+      bottom: 10px;
+    }
   }
 }
 

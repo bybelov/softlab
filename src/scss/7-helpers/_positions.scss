@@ -19,3 +19,19 @@
     text-align: justify;
   }
 }
+
+.mt-0{
+  margin-top: 0;
+}
+.mb-1{
+  margin-bottom: 1rem;
+  @include media('<md'){
+		margin-bottom: 0.5rem;
+  }
+}
+.mb-6{
+  margin-bottom: 6rem;
+  @include media('<md'){
+    margin-bottom: 3rem;
+  }
+}

@@ -37,6 +37,10 @@
   .services__title{
     color: $primary;
   }
+  // features
+  .features__title{
+    color: $primary;
+  }
   // text
   .text-primary{
     color: $primary;
@@ -67,5 +71,32 @@
   .btn-primary{
     background-image: linear-gradient(to right, $btn-start 0%, $btn-end 100%);
   }
-    
+  // popup
+  .popup{
+    background-image: $gradient;
+  }
+  &.popup-open{
+    .hlogo{
+      &__circle-1{
+        fill: $pink
+      }
+      &__circle-2{
+        fill: $pink;
+      }
+      &__circle-3{
+        fill: $pink
+      }
+    }
+    .ilogo{
+      &__text-1{
+        fill: $headings;
+      }
+      &__text-2{
+        fill:url(#logo-gradient);
+      }
+      &__text-3{
+        fill: $headings;
+      }
+    }
+  }
 }
