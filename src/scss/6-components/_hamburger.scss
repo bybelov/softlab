@@ -4,13 +4,23 @@
   margin-left: auto;
   width: 24px;
   height: 24px;
+  @include media('<xs'){
+    width: 18px;
+    height: 18px;
+  }
   &:hover{
     &:before,
     &:after{
       width: 16px;
+      @include media('<xs'){
+        width: 12px;
+      }
     }
     span{
       width: 24px;
+      @include media('<xs'){
+        width: 18px;
+      }
     }
   }
   span{
@@ -22,6 +32,9 @@
     height: 2px;
     background-color: #fff;
     transition: width 0.3s ease-in-out;
+    @include media('<xs'){
+      width: 12px;
+    }
   }
   &:before,
   &:after{
@@ -32,6 +45,9 @@
     height: 2px;
     width: 24px;
     transition: width 0.3s ease-in-out;
+    @include media('<xs'){
+      width: 18px;
+    }
   }
   &:before{
     top: 0;

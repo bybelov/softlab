@@ -22,6 +22,17 @@
       background-image: $gradientPlus;
     }
   }
+  // menu
+  .menu-item{
+    &__link{
+      color: $primaryAccent;
+    }
+    &.active {
+      >.menu-item__link {
+        color: $primaryLight;
+      }
+    }
+  }
   // slider
   .slider{
     &__title{

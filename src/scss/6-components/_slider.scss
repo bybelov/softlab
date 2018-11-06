@@ -11,6 +11,19 @@
     line-height: 1;
     color: #fff;
     font-weight: font-weight(medium);
+    @media (max-height: 767px) and (min-width: 768px){
+      font-size: em(70px);
+    }
+    @media (max-height: 576px){
+      font-size: em(40px);
+    }
+    @media(min-height: 768px) and (max-width: 1200px){
+      font-size: em(70px);
+    }
+    @media(min-height: 768px) and (max-width: 767px),
+          (max-height: 768px) and (max-width: 767px){
+      font-size: em(40px);
+    }
     a{
       display: inline-block;
       border-bottom: em(6px,90px) solid;

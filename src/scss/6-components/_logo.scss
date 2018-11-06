@@ -8,12 +8,21 @@
     width: 1em;
     height: 1em;
     margin-bottom: em(12px, 64px);
+    @include media('<md'){
+      font-size: 3.25rem;
+    }
+    @include media('<xs'){
+      font-size: 3.125rem;
+    }
   }
   .icon-logo-text{
     display: block;
     font-size: 0.875rem;
     width: 5.87em;
     height: 1em;
+    @include media('<xs'){
+      font-size: 0.8em;
+    }
   }
 }
 .hlogo{

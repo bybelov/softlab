@@ -3,7 +3,7 @@
     padding: 20px 20px 0 20px;
     background-attachment: fixed;
     background-image: $gr-1;
-    @media (max-width: 576px){
+    @include media('<xs'){
       padding: 10px 10px 0 10px;
     }
     .header__inner{
@@ -11,9 +11,15 @@
       box-shadow: 0 10px 30px -10px #d1dde6;
       height: 100px;
       align-items: center;
+      @include media('<md'){
+        height: 70px;
+      }
+      @include media('<xs'){
+        height: 56px;
+      }
     }
     .logo{
-      // display: none;
+      display: none;
     }
     .hamburger{
       span,
@@ -36,11 +42,15 @@
   transition: padding 0.25s ease-in-out;
   &__inner{
     height: 140px;
-    padding: 40px 20px;
+    padding: 40px 0;
     display: flex;
     align-items: flex-start;
     flex-direction: row;
     transition: all 0.25s ease-in-out;
+    @include media('<xs'){
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     .container{
       display: flex;
       align-items: center;
