@@ -3,18 +3,20 @@
   <div class="services">
     {% for item in services %}
     <div class="services__item">
-      <div class="services__icon">
-        <div class="svg-icon" id="svg-{{ item.icon }}-{{ loop.index }}"></div>
-        <script>
-          new Vivus('svg-{{ item.icon }}-{{ loop.index }}', {
-            type: 'sync',
-            duration: 200, 
-            file: 'images/demo/{{ item.icon }}.svg'
-          });
-        </script>
+      <div class="services__inner animate-position-x">
+        <div class="services__icon">
+          <div class="svg-icon" id="svg-{{ item.icon }}-{{ loop.index }}"></div>
+          <script>
+            new Vivus('svg-{{ item.icon }}-{{ loop.index }}', {
+              type: 'sync',
+              duration: 200, 
+              file: 'images/demo/{{ item.icon }}.svg'
+            });
+          </script>
+        </div>
+        <h3 class="services__title">{{ item.title }}</h3>
+        <div class="services__body">{{ item.body }}</div>
       </div>
-      <h3 class="services__title">{{ item.title }}</h3>
-      <div class="services__body">{{ item.body }}</div>
     </div>
     {% endfor %}
   </div>

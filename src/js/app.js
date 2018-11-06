@@ -1,5 +1,6 @@
 import './vendor';
 import $ from 'jquery';
+import './app/animation';
 import Swiper from 'swiper';
 import ScrollMagic from 'ScrollMagic';
 import './vendor/tabs';
@@ -38,18 +39,6 @@ $(document).ready(function () {
   }
   let textarea = document.querySelector('textarea');
   textarea.addEventListener('keydown', autosize);
-
-  // popup show
-  $('.js-hamburger').on('click', function(e) {
-    e.preventDefault();
-    $('body').toggleClass('popup-open');
-    $('.popup').toggleClass('show');
-  });
-  $('.js-popup-close').on('click', function(e) {
-    e.preventDefault();
-    $('body').removeClass('popup-open');
-    $('.popup').toggleClass('show');
-  });
 
   // slider
   function slider() {
