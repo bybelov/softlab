@@ -1,6 +1,7 @@
 import 'jquery';
 import 'swiper';
 import 'ScrollMagic';
+import 'vivus';
 import 'jquery.maskedinput/src/jquery.maskedinput.js';
 import 'jquery-validation/dist/jquery.validate.min.js';
 import 'jquery-validation/dist/localization/messages_ru.js';

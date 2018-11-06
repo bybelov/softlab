@@ -18,7 +18,8 @@
     "jquery.scrollbar": "^0.2.11",
     "scrollmagic": "^2.0.6",
     "susy": "^3.0.5",
-    "swiper": "^4.4.2"
+    "swiper": "^4.4.2",
+    "vivus": "^0.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

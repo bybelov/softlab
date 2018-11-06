@@ -4,9 +4,14 @@
     {% for item in services %}
     <div class="services__item">
       <div class="services__icon">
-        <svg class="svg-icon icon-{{ item.icon }}">
-          <use xlink:href="#{{ item.icon }}"></use>
-        </svg>
+        <div class="svg-icon" id="svg-{{ item.icon }}-{{ loop.index }}"></div>
+        <script>
+          new Vivus('svg-{{ item.icon }}-{{ loop.index }}', {
+            type: 'sync',
+            duration: 200, 
+            file: 'images/demo/{{ item.icon }}.svg'
+          });
+        </script>
       </div>
       <h3 class="services__title">{{ item.title }}</h3>
       <div class="services__body">{{ item.body }}</div>

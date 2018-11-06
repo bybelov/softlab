@@ -53,12 +53,20 @@ $(document).ready(function () {
 
   // slider
   function slider() {
+    let titles = [];
+    $('.js-slider .swiper-slide').each(function(i) {
+      titles.push($(this).data('title'))
+    });
     return new Swiper('.js-slider', {
       spaceBetween: 0,
       loop: true,
       slidesPerView: 1,
       pagination: {
         el: '.js-slider-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="swiper-pagination-text ' + className + '">' + titles[index] + '</span>';
+        },
       },
     });
   }
@@ -88,7 +96,6 @@ $(document).ready(function () {
   function getDuration() {
     return content.offsetHeight - sidebar.offsetHeight;
   }
-
 
   // $('.scrollbar-macosx').scrollbar();
 });

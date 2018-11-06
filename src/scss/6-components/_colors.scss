@@ -41,6 +41,11 @@
       }
     }
   }
+  .swiper-pagination-text{
+    &.swiper-pagination-bullet-active{
+      color: $primaryLight;
+    }
+  }
   // services
   .services__icon{
     fill: $primaryAccent;

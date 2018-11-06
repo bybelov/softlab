@@ -103,7 +103,7 @@ function createConfig(env) {
             failOnHint: false
           },
         },
-        // Позволяет выгрузить jquery в глобальную область видимости
+        // Позволяет выгрузить в глобальную область видимости
         {
           test: require.resolve('jquery'),
           use: [{
@@ -117,7 +117,14 @@ function createConfig(env) {
           {
             loader: 'expose-loader',
             options: 'window.jQuery',
-          }],
+          }]
+        },
+        {
+          test: require.resolve('vivus'),
+          use: [{
+            loader: 'expose-loader',
+            options: 'window.Vivus',
+          }]
         },
       ],
     },
