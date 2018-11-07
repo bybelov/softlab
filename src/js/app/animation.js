@@ -1,17 +1,48 @@
-import {TweenMax, EasePack, TweenLite } from "gsap/TweenMax";
+import {TweenMax, EasePack, TweenLite, TimelineMax } from "gsap/TweenMax";
 import $ from 'jquery';
+import ScrollMagic from 'ScrollMagic';
+import 'animation.gsap';
+import 'debug.addIndicators';
+
 $(document).ready(function () {
 
-  TweenMax.to(".animate-position-x", 1, {
-      x: "0",
+  // TweenMax.to(".animate-position-x", 1, {
+  //     x: "0",
+  //     ease: Quart.easeInOut,
+  //     delay: 1
+  // });
+
+  var controller = new ScrollMagic.Controller();
+
+  var tl = new TimelineMax();
+  var tween = tl.staggerTo(
+    ".animate-position-x",
+    1,
+    {
+      x: 0,
       ease: Quart.easeInOut,
-      delay: 1
-  });
+      delay: 0.05
+    },
+    0.25
+  );
+
+  // $('.services__item').each(function(){
+    var scene = new ScrollMagic.Scene({
+      duration: 0,
+      offset: $('.services').height()/2,
+      triggerElement: '.services',
+      triggerHook: 1,
+      tweenChanges: true
+    })
+    .setTween(tween)
+    .addIndicators({name: "loop"})
+    .addTo(controller);
+  // });
+
 
 
 
   // popup window animation
-
   $('.js-hamburger').on('click', function(e) {
     e.preventDefault();
     TweenLite.fromTo(".popup", .4, {

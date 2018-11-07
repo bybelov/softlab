@@ -66,8 +66,14 @@ function createConfig(env) {
         'bower.json',
       ],
       alias: {
-        // extensions: ['.js'],
-        vendor: path.resolve(__dirname, `/${config.src.vendor}`)
+        'vendor': path.resolve(__dirname, `/${config.src.vendor}`),
+        'TweenLite': 'gsap/src/minified/TweenLite.min.js',
+        'TweenMax': 'gsap/src/minified/TweenMax.min.js',
+        'TimelineLite': 'gsap/src/minified/TimelineLite.min.js',
+        'TimelineMax': 'gsap/src/minified/TimelineMax.min.js',
+        'ScrollMagic': 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+        'animation.gsap': 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+        'debug.addIndicators': 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'
       }
 
     },
