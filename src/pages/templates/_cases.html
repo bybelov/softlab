@@ -1,10 +1,10 @@
 <section class="section">
-  <h2 class="section__title">{{ section.cases }}</h2>
+  <h2 class="section__title"><span class="animate-to-top">{{ section.cases }}</span></h2>
   <div class="cases">
     {% for item in cases %}
     <div class="cases__item">
 
-      <div class="case">
+      <div class="case animate-to-right">
         <div class="case__tags tags">
           {% for tag in item.tags %}
             <a href="#" class="tags__item">{{ tag }}</a>

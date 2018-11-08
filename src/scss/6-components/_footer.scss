@@ -28,6 +28,7 @@
   justify-content: space-between;
 }
 .footer-cell{
+  overflow: hidden;
   width: 33.33%;
   @include media('<xs'){
     &:nth-child(3){

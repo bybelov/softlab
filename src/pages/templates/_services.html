@@ -1,9 +1,9 @@
 <section class="section">
-  <h2 class="section__title">{{ section.services }}</h2>
+  <h2 class="section__title"><span class="animate-to-top">{{ section.services }}</span></h2>
   <div class="services">
     {% for item in services %}
     <div class="services__item">
-      <div class="services__inner animate-position-x">
+      <div class="services__inner animate-to-right">
         <div class="services__icon">
           <div class="svg-icon" id="svg-{{ item.icon }}-{{ loop.index }}"></div>
           <script>

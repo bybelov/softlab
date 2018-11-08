@@ -1,9 +1,9 @@
 {% if intro.title %}
 <section class="section intro">
-  <h1>{{ intro.title }}</h1>
+  <h1><span class="animate-to-top">{{ intro.title }}</span></h1>
   {% if intro.lead %}
-    <p class="lead">{{ intro.lead }}</p>
+    <p class="lead"><span class="animate-to-top">{{ intro.lead }}</span></p>
   {% endif %}
-  {{ intro.body | safe }}
+  <div class="animate-fade-in">{{ intro.body | safe }}</div>
 </section>
 {% endif %}

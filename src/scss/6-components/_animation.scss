@@ -1,6 +1,15 @@
-.animate-position-x{
+.animate-to-right{
   transform: translate(-100%, 0%);
 }
+.animate-to-top{
+  display: block;
+  transform: translate(0, 100%);
+}
+
+
+
+
+
 
 // Покачивание вверх и вниз
 @keyframes swing {
