@@ -1,6 +1,12 @@
 import ScrollMagic from 'ScrollMagic';
+import $ from 'jquery';
 
-function sidebar(){
+// pined sidebar
+// body custom scrollbar
+// fixed header
+
+function scrollbar(){
+
   const content = document.querySelector(".content");
   const sidebar = document.querySelector(".sidebar");
   const controller = new ScrollMagic.Controller();
@@ -28,6 +34,23 @@ function sidebar(){
   function getDuration() {
     return content.offsetHeight - sidebar.offsetHeight;
   }
+
+  $("body").mCustomScrollbar({
+    theme:"minimal-dark",
+    autoExpandScrollbar: true,
+    callbacks: { 
+      whileScrolling : function() {
+        scene.refresh();
+        var scrollTop = $('body').find("> .mCSB_scrollTools .mCSB_dragger").position().top;
+        if (scrollTop > 10) {
+          $("body").addClass("header--fixed");
+        } else {
+          $("body").removeClass("header--fixed");
+        }
+      }
+    }
+  });
+
 }
 
-module.exports = sidebar;
+module.exports = scrollbar;

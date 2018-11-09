@@ -10,6 +10,7 @@ function slider() {
     spaceBetween: 0,
     loop: true,
     slidesPerView: 1,
+    effect: 'slide',
     pagination: {
       el: '.js-slider-pagination',
       clickable: true,

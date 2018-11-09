@@ -131,7 +131,7 @@ function createConfig(env) {
             loader: 'expose-loader',
             options: 'window.Vivus',
           }]
-        },
+        }
       ],
     },
   };

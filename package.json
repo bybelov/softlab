@@ -13,11 +13,15 @@
   "dependencies": {
     "gsap": "^2.0.2",
     "include-media": "^1.4.9",
+    "iscroll": "^5.2.0",
     "jquery": "^3.3.1",
+    "jquery-mousewheel": "^3.1.13",
     "jquery-validation": "^1.18.0",
     "jquery.maskedinput": "^1.4.1",
     "jquery.scrollbar": "^0.2.11",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "scrollmagic": "^2.0.6",
+    "smooth-scrollbar": "^8.3.1",
     "susy": "^3.0.5",
     "swiper": "^4.4.2",
     "vivus": "^0.4.4"

@@ -1,8 +1,11 @@
 import 'jquery';
 import 'swiper';
 import 'vivus';
+import 'iscroll';
 import "gsap/TweenMax";
 import 'ScrollMagic';
+import 'malihu-custom-scrollbar-plugin';
+import 'jquery-mousewheel';
 import 'jquery.maskedinput/src/jquery.maskedinput.js';
 import 'jquery-validation/dist/jquery.validate.min.js';
 import 'jquery-validation/dist/localization/messages_ru.js';
