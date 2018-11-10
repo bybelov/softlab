@@ -17,6 +17,8 @@ $(document).ready(function () {
   FormStates();
   Scrollbar();
 
+
+
   // phone mask
   $(".tel").mask("+7 (999) 999-99-99");
 

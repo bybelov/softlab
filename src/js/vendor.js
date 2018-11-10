@@ -1,7 +1,6 @@
 import 'jquery';
 import 'swiper';
-import 'vivus';
-import 'iscroll';
+import 'animejs';
 import "gsap/TweenMax";
 import 'ScrollMagic';
 import 'malihu-custom-scrollbar-plugin';

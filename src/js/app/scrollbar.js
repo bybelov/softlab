@@ -38,7 +38,7 @@ function scrollbar(){
   $("body").mCustomScrollbar({
     theme:"minimal-dark",
     autoExpandScrollbar: true,
-    callbacks: { 
+    callbacks: {
       whileScrolling : function() {
         scene.refresh();
         var scrollTop = $('body').find("> .mCSB_scrollTools .mCSB_dragger").position().top;

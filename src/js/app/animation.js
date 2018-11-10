@@ -3,17 +3,48 @@ import $ from 'jquery';
 import ScrollMagic from 'ScrollMagic';
 import 'animation.gsap';
 import 'debug.addIndicators';
+// import Vivus from 'vivus';
+import anime from 'animejs';
 
 function animation(){
 
   var controller = new ScrollMagic.Controller();
 
+
+  function draw(element){
+    // obj for array svg paths
+    var obj = [];
+    var paths = $(element).find('path');
+    for (var n = 0; n < $(element).find('path').length; n++){
+      obj[n] = paths[n];
+    }
+    // console.log(obj);
+    var lineDrawing = anime({
+      targets: obj,
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 3000,
+      delay: function(el, i) { return i * 250 },
+      direction: 'alternate',
+      loop: false,
+      autoplay: false
+    });
+    lineDrawing.play();
+  }
+
+
+
   // animate from left to right
   $('.animate-to-right').each(function(){
-    var tween = TweenMax.staggerTo( $(this), 1, {
+    var thisElement = $(this);
+    var icon = thisElement.find('.js-animate-stroke-svg');
+    var tween = TweenMax.staggerTo( thisElement, 1, {
       x: 0,
       ease: Quart.easeInOut,
-      delay: 0
+      delay: 0.25,
+      onStart: function(){
+        draw(icon)
+      }
     }, 0.25);
     var scene = new ScrollMagic.Scene({
       triggerElement: this,
@@ -58,6 +89,8 @@ function animation(){
     .addTo(controller);
 
   });
+
+
 
 }
 

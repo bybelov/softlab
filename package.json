@@ -11,6 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "animejs": "^2.2.0",
     "gsap": "^2.0.2",
     "include-media": "^1.4.9",
     "iscroll": "^5.2.0",
@@ -24,7 +25,8 @@
     "smooth-scrollbar": "^8.3.1",
     "susy": "^3.0.5",
     "swiper": "^4.4.2",
-    "vivus": "^0.4.4"
+    "vivus": "^0.4.4",
+    "walkway.js": "0.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
