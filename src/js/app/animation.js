@@ -38,19 +38,25 @@ function animation(){
     let icon = thisElement.find('.animate-svg');
     let tween = TweenMax.staggerFromTo( thisElement, 1, 
       {
+        opacity: 0,
         xPercent: -100,
         ease: Quart.easeInOut,
         delay: 0.25
       },
       {
+        opacity: 1,
         xPercent: 0,
         ease: Quart.easeInOut,
         delay: 0.25,
         onStart: function(){
+          thisElement.parent().css("overflow", "hidden");
           drawSvg(icon)
+        },
+        onComplete: function(){
+          thisElement.parent().css("overflow", "visible");
         }
       },
-      0.25, 0, null);
+      0.25, 0 );
     let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
