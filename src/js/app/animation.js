@@ -1,25 +1,24 @@
 import {TweenMax, EasePack } from "gsap/TweenMax";
 import $ from 'jquery';
 import ScrollMagic from 'ScrollMagic';
-import 'animation.gsap';
-import 'debug.addIndicators';
+
 // import Vivus from 'vivus';
 import anime from 'animejs';
 
 function animation(){
 
-  var controller = new ScrollMagic.Controller();
+  let controller = new ScrollMagic.Controller();
+  
 
-
-  function draw(element){
+  function drawSvg(element){
     // obj for array svg paths
-    var obj = [];
-    var paths = $(element).find('path');
-    for (var n = 0; n < $(element).find('path').length; n++){
+    let obj = [];
+    let paths = $(element).find('path');
+    for (let n = 0; n < $(element).find('path').length; n++){
       obj[n] = paths[n];
     }
     // console.log(obj);
-    var lineDrawing = anime({
+    let lineDrawing = anime({
       targets: obj,
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
@@ -33,20 +32,26 @@ function animation(){
   }
 
 
-
   // animate from left to right
   $('.animate-to-right').each(function(){
-    var thisElement = $(this);
-    var icon = thisElement.find('.js-animate-stroke-svg');
-    var tween = TweenMax.staggerTo( thisElement, 1, {
-      x: 0,
-      ease: Quart.easeInOut,
-      delay: 0.25,
-      onStart: function(){
-        draw(icon)
-      }
-    }, 0.25);
-    var scene = new ScrollMagic.Scene({
+    let thisElement = $(this);
+    let icon = thisElement.find('.animate-svg');
+    let tween = TweenMax.staggerFromTo( thisElement, 1, 
+      {
+        xPercent: -100,
+        ease: Quart.easeInOut,
+        delay: 0.25
+      },
+      {
+        xPercent: 0,
+        ease: Quart.easeInOut,
+        delay: 0.25,
+        onStart: function(){
+          drawSvg(icon)
+        }
+      },
+      0.25, 0, null);
+    let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
     });
@@ -55,42 +60,56 @@ function animation(){
     // .addIndicators({name: "service "})
     .addTo(controller);
   });
+
+ 
+
   
   // animate-to-top
   $('.animate-to-top').each(function(){
-    var tween = TweenMax.staggerTo( $(this), 1, {
-      y: 0,
+    let tween = TweenMax.staggerFromTo( $(this), 1, 
+    {
+      yPercent: 100,
+      ease: Power2.easeInOut,
+      delay: 0
+    },{
+      yPercent: 0,
       ease: Power2.easeInOut,
       delay: 0
     }, 0.5);
-    var scene = new ScrollMagic.Scene({
+
+    let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
     });
+
     scene.setTween(tween)
-    // .addIndicators({name: "text "})
-    .addTo(controller);
+          // .addIndicators({name: "text "})
+          .addTo(controller);
   });
 
   // animate-fade-in
   $('.animate-fade-in').each(function(){
-    var tween = TweenMax.from(this, 1, {
-      y: 40,
+    let tween = TweenMax.staggerFromTo($(this), 1, 
+    {
+      y: 200,
       autoAlpha: 0,
       delay: 0,
       ease: Power2.easeOut
+    },{
+      y: 0,
+      autoAlpha: 1,
+      delay: 0,
+      ease: Power2.easeOut
     }, .25);
-    var scene = new ScrollMagic.Scene({
+
+    let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
     });
     scene.setTween(tween)
-    // .addIndicators({name: "opacity "})
-    .addTo(controller);
-
+          // .addIndicators({name: "opacity "})
+          .addTo(controller);
   });
-
-
 
 }
 

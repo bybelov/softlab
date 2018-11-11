@@ -90,9 +90,7 @@
   // popup
   .popup{
     background-image: $gradient;
-  }
-  &.popup-open{
-    .hlogo{
+    .logo{
       &__circle-1{
         fill: $pink
       }
@@ -103,7 +101,7 @@
         fill: $pink
       }
     }
-    .ilogo{
+    .logo{
       &__text-1{
         fill: $headings;
       }
@@ -116,3 +114,4 @@
     }
   }
 }
+

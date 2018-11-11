@@ -1,20 +1,25 @@
+import {TweenMax, EasePack } from "gsap/TweenMax";
+import $ from 'jquery';
+
 function tabs() {
-  var myTabs = document.querySelectorAll(".tabs-nav > li");
+  let myTabs = document.querySelectorAll(".tabs-nav > li");
 
   function myTabClicks(tabClickEvent) {
+
     for (let i = 0; i < myTabs.length; i++) {
       myTabs[i].classList.remove("active");
     }
-    var clickedTab = tabClickEvent.currentTarget;
+    
+    let clickedTab = tabClickEvent.currentTarget;
     clickedTab.classList.add("active");
     tabClickEvent.preventDefault();
-    var myContentPanes = document.querySelectorAll(".tab-pane");
+    let myContentPanes = document.querySelectorAll(".tab-pane");
     for (let i = 0; i < myContentPanes.length; i++) {
       myContentPanes[i].classList.remove("active");
     }
-    var anchorReference = tabClickEvent.target;
-    var activePaneId = anchorReference.getAttribute("href");
-    var activePane = document.querySelector(activePaneId);
+    let anchorReference = tabClickEvent.target;
+    let activePaneId = anchorReference.getAttribute("href");
+    let activePane = document.querySelector(activePaneId);
     activePane.classList.add("active");
   }
   for (let i = 0; i < myTabs.length; i++) {

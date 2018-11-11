@@ -75,7 +75,10 @@ body{
   width: 100%;
   @include media('>lg'){
     width: 33.33%;
-  } 
+  }
+  &__inner{
+    overflow: hidden;
+  }
 }
 
 .container{

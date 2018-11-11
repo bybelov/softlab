@@ -10,14 +10,13 @@ import FormStates from './app/form-states';
 
 $(document).ready(function () {
 
-  Slider();
+  Scrollbar();
+  Animation();
   Tabs();
   Popup();
-  Animation();
   FormStates();
-  Scrollbar();
-
-
+  Slider();
+  
 
   // phone mask
   $(".tel").mask("+7 (999) 999-99-99");

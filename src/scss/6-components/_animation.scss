@@ -1,14 +1,7 @@
-.animate-to-right{
-  transform: translate(-100%, 0%);
-}
+.animate-to-right,
 .animate-to-top{
   display: block;
-  transform: translate(0, 100%);
 }
-
-
-
-
 
 
 // Покачивание вверх и вниз
@@ -25,5 +18,25 @@
 
   100% {
     transform: translateY(-2px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
