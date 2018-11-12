@@ -16,7 +16,11 @@ body > svg {
   stroke: inherit;
 }
 //font-size:px;
-.icon-check {
+.icon-1 {
+  width:(92/90)+em;
+}.icon-branding {
+  width:(52/52)+em;
+}.icon-check {
   width:(24/24)+em;
 }.icon-chevron-down {
   width:(24/24)+em;
@@ -30,14 +34,18 @@ body > svg {
   width:(20/20)+em;
 }.icon-facebook {
   width:(9/17)+em;
+}.icon-icon-design-mobile-linear {
+  width:(52/52)+em;
 }.icon-logo-circle {
   width:(65/64)+em;
 }.icon-logo-text {
   width:(264/45)+em;
 }.icon-minus {
   width:(24/24)+em;
+}.icon-mobile {
+  width:(52/52)+em;
 }.icon-motion {
-  width:(48/46)+em;
+  width:(52/52)+em;
 }.icon-ok {
   width:(11/17)+em;
 }.icon-plus {
@@ -46,6 +54,8 @@ body > svg {
   width:(18/27)+em;
 }.icon-twitter {
   width:(24/24)+em;
+}.icon-ux {
+  width:(52/52)+em;
 }.icon-vk {
   width:(18/11)+em;
 }

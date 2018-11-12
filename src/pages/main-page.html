@@ -3,15 +3,14 @@
 {% block content %}
 
 <!-- begin main -->
+{% include "templates/_lines.html" %}
 <main class="main" role="main">
+  {% include "templates/_pluses.html" %}
   {% include "templates/_slider.html" %}
-
   <div class="main__content">
       {% include "templates/_lines.html" %}
-
-
+      {% include "templates/_pluses.html" %}
       <div class="container">
-
         <div class="content">
           {% include './templates/_intro.html' %}
           {% include './templates/_services.html' %}

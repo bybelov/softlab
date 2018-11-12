@@ -1,6 +1,6 @@
 .header--fixed{
   .header{
-    padding: 20px 20px 0 20px;
+    padding: 0 20px;
     background-attachment: fixed;
     background-image: $gr-1;
     @include media('<xs'){
@@ -42,7 +42,7 @@
   transition: padding 0.25s ease-in-out;
   &__inner{
     height: 140px;
-    padding: 40px 0;
+    padding: 40px 20px;
     display: flex;
     align-items: flex-start;
     flex-direction: row;

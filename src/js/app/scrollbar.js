@@ -5,7 +5,7 @@ import $ from 'jquery';
 // body custom scrollbar
 // fixed header
 
-function scrollbar(){
+function Scroll(){
 
   const content = document.querySelector(".content");
   const sidebar = document.querySelector(".sidebar");
@@ -35,22 +35,33 @@ function scrollbar(){
     return content.offsetHeight - sidebar.offsetHeight;
   }
 
-  $("body").mCustomScrollbar({
-    theme:"minimal-dark",
-    autoExpandScrollbar: true,
-    callbacks: {
-      whileScrolling : function() {
-        scene.refresh();
-        var scrollTop = $('body').find("> .mCSB_scrollTools .mCSB_dragger").position().top;
-        if (scrollTop > 10) {
-          $("body").addClass("header--fixed");
-        } else {
-          $("body").removeClass("header--fixed");
-        }
-      }
+
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+    if (scroll > 70) {
+      $("body").addClass("header--fixed");
     }
-  });
+    else {
+      $("body").removeClass("header--fixed");
+    }
+  }); 
+
+  // $("body").mCustomScrollbar({
+  //   theme:"minimal-dark",
+  //   autoExpandScrollbar: true,
+  //   callbacks: {
+  //     whileScrolling : function() {
+  //       scene.refresh();
+  //       var scrollTop = $('body').find("> .mCSB_scrollTools .mCSB_dragger").position().top;
+  //       if (scrollTop > 10) {
+  //         $("body").addClass("header--fixed");
+  //       } else {
+  //         $("body").removeClass("header--fixed");
+  //       }
+  //     }
+  //   }
+  // });
 
 }
 
-module.exports = scrollbar;
+module.exports = Scroll;

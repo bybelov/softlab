@@ -1,52 +1,89 @@
-.logo{
+.logo {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  .icon-logo{
+    font-size: 90px;
+    @include media("<xs"){
+      font-size: 70px;
+    }
+  }
+}
+
+// full logo
+.icon-logo {
+  height: 1em;
+  width: 1.02222em;
+  &__1 {
+    fill: #fff;
+  }
+  &__2 {
+    fill: $pink-light;
+  }
+  &__3 {
+    fill: #fff;
+  }
+  &__4 {
+    fill: $pink-light;
+  }
+  &__5 {
+    fill: #fff;
+  }
+}
+
+// logo only circle
+.icon-logo-circle {
+  height: 1em;
+  width: 1.015625em;
+  fill: $pink;
+  &__1 {
+    // fill: $pink;
+  }
+  &__2 {
+    // fill: $pink;
+  }
+  &__3 {
+    // fill: $pink;
+  }
+}
+
+// logo only text
+.icon-logo-text{
+  font-size: 44px;
+  width: 5.866667em;
+  height: 1em;
+  &__1{
+    fill: $headings;
+  }
+  &__2{
+    fill: url(#logo-gradient);
+  }
+  &__3{
+    fill: $headings;
+  }
+}
+
+// logo in popup window
+.popup{
   .icon-logo-circle{
-    display: inline-block;
-    font-size: 4rem;
-    width: 1em;
-    height: 1em;
-    margin-bottom: em(12px, 64px);
+    margin-left: 9px;
+    line-height: 0;
+    font-size: 64px;
     @include media('<md'){
-      font-size: 3.25rem;
+      margin-left: 0;
+      font-size: em(52px);
     }
     @include media('<xs'){
-      font-size: 3.125rem;
+      font-size: em(44px);
     }
   }
   .icon-logo-text{
-    display: block;
-    font-size: 0.875rem;
-    width: 5.87em;
-    height: 1em;
-    @include media('<xs'){
-      font-size: 0.8em;
+    font-size: 44px;
+    @include media('<md'){
+      font-size: 38px;
     }
-  }
-}
-.hlogo{
-  &__circle-1{
-    fill: #fff
-  }
-  &__circle-2{
-    fill: $pink-light;
-  }
-  &__circle-3{
-    fill: #fff
-  }
-}
-.ilogo{
-  &__text-1{
-    fill: #fff;
-    // fill: $headings;
-  }
-  &__text-2{
-    fill: $pink-light;
-    // fill:url(#logo-gradient);
-  }
-  &__text-3{
-    fill: #fff;
-    // fill: $headings;
+    @include media('<xs'){
+      font-size: 28px;
+    }
   }
 }

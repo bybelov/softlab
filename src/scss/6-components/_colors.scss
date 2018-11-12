@@ -1,6 +1,6 @@
 .color-1{
 
-  $primary: $pink ;
+  $primary: $pink;
   $primaryLight: $pink-light;
   $primaryAccent: $purple;
   $gradient: $gr-1;
@@ -86,6 +86,12 @@
   // buttons
   .btn-primary{
     background-image: linear-gradient(to right, $btn-start 0%, $btn-end 100%);
+  }
+  // logo
+  .header{
+    .logo{
+      fill: $primary;
+    }
   }
   // popup
   .popup{

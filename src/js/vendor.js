@@ -5,7 +5,7 @@ import "gsap/TweenMax";
 import 'ScrollMagic';
 import 'animation.gsap';
 import 'debug.addIndicators';
-import 'malihu-custom-scrollbar-plugin';
+// import 'malihu-custom-scrollbar-plugin';
 import 'jquery-mousewheel';
 import 'jquery.maskedinput/src/jquery.maskedinput.js';
 import 'jquery-validation/dist/jquery.validate.min.js';
