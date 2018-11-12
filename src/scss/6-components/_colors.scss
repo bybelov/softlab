@@ -96,25 +96,46 @@
   // popup
   .popup{
     background-image: $gradient;
-    .logo{
-      &__circle-1{
-        fill: $pink
+    // full logo
+    .icon-logo {
+      &__1 {
+        fill: #fff;
       }
-      &__circle-2{
-        fill: $pink;
+      &__2 {
+        fill: $primaryLight;
       }
-      &__circle-3{
-        fill: $pink
+      &__3 {
+        fill: #fff;
+      }
+      &__4 {
+        fill: $primaryLight;
+      }
+      &__5 {
+        fill: #fff;
       }
     }
-    .logo{
-      &__text-1{
+    // logo only circle
+    .icon-logo-circle {
+      fill: $primary;
+      &__1 {
+        // fill: $pink;
+      }
+      &__2 {
+        // fill: $pink;
+      }
+      &__3 {
+        // fill: $pink;
+      }
+    }
+    // logo only text
+    .icon-logo-text{
+      &__1{
         fill: $headings;
       }
-      &__text-2{
-        fill:url(#logo-gradient);
+      &__2{
+        fill: url(#logo-gradient);
       }
-      &__text-3{
+      &__3{
         fill: $headings;
       }
     }
