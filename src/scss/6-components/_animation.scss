@@ -40,3 +40,26 @@
     opacity: 1;
   }
 }
+
+@keyframes linesHeight {
+  from {
+    height: 0;
+    animation-timing-function: easeOut;
+  }
+
+  to {
+    height: 100%;
+    animation-timing-function: easeOut;
+  }
+}
+
+@keyframes loaderRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
