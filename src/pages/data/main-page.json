@@ -40,7 +40,7 @@
 		},
 		{
 			"icon": "motion",
-			"svg": "<svg class='svg-icon' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'><path d='M40 43l-12.38 5.69c-.6.27-1.3.33-1.92.08a3.26 3.26 0 0 1 1.21-6.29l-20.65-8.7a3.26 3.26 0 0 0-1.42 6.2l20.9 8.8M14.52 36.82l5.65-2.5' stroke='#C888FF'/><path stroke='#885AFA' d='M49 39.25L40 43l-9-3.75v-28.5L40 7l9 3.75z'/><path stroke='#885AFA' d='M49 10.75l-9 3.75-9-3.75'/><path d='M40 39V18' stroke='#C888FF'/><path stroke='#885AFA' d='M27.94 37.56L20 34.25v-17.5l7.88-3.37M27.88 19.5L20 16.75'/></g></svg>",
+			"svg": "<svg class='svg-icon' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'><path d='M40 43l-12.38 5.69c-.6.27-1.3.33-1.92.08a3.26 3.26 0 0 1 1.21-6.29l-20.65-8.7a3.26 3.26 0 0 0-1.42 6.2l20.9 8.8M14.52 36.82l5.65-2.5' stroke='#C888FF'/><path stroke='#885AFA' d='M49 39.25L40 43l-9-3.75v-28.5L40 7l9 3.75z'/><path stroke='#885AFA' d='M49 10.75l-9 3.75-9-3.75'/><path d='M40 39V18' stroke='#C888FF'/><path stroke='#885AFA' d='M27.94 37.56L20 34.25v-17.5l7.88-3.37M27.88 19.5L20 16.75'/></g></svg>",
 			"title": "Motion",
 			"body": "Впечатляющий сценарий и режиссура, профессиональный видео- и фотопродакшн, эффектная 2D графика и 3D визуализация"
 		}
