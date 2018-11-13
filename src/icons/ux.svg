@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title>F409B5CF-E558-4DD5-81B0-90072B7CF2D1</title>
-    <desc>Created with sketchtool.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/design/ux-linear">
-            <path d="M3,33 L3,5 C3,3.896 3.896,3 5,3 L47,3 C48.104,3 49,3.896 49,5 L49,17" id="Stroke-1" stroke="#885AFA" stroke-width="2"></path>
-            <path d="M27,38 L5,38 C3.896,38 3,37.104 3,36 L3,33 L27,33" id="Stroke-3" stroke="#885AFA" stroke-width="2"></path>
-            <polyline id="Stroke-5" stroke="#885AFA" stroke-width="2" points="21 38 21 39 20 44 20 45"></polyline>
-            <path d="M17,45 L28,45" id="Stroke-7" stroke="#885AFA" stroke-width="2"></path>
-            <path d="M30,21 C30,19.896 30.896,19 32,19 L47,19 C48.104,19 49,19.896 49,21 L49,47 C49,48.104 48.104,49 47,49 L32,49 C30.896,49 30,48.104 30,47 L30,21 Z" id="Stroke-9" stroke="#C888FF" stroke-width="2"></path>
-            <path d="M41,45 C41,45.552 40.553,46 40,46 C39.447,46 39,45.552 39,45 C39,44.448 39.447,44 40,44 C40.553,44 41,44.448 41,45" id="Fill-11" fill="#885AFA"></path>
-            <path d="M35.5,20 L35.5,21 C35.5,21.5522847 35.9477153,22 36.5,22 L42.5,22 C43.0522847,22 43.5,21.5522847 43.5,21 L43.5,20" id="Stroke-7" stroke="#C888FF" stroke-width="2"></path>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3 33V5c0-1.1.9-2 2-2h42a2 2 0 0 1 2 2v12M27 38H5a2 2 0 0 1-2-2v-3h24M21 38v1l-1 5v1M17 45h11" stroke="#885AFA" stroke-width="2"/><path d="M30 21c0-1.1.9-2 2-2h15a2 2 0 0 1 2 2v26a2 2 0 0 1-2 2H32a2 2 0 0 1-2-2V21z" stroke="#C888FF" stroke-width="2"/><path d="M40.5 45.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" stroke="#885AFA"/><path d="M35.5 20v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1" stroke="#C888FF" stroke-width="2"/></g></svg>

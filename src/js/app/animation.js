@@ -10,7 +10,7 @@ function animation(){
   let controller = new ScrollMagic.Controller();
   
 
-  function drawSvg(element){
+  function drawSvg(element, time = 2000){
     // obj for array svg paths
     let obj = [];
     let paths = $(element).find('path');
@@ -21,15 +21,27 @@ function animation(){
     let lineDrawing = anime({
       targets: obj,
       strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 3000,
-      delay: function(el, i) { return i * 250 },
+      easing: 'easeInQuad',
+      duration: time,
+      delay: function(el, i) { 
+        return (obj.length + 1)/(i + 1) * 250
+      },
       direction: 'alternate',
       loop: false,
       autoplay: false
     });
     lineDrawing.play();
   }
+
+
+  
+  // hover animation
+  $('.animate-svg').hover(function(){
+    let thisElement = $(this);
+    drawSvg(thisElement, 500)
+  }, function(){
+
+  });
 
 
   // animate from left to right
@@ -50,7 +62,7 @@ function animation(){
         delay: 0.25,
         onStart: function(){
           thisElement.parent().css("overflow", "hidden");
-          drawSvg(icon)
+          drawSvg(icon, 2000)
         },
         onComplete: function(){
           thisElement.parent().css("overflow", "visible");

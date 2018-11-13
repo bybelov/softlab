@@ -4,10 +4,10 @@
     {% for item in services %}
     <div class="services__item">
       <div class="services__inner animate-to-right">
-        <div class="services__icon animate-svg">
+        <a href="#" class="services__icon animate-svg">
           {{ item.svg | safe }}
-        </div>
-        <h3 class="services__title">{{ item.title }}</h3>
+        </a>
+        <h3 class="services__title"><a href="#">{{ item.title }}</a></h3>
         <div class="services__body">{{ item.body }}</div>
       </div>
     </div>

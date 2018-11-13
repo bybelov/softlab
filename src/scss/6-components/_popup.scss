@@ -95,6 +95,7 @@
   @include media('<md'){
     min-width: 100%;
     flex: 0 0 100%;
+    padding-right: 0;
   }
 }
 .popup__right{

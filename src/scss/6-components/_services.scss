@@ -25,6 +25,7 @@
     }
   }
   &__icon{
+    display: inline-block;
     width: 52px;
     height: 52px;
     line-height: 0;
@@ -62,6 +63,12 @@
     }
     @include media('<md'){
       margin-bottom: 0.625rem;
+    }
+    a{
+      color: $pink;
+      &:hover{
+        text-decoration: none;
+      }
     }
   }
   &__body{

@@ -64,22 +64,30 @@
 // pagination
 .swiper-container-horizontal>.swiper-pagination-bullets{
   .swiper-pagination-bullet{
-    &.swiper-pagination-text{
+    @include media('>xs'){
       margin-left: 0;
       margin-right: em(30px,20px);
     }
   }
 }
-.swiper-pagination-text{
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  opacity: 1;
-  background:none;
-  color: #fff;
-  font-size: 1.25rem;
-  margin-right: em(30px,20px);
-  &.swiper-pagination-bullet-active{
-    background: none;
+.swiper-pagination-bullet{
+  @include media('>xs'){
+    border: none;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    opacity: 1;
+    background:none;
+    color: #fff;
+    font-size: 1.25rem;
+    margin-right: em(30px,20px);
+    &.swiper-pagination-bullet-active{
+      background: none;
+    }
+  }
+  @include media('<xs'){
+    span{
+      display: none;
+    }
   }
 }

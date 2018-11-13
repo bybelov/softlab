@@ -14,6 +14,7 @@
       margin-bottom: 2rem;
     }
     @include media('<sm'){
+      margin-bottom: 24px;
       width: 100%;
       flex-basis: 100%;
       padding-right: 0;
@@ -25,6 +26,9 @@
     margin-bottom: 1rem;
     @include media('<md'){
       margin-bottom: 0.625rem;
+    }
+    @include media('<xs'){
+      font-size: 1rem;
     }
   }
   &__body{

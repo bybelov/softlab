@@ -15,7 +15,7 @@ function slider() {
       el: '.js-slider-pagination',
       clickable: true,
       renderBullet: function (index, className) {
-        return '<span class="swiper-pagination-text ' + className + '">' + titles[index] + '</span>';
+        return '<div class="' + className + '"><span>' + titles[index] + '</span></div>';
       },
     },
   });

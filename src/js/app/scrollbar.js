@@ -35,8 +35,7 @@ function Scroll(){
     return content.offsetHeight - sidebar.offsetHeight;
   }
 
-
-  $(window).scroll(function() {    
+  function headerFixed(){
     var scroll = $(window).scrollTop();
     if (scroll > 70) {
       $("body").addClass("header--fixed");
@@ -44,23 +43,12 @@ function Scroll(){
     else {
       $("body").removeClass("header--fixed");
     }
+  }
+  headerFixed();
+  
+  $(window).scroll(function() {    
+    headerFixed();
   }); 
-
-  // $("body").mCustomScrollbar({
-  //   theme:"minimal-dark",
-  //   autoExpandScrollbar: true,
-  //   callbacks: {
-  //     whileScrolling : function() {
-  //       scene.refresh();
-  //       var scrollTop = $('body').find("> .mCSB_scrollTools .mCSB_dragger").position().top;
-  //       if (scrollTop > 10) {
-  //         $("body").addClass("header--fixed");
-  //       } else {
-  //         $("body").removeClass("header--fixed");
-  //       }
-  //     }
-  //   }
-  // });
 
 }
 
