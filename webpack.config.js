@@ -3,6 +3,7 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const config = require('./gulp/config');
+const ThreeWebpackPlugin = require('@wildpeaks/three-webpack-plugin');
 
 function createConfig(env) {
 
@@ -52,6 +53,7 @@ function createConfig(env) {
         analyzerPort: 4000,
         openAnalyzer: false,
       }),
+      new ThreeWebpackPlugin()
     ],
 
     resolve: {
@@ -67,6 +69,7 @@ function createConfig(env) {
       ],
       alias: {
         'vendor': path.resolve(__dirname, `/${config.src.vendor}`),
+        'Three': 'three/build/three.min.js',
         'TweenLite': 'gsap/src/minified/TweenLite.min.js',
         'TweenMax': 'gsap/src/minified/TweenMax.min.js',
         'TimelineLite': 'gsap/src/minified/TimelineLite.min.js',
@@ -126,10 +129,10 @@ function createConfig(env) {
           }]
         },
         {
-          test: require.resolve('vivus'),
+          test: require.resolve('THREE'),
           use: [{
             loader: 'expose-loader',
-            options: 'window.Vivus',
+            options: 'window.THREE',
           }]
         }
       ],

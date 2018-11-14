@@ -2,6 +2,14 @@
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include media('<xs'){
+    margin-left: -10px;
+    margin-right: -10px;
+  }
   &__item{
     display: flex;
     height: 100%;
@@ -60,6 +68,10 @@
   animation-duration: .8s;
   animation-iteration-count: infinite;
   cursor: pointer;
+  transition: all ease 0.25s;
+  &:hover{
+    fill: $pink;
+  }
 }
 
 // pagination

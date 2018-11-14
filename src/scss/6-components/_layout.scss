@@ -88,3 +88,14 @@ body{
   max-width: $container-max-width;
   padding: 0 20px;
 }
+
+.dg.ac{
+  z-index: 999!important;
+}
+#container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

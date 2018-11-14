@@ -11,7 +11,7 @@
     .checkbox__label{
       color: $body-color;
       bottom: auto !important;
-      font-size: 1rem;
+      font-size: 16px;
     }
     label {
       color: $input-placeholder;
@@ -190,6 +190,7 @@
   }
   &__label{
     display: block;
+    font-size: 16px;
     // line-height: line-height(base);
     &:before{
       content: "";

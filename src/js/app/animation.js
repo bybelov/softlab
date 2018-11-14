@@ -1,8 +1,6 @@
 import {TweenMax, EasePack } from "gsap/TweenMax";
 import $ from 'jquery';
 import ScrollMagic from 'ScrollMagic';
-
-// import Vivus from 'vivus';
 import anime from 'animejs';
 
 function animation(){

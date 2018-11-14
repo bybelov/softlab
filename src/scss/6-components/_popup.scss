@@ -43,7 +43,7 @@
   }
   &__close{
     fill: $close;
-    transition: all ease 0.25s;
+    transition: fill ease 0.25s;
     background: none;
     border: 0;
     padding: 0;
@@ -54,6 +54,7 @@
     position: absolute;
     right: 20px;
     outline: none;
+    top: 36px;
     &:focus{
       outline: none;
     }
@@ -109,4 +110,10 @@
 // body
 .popup-open{
   overflow: hidden;
+}
+
+.header--sticky{
+  .popup__close{
+    top: 0;
+  }
 }

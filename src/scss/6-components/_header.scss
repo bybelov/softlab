@@ -1,5 +1,6 @@
-.header--fixed{
+.header--sticky{
   .header{
+    position: fixed;
     padding: 0 20px;
     background-attachment: fixed;
     @include media('<xs'){
@@ -33,7 +34,7 @@
   }
 }
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   top: 0;
   left: 0;

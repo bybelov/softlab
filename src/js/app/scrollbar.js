@@ -1,10 +1,7 @@
 import ScrollMagic from 'ScrollMagic';
-import $ from 'jquery';
 
 // pined sidebar
 // body custom scrollbar
-// fixed header
-
 function Scroll(){
 
   const content = document.querySelector(".content");
@@ -34,21 +31,6 @@ function Scroll(){
   function getDuration() {
     return content.offsetHeight - sidebar.offsetHeight;
   }
-
-  function headerFixed(){
-    var scroll = $(window).scrollTop();
-    if (scroll > 70) {
-      $("body").addClass("header--fixed");
-    }
-    else {
-      $("body").removeClass("header--fixed");
-    }
-  }
-  headerFixed();
-  
-  $(window).scroll(function() {    
-    headerFixed();
-  }); 
 
 }
 
