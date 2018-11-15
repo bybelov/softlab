@@ -1,283 +1,227 @@
-
 import * as THREE from 'three';
-import {MarchingCubes} from 'three/examples/js/MarchingCubes.js';
-import {OrbitControls } from 'three/examples/js/controls/OrbitControls.js';
-// 
-// import '../vendor/Detector';
 import * as dat from 'dat.gui';
-// import Stats from 'three/examples/js/libs/stats.min.js';
-// var Stats = require('three/examples/js/libs/stats.min.js');
 
-  // if (!Detector.webgl) Detector.addGetWebGLMessage();
+var SCREEN_WIDTH = window.innerWidth;
+var SCREEN_HEIGHT = window.innerHeight;
+var container;
+var camera, scene, renderer;
+var controls;
+var light, pointLight, ambientLight;
+var meta, metaMat, resolution, numBlobs;
+var time = 0;
+var clock = new THREE.Clock();
 
-  var SCREEN_WIDTH = window.innerWidth;
-  var SCREEN_HEIGHT = window.innerHeight;
+var metaController = {
 
-  var container;
+  //Metaball simulation
+  speed: .2,
+  numBlobs: 9,
+  resolution: 50,
+  isolation: 50,
 
-  var camera, scene, renderer;
+  //Metaball material
+  metaColor: "#ff1db0",
+  metaSpec: "#ffffff",
+  metaShine: 180,
 
-  var controls;
+  // Material color
+  // hue: 0.5,
+  // saturation: 0.35,
+  // lightness: 0.6,
 
-  var light, pointLight, ambientLight;
+  //Point light color
+  lhue: 0.5,
+  lsaturation: 0.35,
+  llightness: 0.6,
 
-  var meta, metaMat, resolution, numBlobs;
+  //Directional light orientation
+  lx: -0.2,
+  ly: 0.15,
+  lz: 0.675,
 
-  var metaStand;
-  var standMat;
+}
 
-  var time = 0;
-  var clock = new THREE.Clock();
+window.onload = function () {
+  init();
+}
 
-  var metaController = {
+function init() {
 
-    //Metaball simulation
-    speed: .2,
-    numBlobs: 9,
-    resolution: 50,
-    isolation: 50,
+  container = document.getElementById('container');
 
-    //Camera control
-    cameraRotate: function () {
-      if (controls.autoRotate) {
-        controls.autoRotate = false;
-      } else {
-        controls.autoRotate = true;
-      }
-    },
+  // CAMERA
+  camera = new THREE.PerspectiveCamera(45, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 1000);
+  camera.position.set(0, 0, 300);
 
-    cameraReset: function () {
-      camera.position.set(0, 0, 2000);
-    },
+  // SCENE
+  scene = new THREE.Scene();
 
-    //Metaball material
-    metaColor: "#ff1db0",
-    metaSpec: "#885afa",
-    metaShine: 7
-  }
+  // LIGHTS
+  light = new THREE.DirectionalLight(0xffffff);
+  light.position.set(0.5, 0.5, 1);
+  scene.add(light);
 
+  pointLight = new THREE.PointLight( 0xff3300 );
+  pointLight.position.set( 0, 0, 100 );
+  scene.add( pointLight );
 
-  //When the window loads run the init scene which will trigger rendering once models load
-  window.onload = function () {
+  ambientLight = new THREE.AmbientLight(0x080808);
+  scene.add(ambientLight);
 
-    init();
+  // METABALLS
+  resolution = 28;
+  numBlobs = 10;
 
-  }
+  metaMat = new THREE.MeshPhongMaterial({
+    color: 0x000000,
+    specular: 0x888888,
+    shininess: 250
+  });
+  meta = new THREE.MarchingCubes(50, metaMat, true, true);
+  meta.position.set(100, -40, 0);
+  meta.scale.set(100, 100, 100);
+  scene.add(meta);
 
+  // RENDERER
 
+  renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setClearColor(0xffffff, 0);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
-  function init() {
+  container.appendChild(renderer.domElement);
 
-    container = document.getElementById('container');
+  renderer.gammaInput = true;
+  renderer.gammaOutput = true;
 
-    // CAMERA
-    camera = new THREE.PerspectiveCamera(45, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 4000);
-    camera.position.set(0, 0, 2000);
+  // CONTROLS
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.autoRotate = true;
 
-    // SCENE
-    scene = new THREE.Scene();
+  animate();
 
-    // //META STAND
-    var loader = new THREE.JSONLoader();
+  // EVENTS
+  window.addEventListener('resize', onWindowResize, false);
 
-    loader.load(
-      '/meta_stand_geo.json',
-      //Load the model
-      function (geometry, materials) {
-        // standMat = new THREE.MeshPhongMaterial({
-        //   color: 0x000000,
-        //   specular: 0xFFD700,
-        //   shininess: 250
-        // })
-        // var object = new THREE.Mesh(geometry, standMat);
-        // metaStand = object;
-        // metaStand.scale.set(400, 400, 400);
-        // metaStand.position.set(0, -1800, 0);
-        // scene.add(metaStand);
+  //setup GUI
+  setupGui();
 
-        //Start animating once the model loads
-        animate();
+}
 
-        //And make the canvas visible		
-        container.style.display = "block";
-      },
-      // called when download progresses
-      function (loaded, total) {
-        console.log((Math.round(loaded / total * 100)) + '% loaded');
-      },
+//
 
-      //  called when download errors
-      function (xhr) {
-        console.error('An error happened');
-      }
-    );
+function onWindowResize(event) {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
-    // LIGHTS
-    light = new THREE.DirectionalLight(0xffffff);
-    light.position.set(0.5, 0.5, 1);
-    scene.add(light);
+// this controls content of marching cubes voxel field
 
-    ambientLight = new THREE.AmbientLight(0xff3eda);
-    scene.add(ambientLight);
+function updateCubes(object, time, numblobs) {
 
-    // METABALLS
-    resolution = 28;
-    numBlobs = 10;
+  object.reset();
 
-    metaMat = new THREE.MeshPhongMaterial({
-      color: 0x000000,
-      specular: 0x888888,
-      shininess: 250
-    });
-    meta = new THREE.MarchingCubes(50, metaMat, true, true);
-    meta.position.set(700, 0, 0);
-    meta.scale.set(700, 700, 700);
+  // fill the field with some metaballs
 
-    scene.add(meta);
+  var i, ballx, bally, ballz, subtract, strength;
 
-    // RENDERER
+  subtract = 12;
+  strength = 1.2 / ((Math.sqrt(numblobs) - 1) / 4 + 1);
 
-    renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setClearColor(0xffffff, 0);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+  for (i = 0; i < numblobs; i++) {
 
-    container.appendChild(renderer.domElement);
+    ballx = Math.sin(i + 1.26 * time * (1.03 + 0.5 * Math.cos(0.21 * i))) * 0.27 + 0.5;
+    bally = Math.abs(Math.cos(i + 1.12 * time * Math.cos(1.22 + 0.1424 * i))) * 0.27 + 0.5;
+    ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
 
-    renderer.gammaInput = true;
-    renderer.gammaOutput = true;
-
-    // CONTROLS
-
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-    controls.autoRotate = true;
-
-    // STATS
-    // stats = new Stats();
-    // container.appendChild(stats.dom);
-
-
-    // EVENTS
-    window.addEventListener('resize', onWindowResize, false);
-
-    //setup GUI
-    setupGui();
+    object.addBall(ballx, bally, ballz, strength, subtract);
 
   }
 
-  //
+}
 
-  function onWindowResize(event) {
+// ANIMATE
+function animate() {
+  requestAnimationFrame(animate);
+  render();
+}
 
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+// RENDER
+function render() {
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+  var delta = clock.getDelta();
 
+  time += delta * metaController.speed * 0.5;
+
+  // controls.update(delta);
+
+  // Metaball simulation GUI
+  if (metaController.resolution !== resolution) {
+    resolution = metaController.resolution;
+    meta.init(Math.floor(resolution));
   }
 
-  // this controls content of marching cubes voxel field
-
-  function updateCubes(object, time, numblobs) {
-
-    object.reset();
-
-    // fill the field with some metaballs
-
-    var i, ballx, bally, ballz, subtract, strength;
-
-    subtract = 12;
-    strength = 1.2 / ((Math.sqrt(numblobs) - 1) / 4 + 1);
-
-    for (i = 0; i < numblobs; i++) {
-
-      ballx = Math.sin(i + 1.26 * time * (1.03 + 0.5 * Math.cos(0.21 * i))) * 0.27 + 0.5;
-      bally = Math.abs(Math.cos(i + 1.12 * time * Math.cos(1.22 + 0.1424 * i))) * 0.27 + 0.5;
-      ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
-
-      object.addBall(ballx, bally, ballz, strength, subtract);
-
-    }
-
+  if (metaController.isolation !== meta.isolation) {
+    meta.isolation = metaController.isolation;
   }
 
+  //Metaball Material GUI
+  metaMat.color = new THREE.Color(metaController.metaColor);
+  metaMat.specular = new THREE.Color(metaController.metaSpec);
 
-  function animate() {
-
-    requestAnimationFrame(animate);
-
-    render();
-
-    // stats.update();
-
+  if (metaMat.shininess !== metaController.metaShine) {
+    metaMat.shininess = metaController.metaShine;
   }
 
-  function render() {
+  // meta.material.color.setHSL( metaController.hue, metaController.saturation, metaController.lightness );
 
-    var delta = clock.getDelta();
+  // lights
+  light.position.set( metaController.lx, metaController.ly, metaController.lz );
+  light.position.normalize();
 
-    time += delta * metaController.speed * 0.5;
+  pointLight.color.setHSL( metaController.lhue, metaController.lsaturation, metaController.llightness );
 
-    // controls.update(delta);
+  updateCubes(meta, time, metaController.numBlobs);
 
-    // Metaball simulation GUI
-    if (metaController.resolution !== resolution) {
+  renderer.clear();
+  renderer.render(scene, camera);
 
-      resolution = metaController.resolution;
-      meta.init(Math.floor(resolution));
+}
 
-    }
+// SETUP GUI
+function setupGui() {
 
-    if (metaController.isolation !== meta.isolation) {
+  var gui = new dat.GUI();
 
-      meta.isolation = metaController.isolation;
+  var h = gui.addFolder("Metaballs");
+      h.add(metaController, "speed", 0.0, 10.0);
+      h.add(metaController, "numBlobs", 0, 20);
+      h.add(metaController, "resolution", 50, 100);
+      h.add(metaController, "isolation", 50, 450);
 
-    }
+  var h = gui.addFolder("Meta Material");
+      h.addColor(metaController, "metaColor");
+      h.addColor(metaController, "metaSpec");
+      h.add(metaController, "metaShine", 0, 250);
 
-    //Metaball Material GUI
-    metaMat.color = new THREE.Color(metaController.metaColor);
-    metaMat.specular = new THREE.Color(metaController.metaSpec);
+  // material (color)
+  // var m_h, m_s, m_l;
+  // var h = gui.addFolder( "Material color" );
+  //     m_h = h.add( metaController, "hue", 0.0, 1.0, 0.025 );
+	// 		m_s = h.add( metaController, "saturation", 0.0, 1.0, 0.025 );
+	// 		m_l = h.add( metaController, "lightness", 0.0, 1.0, 0.025 );
 
-    if (metaMat.shininess !== metaController.metaShine) {
-      metaMat.shininess = metaController.metaShine;
-    }
+  // light (point)
+  var h = gui.addFolder( "Point light color" );
+      h.add( metaController, "lhue", 0.0, 1.0, 0.025 ).name( "hue" );
+      h.add( metaController, "lsaturation", 0.0, 1.0, 0.025 ).name( "saturation" );
+      h.add( metaController, "llightness", 0.0, 1.0, 0.025 ).name( "lightness" );
 
-    //Stand material GUI
-    // standMat.color = new THREE.Color(metaController.standColor);
-    // standMat.specular = new THREE.Color(metaController.standSpec);
+  // light (directional)
+  var h = gui.addFolder( "Directional light orientation" );
+      h.add( metaController, "lx", - 1.0, 1.0, 0.025 ).name( "x" );
+      h.add( metaController, "ly", - 1.0, 1.0, 0.025 ).name( "y" );
+      h.add( metaController, "lz", - 1.0, 1.0, 0.025 ).name( "z" );
 
-    // if (standMat.shininess !== metaController.standShine) {
-    //   standMat.shininess = metaController.standShine;
-    // }
-
-    updateCubes(meta, time, metaController.numBlobs);
-
-    renderer.clear();
-    renderer.render(scene, camera);
-
-  }
-
-  function setupGui() {
-    var gui = new dat.GUI();
-
-    var h = gui.addFolder("Camera");
-    h.add(metaController, "cameraRotate");
-    h.add(metaController, "cameraReset");
-
-    var h = gui.addFolder("Metaballs");
-    h.add(metaController, "speed", 0.0, 10.0);
-    h.add(metaController, "numBlobs", 0, 20);
-    h.add(metaController, "resolution", 50, 100);
-    h.add(metaController, "isolation", 50, 450);
-
-    var h = gui.addFolder("Meta Material");
-    h.addColor(metaController, "metaColor");
-    h.addColor(metaController, "metaSpec");
-    h.add(metaController, "metaShine", 0, 250);
-
-    // var h = gui.addFolder("Stand Material");
-    // h.addColor(metaController, "standColor");
-    // h.addColor(metaController, "standSpec");
-    // h.add(metaController, "standShine", 0, 250);
-  }
+}
