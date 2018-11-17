@@ -4,6 +4,7 @@ import * as dat from 'dat.gui';
 var SCREEN_WIDTH = window.innerWidth;
 var SCREEN_HEIGHT = window.innerHeight;
 var container;
+var mouseX = 0, mouseY = 0;
 var camera, scene, renderer;
 var light, pointLight, ambientLight;
 var meta, metaMat, resolution, numBlobs;
@@ -65,6 +66,7 @@ var metaController = new function(){
 window.onload = function () {
   init();
 }
+
 
 function init() {
 
@@ -153,7 +155,12 @@ function init() {
   // controls.autoRotate = true;
 
   animate();
+
   // EVENTS
+  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+  //
   window.addEventListener('resize', onWindowResize, false);
 
   //SETUP GUI
@@ -178,10 +185,10 @@ function init() {
       h.addColor(metaController, "metaSpec");
       h.add(metaController, "metaShine", 0, 250);
       //
-      h = gui.addFolder("Камера");
-      h.add(metaController, "cameraPositionX", -999, 999);
-      h.add(metaController, "cameraPositionY", -999, 999);
-      h.add(metaController, "cameraPositionZ", -999, 999);
+      // h = gui.addFolder("Камера");
+      // h.add(metaController, "cameraPositionX", -999, 999);
+      // h.add(metaController, "cameraPositionY", -999, 999);
+      // h.add(metaController, "cameraPositionZ", -999, 999);
       //
       h = gui.addFolder("Глобальный свет");
       h.addColor(metaController, 'ambientColor').onChange(function (e) {
@@ -277,10 +284,15 @@ function render() {
 
   time += delta * metaController.speed * 0.5;
 
+  camera.position.x += ( mouseX - camera.position.x ) * 0.001;
+  camera.position.y += ( - mouseY - camera.position.y ) * 0.001;
+  camera.position.z += ( - mouseY - camera.position.z ) * 0.0001;
+  camera.lookAt( scene.position );
+
   // Camera rotation
-  camera.position.x = metaController.cameraPositionX;
-  camera.position.y = metaController.cameraPositionY;
-  camera.position.z = metaController.cameraPositionZ;
+  // camera.position.x = metaController.cameraPositionX;
+  // camera.position.y = metaController.cameraPositionY;
+  // camera.position.z = metaController.cameraPositionZ;
 
   // Metaball simulation GUI
   resolution = metaController.resolution;
@@ -314,4 +326,25 @@ function render() {
   renderer.clear();
   renderer.render(scene, camera);
 
+}
+
+function onDocumentMouseMove( event ) {
+  mouseX = event.clientX - window.innerWidth/2;
+  mouseY = event.clientY - window.innerHeight/2;
+}
+
+function onDocumentTouchStart( event ) {
+  if ( event.touches.length === 1 ) {
+    event.preventDefault();
+    mouseX = event.touches[ 0 ].pageX - window.innerWidth/2;
+    mouseY = event.touches[ 0 ].pageY - window.innerHeight/2;
+  }
+}
+
+function onDocumentTouchMove( event ) {
+  if ( event.touches.length === 1 ) {
+    event.preventDefault();
+    mouseX = event.touches[ 0 ].pageX - window.innerWidth/2;
+    mouseY = event.touches[ 0 ].pageY - window.innerHeight/2;
+  }
 }
