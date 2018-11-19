@@ -13,11 +13,13 @@
       bottom: auto !important;
       font-size: 16px;
     }
-    label {
-      color: $input-placeholder;
-      bottom: 100% !important;
-      font-size: 14px;
-      // line-height: 1;
+    .text-field{
+      label {
+        color: $input-placeholder;
+        bottom: 100% !important;
+        font-size: 14px;
+        // line-height: 1;
+      }
     }
     textarea {
       ~ label {
