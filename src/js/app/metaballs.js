@@ -22,7 +22,7 @@ var metaController = new function(){
 	this.numBlobs = 8;
 	this.resolution = 70;
   this.isolation = 140;
-  this.positionX = 100;
+  this.positionX = 1;
   this.positionY = 0;
   this.positionZ = 0;
 
@@ -34,7 +34,7 @@ var metaController = new function(){
   // Camera position
   this.cameraPositionX = 0;
   this.cameraPositionY = 0;
-  this.cameraPositionZ = 300;
+  this.cameraPositionZ = 3;
 
   // Lights
   // Ambient Color light
@@ -75,6 +75,7 @@ window.onload = function () {
   init();
 }
 
+var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 
 function init() {
@@ -126,10 +127,10 @@ function init() {
               specular: 0x888888,
               shininess: metaController.metaShine
             });
-  meta = new THREE.MarchingCubes(50, metaMat, true, true);
+  meta = new THREE.MarchingCubes(300, metaMat, true, true);
 
   meta.position.set(metaController.positionX, metaController.positionY, metaController.positionZ);
-  meta.scale.set(100, 100, 100);
+  // meta.scale.set(100, 100, 100);
   scene.add(meta);
 
   // RENDERER
@@ -159,6 +160,9 @@ function init() {
 
   // EVENTS
   window.addEventListener( 'mousemove', onMouseMove, false );
+  document.addEventListener('mousedown', onDocumentMouseDown, false);
+
+
   // document.addEventListener( 'mousemove', onDocumentMouseMove, false );
   // document.addEventListener( 'touchstart', onDocumentTouchStart, false );
   // document.addEventListener( 'touchmove', onDocumentTouchMove, false );
@@ -258,7 +262,7 @@ function init() {
       h.add(metaController, "dLightVisible").name("вкл/выкл").onChange(function (e) {
         light.visible = e;
       });
-      h.add(metaController, 'dLightIntensity', 1, 100, 1).name("интенсивность").onChange(function (e) {
+      h.add(metaController, 'dLightIntensity', 1, 100, 1).name("интенсивностьgit ").onChange(function (e) {
         light.intensity = e
       });
       h.add( metaController, "dLightX", - 1.0, 1.0, 0.025 ).name( "x" );
@@ -273,7 +277,10 @@ function onWindowResize(event) {
 }
 
 // this controls content of marching cubes voxel field
-function updateCubes(object, time, numblobs) {
+function updateCubes(object, time, numblobs, mx, my) {
+
+  // mx = mouse.x;
+  // my = mouse.y;
 
   object.reset();
 
@@ -283,11 +290,23 @@ function updateCubes(object, time, numblobs) {
   strength = 1.2 / ((Math.sqrt(numblobs) - 1) / 4 + 1);
 
   for (i = 0; i < numblobs; i++) {
+
+    mx = mouse.x;
+    my = mouse.y;
+
     ballx = Math.sin(i + 1.26 * time * (1.03 + 0.5 * Math.cos(0.21 * i))) * 0.27 + 0.5;
-    bally = Math.abs(Math.cos(i + 1.12 * time * Math.cos(1.22 + 0.1424 * i))) * 0.27 + 0.5;
+    // bally = Math.abs(Math.cos(i + 1.12 * time * Math.cos(1.22 + 0.1424 * i))) * 0.27 + 0.5;
+    bally = Math.sin(Math.sin(i + 3.52 * time * Math.sin(1.22 + 0.1424 * i))) * 0.3 + 0.5;
     ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
+
     object.addBall(ballx, bally, ballz, strength, subtract);
+
+
+    object.material.wireframe = true;
+    console.log('mx = ' + mx,'my = ' + my, ballx, bally );
+
   }
+
 }
 
 // ANIMATE
@@ -304,8 +323,8 @@ function render() {
 
   time += delta * metaController.speed * 0.5;
 
-  camera.position.x += ( mouse.x - camera.position.x );
-  camera.position.y += ( mouse.y - camera.position.y );
+  // camera.position.x += ( mouse.x - camera.position.x );
+  // camera.position.y += ( mouse.y - camera.position.y );
 
   pointLight.position.x = mouse.x*100;
   pointLight.position.y = mouse.y*100;
@@ -345,7 +364,7 @@ function render() {
 
   pointLight.color.setHSL( metaController.lhue, metaController.lsaturation, metaController.llightness );
 
-  updateCubes(meta, time, metaController.numBlobs, mouseX, mouseY);
+  updateCubes(meta, time, metaController.numBlobs, mouse.x, mouse.y);
 
   renderer.clear();
   renderer.render(scene, camera);
@@ -360,6 +379,27 @@ function onMouseMove( event ) {
 }
 
 
+// See https://stackoverflow.com/questions/12800150/catch-the-click-event-on-a-specific-mesh-in-the-renderer
+// Handle all clicks to determine of a three.js object was clicked and trigger its callback
+function onDocumentMouseDown(event) {
+    event.preventDefault();
+
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    // meshObjects = [meta]; // three.js objects with click handlers we are interested in
+      
+    var intersects = raycaster.intersectObject( scene.children[5], true );
+
+    if (intersects.length > 0) {
+        intersects[0].object.callback();
+    }
+
+}
+
+  
 function onDocumentMouseMove( event ) {
   mouseX = event.clientX - window.innerWidth/2;
   mouseY = event.clientY - window.innerHeight/2;
@@ -379,4 +419,8 @@ function onDocumentTouchMove( event ) {
     mouseX = event.touches[ 0 ].pageX - window.innerWidth/2;
     mouseY = event.touches[ 0 ].pageY - window.innerHeight/2;
   }
+}
+
+function objectClickHandler() {
+  window.open('localhost:3000', '_blank');
 }
