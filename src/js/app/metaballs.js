@@ -30,8 +30,8 @@ var metaController = new function(){
 
   //Metaball material
   this.metaColor = "#ff00e5";
-  this.metaSpec = "#6e6cff";
-  this.metaShine = 5;
+  this.metaSpec = "#090909";
+  this.metaShine = 160;
 
   // Camera position
   this.cameraPositionX = 0;
@@ -45,12 +45,12 @@ var metaController = new function(){
 
   // SpotLight
   this.spotColor = "#ffffff";
-  this.spotPositionX = -40;
-  this.spotPositionY = 120;
-  this.spotPositionZ = 10;
+  this.spotPositionX = 1;
+  this.spotPositionY = -370;
+  this.spotPositionZ = 55;
   this.spotRotationX = 0;
-  this.spotRotationY = 0;
-  this.spotRotationZ = 0;
+  this.spotRotationY = 1;
+  this.spotRotationZ = 2;
   this.spotVisible = false;
   this.spotHelperVisible = false;
 
@@ -68,9 +68,9 @@ var metaController = new function(){
   //Directional light orientation
   this.dLightVisible = true;
   this.dLightIntensity = 1;
-  this.dLightX = 0;
-  this.dLightY = 0.55;
-  this.dLightZ = 0.2;
+  this.dLightX = -1;
+  this.dLightY = 1;
+  this.dLightZ = 1;
 }
 
 window.onload = function () {
@@ -162,14 +162,17 @@ function onWindowResize(event) {
 }
 
 var colorChanger = function colorChangerF(mx, object) {
-  var h;
+  var hue;
+  var saturate = 100;
+  var lightness = 70;
+
   if(mx <= 0){
-    h = mx * 149 + 359;
+    hue = mx * 359 + 359;
   }
   else{
-    h = 359 - mx * 149;
+    hue = 359 - mx * 359;
   }
-  var newColor = String("hsl(" + ( Math.abs(Math.round(h))) + "," + 100 + "%" + "," + 70 + "%" + ")");
+  var newColor = String("hsl(" + ( Math.abs(Math.round(hue))) + "," + saturate + "%" + "," + lightness + "%" + ")");
   console.log(newColor);
   object.material = new THREE.MeshPhongMaterial( { color: newColor } );
 }
@@ -189,14 +192,12 @@ function updateCubes(object, time, numblobs, mx, my) {
     mx = mouse.x;
     my = mouse.y;
 
-    ballx = Math.sin(i + 1.26 * time/1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.35 + 0.5;
-    bally = Math.sin(Math.sin(i + 3.52 * time/1.5 * Math.sin(1.22 + 0.1424 * i))) * my * 0.45 + 0.5;
+    ballx = Math.sin(i + 1.26 * time/1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.34 + 0.5;
+    bally = Math.sin(Math.sin(i + 3.52 * time/1.5 * Math.sin(1.22 + 0.1424 * i))) * my * 0.43 + 0.5;
     ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
 
     colorChanger(mouse.x, object);
     object.addBall(ballx, bally, ballz, strength, subtract);
-
-    console.log(time)
 
   }
 }
@@ -223,19 +224,7 @@ function render() {
   meta.init(Math.floor(resolution));
   
   // position metaballs
-  meta.position.set(metaController.positionX, metaController.positionY, metaController.positionZ);
-
-  if (metaController.isolation !== meta.isolation) {
-    meta.isolation = metaController.isolation;
-  }
-
-  //Metaball Material GUI
-
-  // metaMat.specular = new THREE.Color(metaController.metaSpec);
-
-  if (metaMat.shininess !== metaController.metaShine) {
-    metaMat.shininess = metaController.metaShine;
-  }
+  // meta.position.set(metaController.positionX, metaController.positionY, metaController.positionZ);
 
   // lights
   light.position.set( metaController.dLightX, metaController.dLightY, metaController.dLightZ );
