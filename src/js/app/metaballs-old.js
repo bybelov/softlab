@@ -1,18 +1,16 @@
 import * as THREE from 'three';
-
-// import {settingGui} from './metaball-gui';
+import {settingGui} from './metaball-gui';
 
 var SCREEN_WIDTH = window.innerWidth;
 var SCREEN_HEIGHT = window.innerHeight;
 var container;
+var mouseX = 0, mouseY = 0;
 var camera, scene, renderer;
 var spotLight, light, pointLight, ambientLight;
 var meta, metaMat, resolution, numBlobs;
 var time = 0;
-
 // объект отслеживания времени
 var clock = new THREE.Clock();
-var mouse = new THREE.Vector2();
 
 // SETTINGS DEFAULT
 var metaController = new function(){
@@ -20,7 +18,7 @@ var metaController = new function(){
   this.axes = false;
 
   //Metaball simulation
-	this.speed = 1;
+	this.speed = .5;
 	this.numBlobs = 8;
 	this.resolution = 70;
   this.isolation = 140;
@@ -77,7 +75,8 @@ window.onload = function () {
   init();
 }
 
-
+var raycaster = new THREE.Raycaster();
+var mouse = new THREE.Vector2();
 
 function init() {
 
@@ -103,6 +102,10 @@ function init() {
   spotLight.position.set( metaController.spotPositionX, metaController.spotPositionY, metaController.spotPositionZ);
   spotLight.visible = metaController.spotVisible;
   scene.add(spotLight);
+  // HELPER для прожектора
+  var spotLightHelper = new THREE.SpotLightHelper( spotLight );
+      spotLightHelper.visible = metaController.spotHelperVisible;
+      scene.add( spotLightHelper );
 
   // Солнечный свет, бесконечный
   light = new THREE.DirectionalLight(0xffffff, metaController.dLightIntensity);
@@ -115,11 +118,13 @@ function init() {
   pointLight.visible = metaController.pointVisible;
   scene.add( pointLight );
 
+
+
   // METABALLS
   // Материал для шариков
   metaMat = new THREE.MeshPhongMaterial({
-              color: metaController.metaColor,
-              specular: metaController.metaSpec,
+              color: 0x000000,
+              specular: 0x888888,
               shininess: metaController.metaShine
             });
   meta = new THREE.MarchingCubes(300, metaMat, true, true);
@@ -140,19 +145,31 @@ function init() {
   // добавим канвас рендерер в наш контейнер #container
   container.appendChild(renderer.domElement);
 
+  renderer.gammaInput = true;
+  renderer.gammaOutput = true;
+
   var axes = new THREE.AxesHelper( 200, 200, 200 );
       axes.visible = metaController.axes;
   scene.add(axes);
+
+  // CONTROLS
+  // var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  // controls.autoRotate = true;
 
   animate();
 
   // EVENTS
   window.addEventListener( 'mousemove', onMouseMove, false );
-  document.addEventListener( 'touchmove', onTouchMove, false );
+  document.addEventListener('mousedown', onDocumentMouseDown, false);
+
+
+  // document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+  // document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+  // document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+  //
   window.addEventListener('resize', onWindowResize, false);
 
-  // SETTINGS
-  // settingGui(metaController);
+  settingGui(metaController);
 }
 
 function onWindowResize(event) {
@@ -161,21 +178,11 @@ function onWindowResize(event) {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-var colorChanger = function colorChangerF(mx, object) {
-  var h;
-  if(mx <= 0){
-    h = mx * 149 + 359;
-  }
-  else{
-    h = 359 - mx * 149;
-  }
-  var newColor = String("hsl(" + ( Math.abs(Math.round(h))) + "," + 100 + "%" + "," + 70 + "%" + ")");
-  console.log(newColor);
-  object.material = new THREE.MeshPhongMaterial( { color: newColor } );
-}
-
 // this controls content of marching cubes voxel field
 function updateCubes(object, time, numblobs, mx, my) {
+
+  // mx = mouse.x;
+  // my = mouse.y;
 
   object.reset();
 
@@ -189,16 +196,33 @@ function updateCubes(object, time, numblobs, mx, my) {
     mx = mouse.x;
     my = mouse.y;
 
-    ballx = Math.sin(i + 1.26 * time/1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.35 + 0.5;
-    bally = Math.sin(Math.sin(i + 3.52 * time/1.5 * Math.sin(1.22 + 0.1424 * i))) * my * 0.45 + 0.5;
+    // ballx = Math.sin(i + 1.26 * time * (1.03 + 0.5 * Math.cos(0.21 * i))) * 0.27 + 0.5;
+    // // bally = Math.abs(Math.cos(i + 1.12 * time * Math.cos(1.22 + 0.1424 * i))) * 0.27 + 0.5;
+    // bally = Math.sin(Math.sin(i + 3.52 * time * Math.sin(1.22 + 0.1424 * i))) * 0.3 + 0.5;
+    // ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
+
+    // ballx = Math.sin(i + 1.26 * time * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.43 + 0.5;
+    // bally = Math.sin(Math.sin(i + 3.52 * time * Math.sin(1.22 + 0.1424 * i))) * my * 0.65 + 0.5;
+
     ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
 
-    colorChanger(mouse.x, object);
+
+    ballx = Math.sin(i + 1.26 * time/1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.35 + 0.5;
+    bally = Math.sin(Math.sin(i + 3.52 * time/1.5 * Math.sin(1.22 + 0.1424 * i))) * my * 0.45 + 0.5;
+
     object.addBall(ballx, bally, ballz, strength, subtract);
 
-    console.log(time)
+
+    object.material.wireframe = true;
+
+
+    // console.log('mx = ' + mx,'my = ' + my, ballx, bally );
+  
+
+   
 
   }
+
 }
 
 // ANIMATE
@@ -215,8 +239,19 @@ function render() {
 
   time += delta * metaController.speed * 0.5;
 
-  pointLight.position.x = mouse.x * 3;
-  pointLight.position.y = mouse.y * 3;
+  // camera.position.x += ( mouse.x - camera.position.x );
+  // camera.position.y += ( mouse.y - camera.position.y );
+
+  pointLight.position.x = mouse.x*100;
+  pointLight.position.y = mouse.y*100;
+
+  // camera.position.z += ( - mouseY - camera.position.z ) * 0.0001;
+  // camera.lookAt( scene.position );
+
+  // Camera rotation
+  // camera.position.x = metaController.cameraPositionX;
+  // camera.position.y = metaController.cameraPositionY;
+  // camera.position.z = metaController.cameraPositionZ;
 
   // Metaball simulation GUI
   resolution = metaController.resolution;
@@ -230,12 +265,14 @@ function render() {
   }
 
   //Metaball Material GUI
-
-  // metaMat.specular = new THREE.Color(metaController.metaSpec);
+  metaMat.color = new THREE.Color(metaController.metaColor);
+  metaMat.specular = new THREE.Color(metaController.metaSpec);
 
   if (metaMat.shininess !== metaController.metaShine) {
     metaMat.shininess = metaController.metaShine;
   }
+
+  // meta.material.color.setHSL( metaController.hue, metaController.saturation, metaController.lightness );
 
   // lights
   light.position.set( metaController.dLightX, metaController.dLightY, metaController.dLightZ );
@@ -256,10 +293,46 @@ function onMouseMove( event ) {
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
   mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
-function onTouchMove( event ) {
+
+
+// See https://stackoverflow.com/questions/12800150/catch-the-click-event-on-a-specific-mesh-in-the-renderer
+// Handle all clicks to determine of a three.js object was clicked and trigger its callback
+function onDocumentMouseDown(event) {
+    event.preventDefault();
+
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    // meshObjects = [meta]; // three.js objects with click handlers we are interested in
+      
+    var intersects = raycaster.intersectObject( scene.children[5], true );
+
+    if (intersects.length > 0) {
+        intersects[0].object.callback();
+    }
+
+}
+
+  
+function onDocumentMouseMove( event ) {
+  mouseX = event.clientX - window.innerWidth/2;
+  mouseY = event.clientY - window.innerHeight/2;
+}
+
+function onDocumentTouchStart( event ) {
   if ( event.touches.length === 1 ) {
     event.preventDefault();
-    mouse.x = event.touches[ 0 ].pageX - window.innerWidth/2;
-    mouse.y = event.touches[ 0 ].pageY - window.innerHeight/2;
+    mouseX = event.touches[ 0 ].pageX - window.innerWidth/2;
+    mouseY = event.touches[ 0 ].pageY - window.innerHeight/2;
+  }
+}
+
+function onDocumentTouchMove( event ) {
+  if ( event.touches.length === 1 ) {
+    event.preventDefault();
+    mouseX = event.touches[ 0 ].pageX - window.innerWidth/2;
+    mouseY = event.touches[ 0 ].pageY - window.innerHeight/2;
   }
 }
