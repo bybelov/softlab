@@ -173,7 +173,7 @@ var colorChanger = function colorChangerF(mx, object) {
     hue = 359 - mx * 359;
   }
   var newColor = String("hsl(" + ( Math.abs(Math.round(hue))) + "," + saturate + "%" + "," + lightness + "%" + ")");
-  console.log(newColor);
+  // console.log(newColor);
   object.material = new THREE.MeshPhongMaterial( { color: newColor } );
 }
 

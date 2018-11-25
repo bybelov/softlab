@@ -77,6 +77,54 @@ function animation(){
     .addTo(controller);
   });
 
+  // animejs
+  // animate left ro right
+  
+
+  // $('.animate-to-right').each(function(){
+  //   let thisElement = this;
+  //   const lrDelay = 1000
+
+  //   let lrStart = {
+  //     targets: thisElement,
+  //     opacity: 0,
+  //     translateX: '-100%',
+  //     easing: 'easeInOutQuad',
+  //     duration: lrDelay
+  //   };
+  //   let lrEnd = {
+  //     targets: thisElement,
+  //     opacity: 1,
+  //     translateX: 0,
+  //     easing: 'easeInOutQuad',
+  //     duration: lrDelay
+  //   };
+
+  //   anime(
+  //     lrStart
+  //   );
+  //   let scene = new ScrollMagic.Scene({
+  //     triggerElement: this,
+  //     triggerHook: 1
+  //   });
+    
+  //   // .setClassToggle(this, 'reveal')
+  //   // .addIndicators({name: "service "})
+  //   scene.addTo(controller)
+  //         .on("progress", function (event) {
+  //           anime(
+  //             lrEnd
+  //           ).restart();
+  //         })
+  //         .on("leave", function (event) {
+  //           anime(
+  //             lrStart
+  //           ).restart();
+  //         });
+  // });
+
+
+
  
 
   

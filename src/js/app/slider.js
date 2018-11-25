@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper.js';
 
 function slider() {
   let titles = [];

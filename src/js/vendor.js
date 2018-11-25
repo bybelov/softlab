@@ -1,5 +1,5 @@
 import 'jquery';
-import 'swiper';
+import 'swiper/dist/js/swiper.js';
 import 'animejs';
 import "gsap/TweenMax";
 import 'ScrollMagic';
