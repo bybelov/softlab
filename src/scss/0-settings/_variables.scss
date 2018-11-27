@@ -12,16 +12,17 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-$primary:      material-color(indigo, 500) !default;
+$primary:      #ff1db0 !default;
 $secondary:    material-color(pink, 500) !default;
 $success:      material-color(green, 500) !default;
 $info:         material-color(light-blue, 500) !default;
 $warning:      material-color(orange, 500) !default;
 $danger:       material-color(red, 500) !default;
-$light:        #83919c !default;
+$light:      #83919c !default;
+$lighter:    #afc3d3 !default;
 $dark:         material-color(blue-grey, 800) !default;
 $muted:        material-color(gray, 600) !default;
-$headings:     #464d53 !default;
+$headings:   #464d53 !default;
 
 $pink-light: #ff3eda !default; // on slider
 $pink: #ff1db0 !default;
@@ -60,8 +61,8 @@ $label-margin-bottom:      .5rem !default;
 
 // FONTS
 
-$font-family-base:      "FuturaPT", "Helvetica Neue", Arial, sans-serif !default;
-$font-family-headings:  "FuturaPT", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-base:      'Source Sans Pro', sans-serif !default;
+$font-family-headings:  'Source Sans Pro', sans-serif !default;
 $font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 $font-size: () !default;
@@ -69,8 +70,8 @@ $font-size: map-merge((
   sm:         (16px * .875),
   base:       16px,
   lg:         (16px * 1.25),
-  h1:         64px,
-  h2:         64px,
+  h1:         50px,
+  h2:         40px,
   h3:         28px,
   h4:         18px,
   h5:         16px,
@@ -103,7 +104,7 @@ $line-height: map-merge((
   sm:         1.2,
   lg:         1.63,
   headings:   1.2,
-  h1:         0.94
+  h1:         1.2
 ), $line-height);
 // example: line-height(base);
 

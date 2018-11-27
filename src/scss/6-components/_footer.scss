@@ -1,6 +1,7 @@
 .footer{
   position: relative;
   margin-top: auto;
+  background-color: $headings;
   color: $white;
   padding: 3rem 0;
   @include media('<xs'){

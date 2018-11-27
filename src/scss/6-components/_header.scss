@@ -1,11 +1,8 @@
 .header--sticky{
   .header{
     position: fixed;
-    padding: 0 20px;
+    padding: 0;
     background-attachment: fixed;
-    @include media('<xs'){
-      padding: 0 10px;
-    }
     .header__inner{
       background-color: #fff;
       box-shadow: 0 10px 30px -10px #d1dde6;
@@ -18,9 +15,6 @@
         height: 56px;
       }
     }
-    .logo{
-      display: none;
-    }
     .hamburger{
       span,
       &:before,
@@ -28,11 +22,29 @@
         background-color: $light;
       }
     }
+    .logo{
+      font-size: 30px;
+      .icon-logo{
+        &__1{
+          fill: $headings;
+        }
+        &__2{
+          fill: url(#logo-gradient);
+        }
+        &__3{
+          fill: $headings;
+        }
+        &__4{
+          fill: $headings;
+        }
+      }
+    }
   }
   .page{
     background-attachment: fixed;
   }
 }
+
 .header {
   position: absolute;
   z-index: 10;
@@ -54,10 +66,25 @@
     .container{
       display: flex;
       align-items: center;
+      justify-content: space-between;
       width: 100%;
     }
   }
   .logo{
-
+    font-size: 30px;
+    .icon-logo{
+      &__1{
+        fill: #fff;
+      }
+      &__2{
+        fill: $pink;
+      }
+      &__3{
+        fill: #fff;
+      }
+      &__4{
+        fill: #fff;
+      }
+    }
   }
 }

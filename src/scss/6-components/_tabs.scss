@@ -15,9 +15,9 @@
     }
     > a {
       float: left;
-      color: $light;
+      color: $headings;
       font-size: 1.125rem;
-      font-weight: font-weight(medium);
+      font-weight: font-weight(bold);
       padding: 10px 0;
       transition: all ease 0.25s;
       &:hover {

@@ -62,4 +62,15 @@
   }
 }
 
+@keyframes press {
+  0% {
+    box-shadow: 0 0 0 0 lighten($primary, 10%);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , .35 );
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , 0 );
+  }
+}
 

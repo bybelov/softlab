@@ -150,7 +150,7 @@ blockquote {
 }
 
 .lead {
-	font-size: em(24px);
+	font-size: em(20px);
 	color: $light;
 	margin-bottom: 1.25em;
 	@include media('<md'){

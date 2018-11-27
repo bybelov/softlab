@@ -3,7 +3,7 @@
     <div class="popup__header">
       <div class="container">
         <a href="/" class="logo">
-          {% include './svg/_logo-circle.html' %}
+          <svg class="svg-icon icon-logo"><use xlink:href="#logo"></use></svg>
         </a>
         <button type="button" class="popup__close js-popup-close">
           <svg class="svg-icon icon-close">
@@ -16,9 +16,6 @@
       <div class="container">
         <div class="popup__row">
           <div class="popup__left">
-            <p>
-              {% include './svg/_logo-text.html' %}
-            </p>
             <p class="lead">Креативное пространство, сочетающее в себе популярные направления digital области — UX/UI,
               Event, HR и Обучение</p>
             <p class="mb-6">Знания – самый главный инвестиционный ресурс для реализации успешного будущего человека. Мы обладаем знаниями, обучаем и передаем опыт молодым специалистам, создавая кадровый резерв для развивающегося рынка digital-профессий.</p>

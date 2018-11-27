@@ -20,6 +20,8 @@
 .text-white{
   color: $white;
 }
-.d-flex{
-  display: flex;
+
+// gradients
+.gradient-1{
+  background-image: $gr-1;
 }

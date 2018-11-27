@@ -12,14 +12,5 @@
     @include media('>lg'){
       padding-right: 2rem;
     }
-    h1{
-      overflow: hidden;
-    }
-  }
-  &__title{
-    overflow: hidden;
-  }
-  p{
-    overflow: hidden;
   }
 }

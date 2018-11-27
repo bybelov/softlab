@@ -22,12 +22,14 @@
   }
   &.active {
     >.menu-item__link {
+      color: $link-color;
       text-decoration: none;
     }
   }
 
   &__link {
-    font-size: 1.25rem;
+    color: $headings;
+    font-size: 1rem;
     padding: 0.5rem 0;
     border-radius: 2px;
     display: block;

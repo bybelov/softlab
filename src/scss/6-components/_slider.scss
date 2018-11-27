@@ -1,34 +1,36 @@
+$sliderZIndex_1: 1 !default;
+$sliderZIndex_2: 2 !default;
+$sliderZIndex_3: 3 !default;
+
 .slider{
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @include media('<xs'){
-    margin-left: -10px;
-    margin-right: -10px;
+  .lines,
+  .pluses{
+    z-index: $sliderZIndex_1;
   }
   &__item{
+    position: relative;
     display: flex;
     height: 100%;
     align-items: center;
+    z-index: $sliderZIndex_2;
   }
   &__title{
-    font-size: em(90px);
+    font-size: em(80px);
     line-height: 1;
     color: #fff;
     font-weight: font-weight(medium);
-    margin-bottom: em(64px,90px);
+    margin-bottom: em(38px,90px);
     @media (max-height: 767px) and (min-width: 768px){
-      font-size: em(70px);
+      font-size: em(60px);
     }
     @media (max-height: 576px){
       font-size: em(40px);
     }
     @media(min-height: 768px) and (min-width: 768px) and (max-width: 1200px){
-      font-size: em(70px);
+      font-size: em(60px);
     }
     @media(min-height: 768px) and (max-width: 767px),
           (max-height: 768px) and (max-width: 767px),
@@ -48,7 +50,7 @@
 .slider-footer{
   position: absolute;
   bottom: 0;
-  z-index: 1;
+  z-index: $sliderZIndex_1;
   left: 0;
   right: 0;
   padding-bottom: 30px;
@@ -63,7 +65,7 @@
 }
 .slider-scroll{
   fill: #fff;
-  font-size: 28px;
+  font-size: 31px;
   animation-name: swing;
   animation-duration: .8s;
   animation-iteration-count: infinite;
@@ -92,9 +94,10 @@
     opacity: 1;
     background:none;
     color: #fff;
-    font-size: 1.25rem;
-    margin-right: em(30px,20px);
+    font-size: 1rem;
+    margin-right: em(40px);
     &.swiper-pagination-bullet-active{
+      color: $pink-light;
       background: none;
     }
   }

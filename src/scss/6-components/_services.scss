@@ -25,6 +25,7 @@
     }
   }
   &__icon{
+    fill: $pink-light;
     display: inline-block;
     font-size: 52px;
     // width: 52px;
@@ -59,6 +60,7 @@
     // }
   }
   &__title{
+    color: $primary;
     font-weight: font-weight(normal);
     margin-bottom: 1rem;
     @include media('<xs'){

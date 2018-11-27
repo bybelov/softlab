@@ -1,6 +1,5 @@
 <div class="swiper-container slider js-slider">
-  <div id="monitor"></div>
-  <div id="container"></div>
+  {% include "templates/_lines.html" %}
   <div class="pluses">
     <div class="container">
       <div class="plus-row">
@@ -30,51 +29,28 @@
     </div>
   </div>
   <div class="swiper-wrapper">
-    <div class="swiper-slide" data-title="UX/UI">
+    {% for item in slider %}
+    <div class="swiper-slide {{ item.gradient }}" data-title="{{ item.data }}">
+      {% if loop.index == 1 %}
+        <div id="container"></div>
+      {% endif %}
       <div class="slider__item">
         <div class="container">
           <div class="slider__title">
-            <a href="#">UX/UI</a> от идеи <br>
-            до реализации
+            {{ item.title | safe }}
           </div>
           <div class="js-slider-pagination swiper-pagination"></div>
         </div>
       </div>
     </div>
-    <div class="swiper-slide" data-title="Motion">
-      <div class="slider__item">
-        <div class="container">
-          <div class="slider__title">
-            <a href="#">Motion</a> от идеи <br>
-            до реализации
-          </div>
-          <div class="js-slider-pagination swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-slide" data-title="3D">
-      <div class="slider__item">
-        <div class="container">
-          <div class="slider__title">
-            <a href="#">3D</a> от идеи <br>
-            до реализации
-          </div>
-          <div class="js-slider-pagination swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-
+    {% endfor %}
   </div>
-  
   <div class="slider-footer">
     <div class="container">
       <div class="js-slider-scroll slider-scroll">
-        <svg class="svg-icon icon-scroll">
-          <use xlink:href="#scroll"></use>
-        </svg>
+        <svg class="svg-icon icon-mouse"><use xlink:href="#mouse"></use></svg>
       </div>
       {% include './_social-link.html' %}
     </div>
   </div>
-
 </div>
