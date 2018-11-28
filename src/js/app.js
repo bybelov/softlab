@@ -2,6 +2,7 @@ import './vendor';
 import $ from 'jquery';
 import Tabs from './app/tabs';
 import Slider from './app/slider';
+import Awards from './app/slider-awards';
 import Popup from './app/popup';
 import Animation from './app/animation';
 import Scroll from './app/scrollbar';
@@ -23,6 +24,7 @@ $(document).ready(function () {
   Popup();
   FormStates();
   Slider();
+  Awards();
 
   // phone mask
   $(".tel").mask("+7 (999) 999-99-99");

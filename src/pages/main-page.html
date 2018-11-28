@@ -6,28 +6,20 @@
 <main class="main" role="main">
   {% include "templates/_slider.html" %}
   <div class="main__content">
+
       {% include "templates/_lines.html" %}
       {% include "templates/_pluses.html" %}
+
       <div class="container">
-        <div class="content">
-          {% include './templates/_intro.html' %}
-          {% include './templates/_services.html' %}
-          {% include './templates/_cases.html' %}
-        </div>
-
-        <aside class="sidebar">
-          <div class="sidebar__inner">
-            <div class="callback-form js-callback-form animate-to-right">
-              <h3 class="text-primary">Заказать услуги Дизайна</h3>
-              {% include './templates/_callback.html' %}
-            </div>
-          </div>
-        </aside>
-
+        {% include './templates/_intro.html' %}
+      </div>
+      {% include './templates/_awards.html' %}
+      <div class="container">
+        {% include './templates/_services.html' %}
+        {% include './templates/_cases.html' %}
       </div>
 
   </div>
 </main>
-
 <!-- end main -->
 {% endblock %}

@@ -1,42 +1,45 @@
-<form action="" id="callback">
-  <div class="form-group">
-    <div class="text-field">
-      <input id="f-name" type="text" name="name">
-      <label for="f-name">Имя</label>
-      <span class="form-group__bar"></span>
+<div class="callback-form js-callback-form animate-to-right">
+  <h3 class="text-primary">Заказать услуги Дизайна</h3>
+  <form action="" id="callback">
+    <div class="form-group">
+      <div class="text-field">
+        <input id="f-name" type="text" name="name">
+        <label for="f-name">Имя</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="text-field">
-      <input id="f-email" type="text" name="email">
-      <label for="f-email">E-mail</label>
-      <span class="form-group__bar"></span>
+    <div class="form-group">
+      <div class="text-field">
+        <input id="f-email" type="text" name="email">
+        <label for="f-email">E-mail</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="text-field">
-      <input id="f-phone" class="tel" type="text" name="phone">
-      <label for="f-phone">Телефон</label>
-      <span class="form-group__bar"></span>
+    <div class="form-group">
+      <div class="text-field">
+        <input id="f-phone" class="tel" type="text" name="phone">
+        <label for="f-phone">Телефон</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="text-field">
-      <textarea name="message" id="f-message" cols="30" rows="1"></textarea>
-      <label for="f-message">Сообщение</label>
-      <span class="form-group__bar"></span>
+    <div class="form-group">
+      <div class="text-field">
+        <textarea name="message" id="f-message" cols="30" rows="1"></textarea>
+        <label for="f-message">Сообщение</label>
+        <span class="form-group__bar"></span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="checkbox" for="privacy">
-      <input type="checkbox" class="checkbox__input" name="privacy" id="privacy">
-      <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
-    </label>
-  </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">Отправить</button>
-  </div>
-</form>
+    <div class="form-group">
+      <label class="checkbox" for="privacy">
+        <input type="checkbox" class="checkbox__input" name="privacy" id="privacy">
+        <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
+      </label>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </div>
+  </form>
+</div>
 <script>
     $(document).ready(function(){
       $("#callback").validate( {

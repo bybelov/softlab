@@ -167,10 +167,10 @@ var colorChanger = function colorChangerF(mx, object) {
   var lightness = 70;
 
   if(mx <= 0){
-    hue = mx * 359 + 359;
+    hue = mx * 90 + 350;
   }
   else{
-    hue = 359 - mx * 359;
+    hue = 350 - mx * 90;
   }
   var newColor = String("hsl(" + ( Math.abs(Math.round(hue))) + "," + saturate + "%" + "," + lightness + "%" + ")");
   // console.log(newColor);

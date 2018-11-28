@@ -1,0 +1,10 @@
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.col{
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: 20px;
+}

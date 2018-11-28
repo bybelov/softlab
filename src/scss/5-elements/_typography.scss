@@ -33,6 +33,7 @@ h6,
 h1,
 .h1 {
 	font-size: font-size(h1);
+	margin-bottom: em(90px, font-size(h1));
 	@include media('<xs'){
 		font-size: 24px;
 	}
@@ -47,6 +48,7 @@ h1,
 h2,
 .h2 {
 	font-size: font-size(h2);
+	margin-bottom: 0.9em;
 	@include media('<xs'){
 		font-size: 24px;
 	}
@@ -85,14 +87,6 @@ h5,
 h6,
 .h6 {
 	font-size: font-size(h6);
-}
-
-h1,
-.h1,
-h2,
-.h2 {
-	line-height: line-height(h1);
-	margin-bottom: 0.9em;
 }
 
 // Links
@@ -151,6 +145,7 @@ blockquote {
 
 .lead {
 	font-size: em(20px);
+	line-height: line-height(lg);
 	color: $light;
 	margin-bottom: 1.25em;
 	@include media('<md'){

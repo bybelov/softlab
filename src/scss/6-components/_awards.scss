@@ -1,0 +1,60 @@
+.awards{
+  position: relative;
+  z-index: 0;
+  background-color: $headings;
+  padding: 3.75rem 0 4.25rem; // 60
+  &__item{
+    text-align: center;
+    padding: 0 10px;
+  }
+  &__picture{
+    margin-bottom: 0.5rem;
+  }
+  &__title{
+    line-height: 1.43;
+    color: $light;
+    font-size: 0.875rem;
+    padding: 0 10px;
+  }
+}
+
+.award{
+  text-align: center;
+  &__title{
+    font-size: 0.875rem;
+    line-height: line-height(sm);
+    color: $light;
+    margin-bottom: em(40px, 14px);
+  }
+  &__body{
+
+  }
+  &__count{
+    background-image: url(../images/winner.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 94px;
+    width: 176px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    span{
+      font-size: 3.75rem;
+      color: $headings;
+      line-height: 1;
+      font-weight: font-weight(bold);
+      margin-top: -8px;
+      display: inline-block;
+    }
+  }
+  &__picture{
+    margin-bottom: 10px;
+  }
+  &__nomination{
+    color: $light;
+    font-size: 0.875rem;
+    line-height: line-height(sm);
+  }
+}

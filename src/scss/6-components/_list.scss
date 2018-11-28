@@ -1,0 +1,12 @@
+// INTRO
+.list-intro{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li{
+    line-height: line-height(sm);
+    font-size: 1.625rem;
+    color: $headings;
+    margin-bottom: em(40px, 26px);
+  }
+}

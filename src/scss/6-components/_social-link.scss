@@ -20,6 +20,7 @@
       padding: 8px 10px;
     }
     .svg-icon{
+      transition: all ease 0.25s;
       max-width: em(18px,17px);
       font-size: em(17px);
       transition: all ease-in-out 0.25s;
@@ -29,6 +30,16 @@
       .svg-icon{
         transform: scale(1.2);
       }
+    }
+  }
+}
+.footer{
+  .social-link__item{
+    color: $tag-color;
+    fill: $tag-color;
+    &:hover{
+      color: #fff;
+      fill: #fff;
     }
   }
 }

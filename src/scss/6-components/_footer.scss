@@ -13,13 +13,18 @@
   @include media('<md'){
     padding: 1.5rem 0;
   }
-  .container{
-    @include media('<md'){
-      padding: 0;
-    }
-  }
   p{
     margin-bottom: 0; 
+  }
+  a{
+    color: $light;
+    &.phone{
+      color: #fff;
+    }
+    &:hover{
+      text-decoration: none;
+      color: #fff;
+    }
   }
 }
 
@@ -55,9 +60,6 @@
     &:nth-child(3){
       width: 50%;
     }
-  }
-  a{
-    color: #fff;
   }
   .d-flex{
     justify-content: space-between;

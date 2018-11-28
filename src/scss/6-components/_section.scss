@@ -9,8 +9,8 @@
   }
   &.intro{
     padding-top: 0;
-    @include media('>lg'){
-      padding-right: 2rem;
+    .lead{
+      margin-bottom: em(60px, 20px);
     }
   }
 }
