@@ -3,10 +3,20 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  @include media('<sm'){
+    margin-bottom: 2rem;
+  }
   li{
     line-height: line-height(sm);
     font-size: 1.625rem;
     color: $headings;
     margin-bottom: em(40px, 26px);
+    @include media('<sm'){
+      font-size: 1.5rem;
+      margin-bottom: em(10px);
+    }
+    @include media('<xs'){
+      font-size: 1.125rem;
+    }
   }
 }

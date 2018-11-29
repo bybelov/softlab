@@ -7,10 +7,38 @@
   @include media('<md'){
     padding: 20px 0;
   }
+  // INTRO
   &.intro{
     padding-top: 0;
     .lead{
       margin-bottom: em(60px, 20px);
+      @include media('<sm'){
+        margin-bottom: em(30px, 20px);
+      }
     }
+    @include media('<lg'){
+      .row{
+        flex-wrap: wrap;
+      }
+      .col{
+        flex-basis: 50%;
+        &:nth-child(3){
+          width: 100%;
+          padding-right: 0;
+        }
+      }
+      .award{
+        margin-top: 2rem;
+      }
+    }
+    @include media('<sm'){
+      .row{
+        flex-direction: column;
+      }
+      .col{
+        flex-basis: 100%;
+      }
+    }
+
   }
 }

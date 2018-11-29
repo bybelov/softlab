@@ -74,56 +74,64 @@
 	],
 	"cases": [
 		{
-			"title": "Процессинговая<br>компания Рукард",
-			"titleClass": "text-white",
-			"picture": "group-10",
-			"tags": [
-				"UX/UI",
-				"Mobile",
-				"Motion",
-				"Branding"
-			]
+			"title": "Инкаробанк",
+			"titleClass": "text-dark",
+			"picture": "group-1",
+			"size": ""
 		},
 		{
-			"title": "Электронный кошелек<br>E-Wallet",
-			"picture": "group-4",
-			"tags": [
-				"UX/UI",
-				"Mobile",
-				"Motion",
-				"Branding"
-			]
-		},
-		{
-			"title": "HyperBank — самый быстрый<br>и простой мультибанк",
-			"picture": "group-6",
-			"titleClass": "text-white",
-			"tags": [
-				"UX/UI",
-				"Mobile",
-				"Motion",
-				"Branding"
-			]
+			"title": "HyperBank. Мультибанк",
+			"titleClass": "",
+			"picture": "group-2",
+			"size": ""
 		},
 		{
 			"title": "Мгновенные переводы<br>по всему миру от ChequePay",
-			"titleClass": "text-white",
-			"picture": "group-5",
-			"tags": [
-				"UX/UI",
-				"Mobile",
-				"Branding"
-			]
+			"titleClass": "",
+			"picture": "group-3",
+			"size": ""
 		},
 		{
-			"title": "Тестирование сервисов,<br>приложений и ПО",
-			"picture": "group-11",
-			"tags": [
-				"UX/UI",
-				"Mobile",
-				"Motion",
-				"Branding"
-			]
+			"title": "Рукард. Процессинг",
+			"titleClass": "",
+			"picture": "group-4",
+			"size": "2x"
+		},
+		{
+			"title": "Online банк Hive",
+			"titleClass": "text-dark",
+			"picture": "group-5",
+			"size": ""
+		},
+		{
+			"title": "Электронный кошелек",
+			"titleClass": "",
+			"picture": "group-6",
+			"size": ""
+		},
+		{
+			"title": "Софттест.<br>Тестирование сервисов,<br>приложений и ПО",
+			"titleClass": "",
+			"picture": "group-7",
+			"size": ""
+		},
+		{
+			"title": "Удобный мобильный банк",
+			"titleClass": "",
+			"picture": "group-8",
+			"size": ""
+		},
+		{
+			"title": "Intellect Banking",
+			"titleClass": "",
+			"picture": "group-9",
+			"size": ""
+		},
+		{
+			"title": "Больше, чем Финтех. Русофт",
+			"titleClass": "text-dark",
+			"picture": "group-10",
+			"size": "2x"
 		}
 	],
 	"features": [
