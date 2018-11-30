@@ -1,23 +1,25 @@
 <section class="section">
-  <h2 class="section__title"><span class="animate-to-top">{{ section.cases }}</span></h2>
-  <div class="cases">
-    {% for item in cases %}
-    <div class="cases__item {% if item.size == '2x' %}cases__item--size2x{% endif %}">
-
-      <div class="case animate-to-right">
-        <a href="#" class="case__link">
-          <h4 class="case__title {{ item.titleClass }}">{{ item.title | safe }}</h4>
-          <div class="case__picture">
-            <img 
-              src="images/demo/{{ item.picture }}.jpg"
-              srcset="images/demo/{{ item.picture }}@2x.jpg 2x"
-              srcset="images/demo/{{ item.picture }}@3x.jpg 3x"
-              alt="">
-          </div>
-        </a>
+  <div class="container">
+    <h2 class="section__title"><span class="animate-to-top">Кейсы</span></h2>
+    <div class="cases">
+      {% for item in cases %}
+      <div class="cases__item {% if item.size == '2x' %}cases__item--size2x{% endif %}">
+  
+        <div class="case animate-to-right">
+          <a href="#" class="case__link">
+            <h4 class="case__title {{ item.titleClass }}">{{ item.title | safe }}</h4>
+            <div class="case__picture">
+              <img 
+                src="images/demo/{{ item.picture }}.jpg"
+                srcset="images/demo/{{ item.picture }}@2x.jpg 2x"
+                srcset="images/demo/{{ item.picture }}@3x.jpg 3x"
+                alt="">
+            </div>
+          </a>
+        </div>
+  
       </div>
-
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>

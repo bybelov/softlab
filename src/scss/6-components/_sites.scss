@@ -1,0 +1,28 @@
+.sites{
+  display: flex;
+  flex-wrap: wrap;
+  &__item{
+    margin-bottom: em(40px);
+    @include media('>sm'){
+      width: 50%;
+      padding-right: 30px;
+      margin-bottom: em(60px);
+    }
+    @include media('>lg'){
+      width: 33.33%;
+      padding-right: 30px;
+      margin-bottom: em(80px);
+    }
+  }
+  &__title{
+    font-size: 1.5rem;
+    color: $pink;
+  }
+  &__desc{
+
+  }
+  &__price{
+    color: $light;
+    line-height: 2.13;
+  }
+}

@@ -138,7 +138,10 @@ function init() {
 	// Добавим мягкости теням
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   // добавим канвас рендерер в наш контейнер #container
-  container.appendChild(renderer.domElement);
+  if(container){
+    container.appendChild(renderer.domElement);
+  }
+  
 
   var axes = new THREE.AxesHelper( 200, 200, 200 );
       axes.visible = metaController.axes;

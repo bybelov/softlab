@@ -1,6 +1,6 @@
 {
 	"page" : {
-		"classes": "home color-1",
+		"classes": "home",
 		"title" : "Main page",
 		"url"		: "main-page.html",
 		"breadcrumbs" : [
@@ -43,8 +43,7 @@
 		]
 	},
 	"section": {
-		"services": "Услуги",
-		"cases": "Кейсы"
+		"services": "Услуги"
 	},
 	"services": [
 		{

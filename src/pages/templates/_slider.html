@@ -1,33 +1,6 @@
 <div class="swiper-container slider js-slider">
-  {% include "templates/_lines.html" %}
-  <div class="pluses">
-    <div class="container">
-      <div class="plus-row">
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-      </div>
-      <div class="plus-row">
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-      </div>
-      <div class="plus-row">
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-      </div>
-      <div class="plus-row">
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-        <div class="plus"></div>
-      </div>
-    </div>
-  </div>
+  {% include "./_lines.html" %}
+  {% include "./_pluses4.html" %}
   <div class="swiper-wrapper">
     {% for item in slider %}
     <div class="swiper-slide {{ item.gradient }}" data-title="{{ item.data }}">

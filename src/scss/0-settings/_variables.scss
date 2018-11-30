@@ -24,16 +24,12 @@ $dark:         material-color(blue-grey, 800) !default;
 $muted:        material-color(gray, 600) !default;
 $headings:   #464d53 !default;
 
-$pink-light: #ff3eda !default; // on slider
 $pink: #ff1db0 !default;
-$purple: #885afa !default;
+$purple: #835eff !default;
 
 // button gradient color
-$periwinkle: #835eff !default;
-$hot-pink: #ff008d !default;
-
-$btn-start: $periwinkle !default;
-$btn-end: $hot-pink !default;
+$btn-start: $purple !default;
+$btn-end: $pink !default;
 
 $tag-color: #afc3d3!default;
 $close: $tag-color!default;
@@ -72,10 +68,10 @@ $font-size: map-merge((
   lg:         (16px * 1.25),
   h1:         50px,
   h2:         40px,
-  h3:         28px,
-  h4:         18px,
-  h5:         16px,
-  h6:         14px
+  h3:         26px,
+  h4:         24px,
+  h5:         20px,
+  h6:         16px
 ), $font-size);
 // example: font-size(base);
 

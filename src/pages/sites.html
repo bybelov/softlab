@@ -1,0 +1,33 @@
+{% extends "extends/_base.html" %}
+
+{% block content %}
+
+<!-- begin main -->
+<main class="main" role="main">
+    <div class="page-intro" style="background-color: {{ page.intro.bgColor }}">
+        {% include "templates/_lines.html" %}
+        {% include "templates/_pluses4.html" %}
+
+        <img class="page-intro__bg" src="{{ page.intro.bg }}.png" 
+              srcset="{{ page.intro.bg }}@2x.png 2x"
+              srcset="{{ page.intro.bg }}@3x.png 3x"
+              alt="">
+  
+      </div>
+  <div class="main__content">
+
+
+
+      {% include "templates/_lines.html" %}
+      {% include "templates/_pluses.html" %}
+
+      {% include "templates/_sites.html" %}
+      {% include "templates/_cases.html" %}
+
+
+
+
+  </div>
+</main>
+<!-- end main -->
+{% endblock %}
