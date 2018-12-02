@@ -22,6 +22,7 @@
       }
       .col{
         flex-basis: 50%;
+        width: 50%;
         &:nth-child(3){
           width: 100%;
           padding-right: 0;
@@ -37,8 +38,31 @@
       }
       .col{
         flex-basis: 100%;
+        width: 100%;
       }
     }
-
+  }
+  // WORK
+  &.work{
+    .row{
+      flex-direction: column;
+      @include media('>lg'){
+        flex-direction: row;
+      }
+    }
+    .col{
+      margin-bottom: 60px;
+      @include media('>lg'){
+        margin-bottom: 0;
+        flex-basis: 33.33%;
+        width: 33.33%;
+        &:first-child{
+          flex: 1;
+          flex-basis: 66.67%;
+          width: 66.67%;
+          padding-right: 80px;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="container">
+    <h2>Этапы создания</h2>
+    <div class="stage">
+      {% for item in stage %}
+        <div class="stage__item">
+          <div class="animate-to-right">
+            <div class="stage__header">
+              <div class="stage__icon animate-svg">
+                {{ item.icon | safe }}
+              </div>
+              <div class="stage__title-wrapper">
+                <span class="stage__number">#{{ item.number }}</span>
+                <h4 class="stage__title">{{ item.title }}</h4>
+              </div>
+            </div>
+            <div class="stage__desc">
+              {{ item.desc }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

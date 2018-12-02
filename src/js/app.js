@@ -8,6 +8,7 @@ import Animation from './app/animation';
 import Scroll from './app/scrollbar';
 import HeaderSticky from './app/header-sticky';
 import FormStates from './app/form-states';
+import FormFile from './app/input-file';
 import Preloader from './app/preloader';
 import VH from './app/polifill-vh';
 import './app/metaballs';
@@ -23,6 +24,7 @@ $(document).ready(function () {
   Tabs();
   Popup();
   FormStates();
+  FormFile(document, window, 0);
   Slider();
   Awards();
 

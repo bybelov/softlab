@@ -1,34 +1,52 @@
-<div class="callback-form js-callback-form animate-to-right">
-  <h3>Заказать услуги Дизайна</h3>
-  <form action="" id="callback">
+<div class="callback-form animate-to-right">
+  <h3>Заполните бриф и отправьте нам для оценки работ</h3>
+
+
+  <ul class="list-icon">
+    <li>
+      <a href="file.pdf">
+        <svg class="list-icon__icon svg-icon icon-prototype"><use xlink:href="#prototype"></use></svg>
+        <span class="list-icon__title">Скачать бриф (1мб)</span>
+      </a>
+    </li>
+  </ul>
+
+  <form action="" id="brief">
     <div class="form-group">
       <div class="text-field">
-        <input id="f-name" type="text" name="name">
-        <label for="f-name">Имя</label>
+        <input id="b-name" type="text" name="name">
+        <label for="b-name">Имя</label>
         <span class="form-group__bar"></span>
       </div>
     </div>
     <div class="form-group">
       <div class="text-field">
-        <input id="f-email" type="text" name="email">
-        <label for="f-email">E-mail</label>
+        <input id="b-email" type="text" name="email">
+        <label for="b-email">E-mail</label>
         <span class="form-group__bar"></span>
       </div>
     </div>
     <div class="form-group">
       <div class="text-field">
-        <input id="f-phone" class="tel" type="text" name="phone">
-        <label for="f-phone">Телефон</label>
+        <input id="b-phone" class="tel" type="text" name="phone">
+        <label for="b-phone">Телефон</label>
         <span class="form-group__bar"></span>
       </div>
     </div>
-    <div class="form-group">
-      <div class="text-field">
-        <textarea name="message" id="f-message" cols="30" rows="1"></textarea>
-        <label for="f-message">Сообщение</label>
-        <span class="form-group__bar"></span>
+
+    <div class="form__group">
+      <div class="text-field text-field--file">
+        <div class="btn">
+          <span>Прикрепить</span>
+          <input type="file" name="file-1" id="file-1" class="file-input">
+        </div>
+        <label for="file-1" class="file-label">
+          <input type="text" class="file-name" placeholder="Прикрепите файл" readonly>
+          <span class="form-group__bar"></span>
+        </label>
       </div>
     </div>
+
     <div class="form-group">
       <label class="checkbox" for="privacy">
         <input type="checkbox" class="checkbox__input" name="privacy" id="privacy">
@@ -42,7 +60,8 @@
 </div>
 <script>
     $(document).ready(function(){
-      $("#callback").validate( {
+
+      $("#brief").validate( {
         rules: {
           phone: {
             requiredphone: true,

@@ -1,0 +1,32 @@
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="icon/analitycs" stroke-width="2">
+            <g id="Group-40" transform="translate(1.000000, 5.000000)">
+                <path d="M39.8439063,28.03125 L47.6564063,28.03125 C48.5196875,28.03125 49.2189063,27.33125 49.2189063,26.46875 C49.2189063,25.60625 48.5189063,24.90625 47.6564063,24.90625 L39.8439063,24.90625" id="Stroke-15" stroke="#FF1DB0"></path>
+                <polyline id="Stroke-17" stroke="#FF1DB0" points="10.1564063 24.90625 3.12515625 24.90625 1.56265625 26.46875 3.12515625 28.03125 10.1564063 28.03125"></polyline>
+                <path d="M49.2189063,42.09375 L29.6876563,42.09375 L28.1251563,42.875 L21.8751563,42.875 L20.3126563,42.09375 L0.78140625,42.09375 L0.78140625,44.4375 C0.78140625,44.8695313 1.130625,45.21875 1.56265625,45.21875 L48.4376563,45.21875 C48.8689063,45.21875 49.2189063,44.8695313 49.2189063,44.4375 L49.2189063,42.09375 Z" id="Stroke-1" stroke="#885AFA"></path>
+                <path d="M2.34390625,22.5625 L2.34390625,13.96875 C2.34390625,13.10625 3.043125,12.40625 3.90640625,12.40625 L7.59390625,12.40625" id="Stroke-3" stroke="#885AFA"></path>
+                <path d="M2.34390625,42.09375 L2.34390625,30.375" id="Stroke-5" stroke="#885AFA"></path>
+                <polyline id="Stroke-7" stroke="#885AFA" points="7.59390625 15.53125 5.46890625 15.53125 5.46890625 22.5625"></polyline>
+                <path d="M47.6564062,22.5625 L47.6564062,13.96875 C47.6564062,13.10625 46.9564062,12.40625 46.0939062,12.40625 L42.4064063,12.40625" id="Stroke-9" stroke="#885AFA"></path>
+                <path d="M47.6564063,42.09375 L47.6564063,30.375" id="Stroke-11" stroke="#885AFA"></path>
+                <polyline id="Stroke-13" stroke="#885AFA" points="39.8439063 35.625 39.8439063 0.78125 10.1564063 0.78125 10.1564063 35.625"></polyline>
+                <polyline id="Stroke-19" stroke="#885AFA" points="5.46890625 30.375 5.46890625 38.96875 44.5314063 38.96875 44.5314063 30.375"></polyline>
+                <polyline id="Stroke-21" stroke="#885AFA" points="44.5314062 22.5625 44.5314062 15.53125 42.4064063 15.53125"></polyline>
+                <polygon id="Stroke-23" stroke="#FF1DB0" points="15.625 23.09375 20.3125 23.09375 20.3125 18.40625 15.625 18.40625"></polygon>
+                <polygon id="Stroke-25" stroke="#FF1DB0" points="15.625 31.90625 20.3125 31.90625 20.3125 27.21875 15.625 27.21875"></polygon>
+                <polygon id="Stroke-27" stroke="#FF1DB0" points="15.625 14.28125 20.3125 14.28125 20.3125 9.59375 15.625 9.59375"></polygon>
+                <path d="M23.6564063,10.375 L35.1564063,10.375" id="Stroke-28" stroke="#FF1DB0"></path>
+                <path d="M10.1564063,3.90625 L23.1251562,3.90625" id="Stroke-29" stroke="#885AFA"></path>
+                <path d="M27.6876562,3.90625 L28.2501563,3.90625" id="Stroke-30" stroke="#885AFA"></path>
+                <path d="M30.8126562,3.90625 L31.3751563,3.90625" id="Stroke-31" stroke="#885AFA"></path>
+                <path d="M33.9376562,3.90625 L34.5001563,3.90625" id="Stroke-32" stroke="#885AFA"></path>
+                <path d="M23.6564063,13.5 L35.1564063,13.5" id="Stroke-33" stroke="#FF1DB0"></path>
+                <path d="M23.6564063,19.1875 L35.1564063,19.1875" id="Stroke-34" stroke="#FF1DB0"></path>
+                <path d="M23.6564063,22.3125 L35.1564063,22.3125" id="Stroke-35" stroke="#FF1DB0"></path>
+                <path d="M23.6564063,28 L35.1564063,28" id="Stroke-36" stroke="#FF1DB0"></path>
+                <path d="M23.6564063,31.125 L35.1564063,31.125" id="Stroke-37" stroke="#FF1DB0"></path>
+            </g>
+        </g>
+    </g>
+</svg>

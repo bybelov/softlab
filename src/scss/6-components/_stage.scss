@@ -1,0 +1,56 @@
+.stage{
+  display: flex;
+  flex-wrap: wrap;
+  &__item{
+    width: 33.33%;
+    margin-bottom: 80px;
+    padding-right: 60px;
+  }
+  &__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__icon{
+    margin-right: 20px;
+    fill: $pink;
+    display: inline-block;
+    font-size: 52px;
+    line-height: 0;
+    @include media('<xs'){
+      font-size: 40px;
+    }
+    @include media('<sm'){
+      font-size: 38px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    @include media('<lg'){
+      font-size: 48px;
+    }
+    > svg{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1em;
+      height: 1em;
+      width: 1em;
+      fill: inherit;
+      stroke: inherit;
+    }
+  }
+  &__wrapper{
+
+  }
+  &__title{
+    font-weight: font-weight(bold);
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  &__number{
+    display: block;
+    color: $light;
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}

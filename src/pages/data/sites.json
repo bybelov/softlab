@@ -75,32 +75,38 @@
 	],
 	"stage": [
 		{
-			"icon": "",
+			"number": "01",
+			"icon": "<svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'><path d='M40.84 33.03h7.82a1.56 1.56 0 0 0 0-3.12h-7.82M11.16 29.9H4.13l-1.57 1.57 1.57 1.56h7.03' stroke='#FF1DB0'/><path d='M50.22 47.1H30.69l-1.56.77h-6.25l-1.57-.78H1.78v2.35c0 .43.35.78.78.78h46.88c.43 0 .78-.35.78-.78v-2.35zM3.34 27.56v-8.6c0-.85.7-1.55 1.57-1.55h3.68M3.34 47.1V35.36' stroke='#885AFA'/><path stroke='#885AFA' d='M8.6 20.53H6.46v7.03M48.66 27.56v-8.6c0-.85-.7-1.55-1.57-1.55h-3.68M48.66 47.1V35.36M40.84 40.63V5.77H11.16v34.84'/><path stroke='#885AFA' d='M6.47 35.38v8.59h39.06v-8.6M45.53 27.56v-7.03h-2.12'/><path stroke='#FF1DB0' d='M16.63 28.1h4.68v-4.7h-4.68zM16.63 36.9h4.68v-4.68h-4.68zM16.63 19.28h4.68V14.6h-4.68zM24.66 15.38h11.5'/><path d='M11.16 8.9h12.97M28.69 8.9h.56M31.81 8.9h.57M34.94 8.9h.56' stroke='#885AFA'/><path d='M24.66 18.5h11.5M24.66 24.19h11.5M24.66 27.31h11.5M24.66 33h11.5M24.66 36.13h11.5' stroke='#FF1DB0'/></g></svg>",
 			"title": "Аналитика",
 			"desc": "Собираем данные о компании, целевой аудитории, конкурентах. Анализируем и выдвигаем гипотезы."
 		},
 		{
-			"icon": "",
+			"number": "02",
+			"icon": "<svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'><path stroke='#885AFA' d='M45.6 47V4h-39'/><path stroke='#885AFA' d='M49.6 44V1h-39'/><path stroke='#885AFA' d='M2.6 50h39V7h-39z'/><path stroke='#885AFA' d='M17 17h4v-4h-4zM17 29h4v-4h-4zM17 41h4v-4h-4zM25 17h4v-4h-4zM25 29h4v-4h-4zM25 41h4v-4h-4zM33 17h4v-4h-4zM33 29h4v-4h-4zM33 41h4v-4h-4z'/><path d='M17 20h4M17 32.06h4M17 44.18h4M25 20h4M25 32.06h4M25 44.18h4M33 20h4M33 32.06h4M33 44.18h4M7 13h4M7 25h3M7 37h4M7 16h4M7 28h2M7 40h3M7 19h3M7 31h1M7 43h4' stroke='#FF1DB0'/></g></svg>",
 			"title": "Прототипирование",
 			"desc": "Продумываем пользовательские сценарии и создаем карту сайта. Разрабатываем кликабельные прототипы."
 		},
 		{
-			"icon": "",
+			"number": "03",
+			"icon": "<svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'><path stroke='#FF1DB0' d='M29.19 6.48l3.8 1.02 2.86-2.95 3.8 2.2-1.13 3.94 2.79 2.8 3.95-1.14 2.19 3.8L44.5 19l1.02 3.81 3.98 1v4.38l-3.98 1-1.02 3.8 2.95 2.86-2.2 3.8-3.94-1.13-2.8 2.79 1.14 3.95-3.8 2.19L33 44.5l-3.81 1.02'/><path d='M29.19 37.03A11.24 11.24 0 0 0 26 14.81' stroke='#885AFA'/><path d='M26 29.95a4.09 4.09 0 0 0 3.3-7.34M5.57 16.8H2.5M5.57 12.72H2.5' stroke='#FF1DB0'/><path d='M2.5 6.59h8.17' stroke='#885AFA'/><path d='M13.74 16.8h-3.07M13.74 12.72h-3.07' stroke='#FF1DB0'/><path d='M10.67 6.59h8.18M14.76 29.1v2.05M14.76 34.2v2.04' stroke='#885AFA'/><path d='M14.76 39.28v2.05M6.59 29.1v2.05M6.59 34.2v2.04' stroke='#FF1DB0'/><path d='M6.59 39.28v2.05' stroke='#885AFA'/><path d='M21.91 16.8h-3.06M21.91 12.72h-3.06' stroke='#FF1DB0'/><path stroke='#885AFA' d='M2.5 49.5h8.17V20.9H2.5zM10.67 49.5h8.18V20.9h-8.18zM2.5 20.9h8.17V2.5H2.5zM10.67 20.9h8.18V2.5h-8.18zM18.85 49.5H26v-47h-7.15z'/></g></svg>",
 			"title": "Техническое задание",
 			"desc": "Технический писатель оформляет предъявленные требования к сайту, задуманный функционал страниц и разработанный прототип в единый документ, на основе которого будет вестись разработка."
 		},
 		{
-			"icon": "",
+			"number": "06",
+			"icon": "<svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linejoin='round'><path stroke='#885AFA' stroke-linecap='round' d='M18.3 45.24H2.93V31.78'/><path d='M23.12 46.68h1.92M26.96 46.68h1.92' stroke='#885AFA'/><path d='M31.77 46.68h6.73' stroke='#FF1DB0' stroke-linecap='round'/><path d='M40.42 46.68h1.93M44.27 46.68h1.92M23.12 41.88h1.92M26.96 41.88h1.92M31.77 41.88h1.92M35.62 41.88h1.92M40.42 41.88h1.93M44.27 41.88h1.92M27.03 37.55h21.8c1.2 0 2.17 1 2.17 2.24v8.98C51 50 50.02 51 48.82 51H20.5c-1.2 0-2.18-1-2.18-2.24v-8.98c0-1.24.97-2.24 2.18-2.24h4.36' stroke='#885AFA'/><path d='M40.15 38.51V24.77a2.73 2.73 0 0 1 2.71-2.74c1.5 0 2.72 1.23 2.72 2.74v7.7a2.73 2.73 0 0 0 2.7 2.74c1.5 0 2.72-1.23 2.72-2.74V7.74H29.85' stroke='#885AFA'/><path stroke='#FF1DB0' d='M13.9 4.58L15.18 1h4.35l1.27 3.57 3.16 1.3 3.42-1.62 3.07 3.07-1.63 3.42 1.31 3.17 3.57 1.26v4.35l-3.57 1.27-1.3 3.16 1.62 3.42-3.07 3.07-3.42-1.63-3.16 1.31-1.27 3.57h-4.35l-1.26-3.57-3.17-1.3-3.42 1.62-3.07-3.07 1.63-3.42-1.31-3.16L1 19.53v-4.35l3.57-1.26 1.3-3.17-1.62-3.42 3.07-3.07 3.42 1.63z'/><path d='M17.35 13.51a3.85 3.85 0 1 1 0 7.7 3.85 3.85 0 0 1 0-7.7z' stroke='#885AFA'/><path d='M35.62 12.07H51' stroke='#885AFA' stroke-linecap='round'/></g></svg>",
 			"title": "Программирование",
 			"desc": "Создаем дизайн-концепцию сайта, учитывая фирменный стиль  компании. Отрисовываем типовые страницы сайта, версии для платшета и телефона."
 		},
 		{
-			"icon": "",
+			"number": "05",
+			"icon": "<svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><path d='M2 33V5c0-1.1.9-2 2-2h42a2 2 0 0 1 2 2v12' stroke='#885AFA' stroke-width='2'/><path stroke='#885AFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M7 13h4V9H7zM7 25h4v-4H7zM23 13h4V9h-4zM23 25h4v-4h-4zM15 13h4V9h-4zM15 25h4v-4h-4zM31 13h4V9h-4zM39 13h4V9h-4zM7 16h4M7 28h4M23 16h4M23 28h4M15 16h4M15 28h4M31 16h4M39 16h4'/><path d='M29 38H4a2 2 0 0 1-2-2v-3h27M20 38v1l-1 5v1M16 45h13' stroke='#885AFA' stroke-width='2'/><path d='M31 21c0-1.1.9-2 2-2h15a2 2 0 0 1 2 2v26a2 2 0 0 1-2 2H33a2 2 0 0 1-2-2V21z' stroke='#FF1DB0' stroke-width='2'/><path d='M41.5 45.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0' stroke='#885AFA'/><path d='M36.5 20v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1' stroke='#FF1DB0' stroke-width='2'/><path stroke='#885AFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M35 29h4v-4h-4zM35 39h4v-4h-4zM42 29h4v-4h-4zM42 39h4v-4h-4zM35 32h4M35 42h4M42 32h4M42 42h4'/></g></svg>",
 			"title": "Адаптивная верстка",
 			"desc": "Утвержденный дизайн переводим в код и анимируем необходимые элементы. Используемые технологии: HTML5, CSS3, jQuery, React.js, Git"
 		},
 		{
-			"icon": "",
+			"number": "04",
+			"icon": "<svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'><g stroke-width='2' fill='none' fill-rule='evenodd'><path d='M16 36H3v3c0 1.1.9 2 2 2h16' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round'/><path stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' d='M37 32v-9.34L41 12l4 10.66V32'/><path d='M49 33V6a2 2 0 0 0-2-2h-3M36 36h13v3a2 2 0 0 1-2 2H34M8 4H5a2 2 0 0 0-2 2v30' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round'/><path d='M26 19V5' stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round'/><path d='M27 18.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0' stroke='#885AFA'/><path d='M28 5c0 2.08.37 3.63 1.1 5.54l3.1 8.25c1.72 4.6.6 9.92-2.78 13.21M24 5c0 2.08-.34 3.63-1.06 5.54L19.8 18.8A12.42 12.42 0 0 0 22.61 32' stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round'/><path d='M15 4h9M15 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM28 4h9M37 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0z' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round'/><path stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' d='M24 5V2h4v3M21 36.63V48M31 36v12M19 32h14'/><path d='M19 36h14M6 48h40' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round'/><path d='M37 22.66h8M7 32V10h8v22M10 16h5M12 20h3M12 24h3M12 28h3M10 32h5M24 6h4' stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round'/></g></svg>",
 			"title": "Адаптивный дизайн",
 			"desc": "Для удобства модерирования, переносим верстку  на Систему управления сайтом(CMS). Пишем необходимый функционал, тестируем и переносим сайт на боевой хостинг."
 		}
