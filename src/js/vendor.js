@@ -5,6 +5,7 @@ import 'animejs';
 import 'ScrollMagic';
 // import 'animation.gsap';
 import 'debug.addIndicators';
+import 'jquery.scrollto/jquery.scrollTo.min.js';
 
 import 'three';
 // import './vendor/Detector';

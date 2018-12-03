@@ -21,6 +21,7 @@
     "jquery-mousewheel": "^3.1.13",
     "jquery-validation": "^1.18.0",
     "jquery.maskedinput": "^1.4.1",
+    "jquery.scrollto": "^2.1.2",
     "scrollmagic": "^2.0.6",
     "susy": "^3.0.5",
     "swiper": "^4.4.2"
