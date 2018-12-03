@@ -1,4 +1,3 @@
-import {TweenMax, EasePack } from "gsap/TweenMax";
 import $ from 'jquery';
 import ScrollMagic from 'ScrollMagic';
 import anime from 'animejs';
@@ -6,8 +5,8 @@ import anime from 'animejs';
 function animation(){
 
   let controller = new ScrollMagic.Controller();
-  
 
+  // draw svg icon
   function drawSvg(element, time = 2000){
     // obj for array svg paths
     let obj = [];
@@ -28,151 +27,96 @@ function animation(){
       loop: false,
       autoplay: false
     });
-    lineDrawing.play();
+    return lineDrawing;
   }
 
-
-  
   // hover animation
   $('.animate-svg').hover(function(){
     let thisElement = $(this);
-    drawSvg(thisElement, 500)
+    drawSvg(thisElement, 500).play();
   }, function(){
 
   });
 
-
-  // animate from left to right
+  // animate left ro right
   $('.animate-to-right').each(function(){
-    let thisElement = $(this);
-    let icon = thisElement.find('.animate-svg');
-    let tween = TweenMax.staggerFromTo( thisElement, 1, 
-      {
-        opacity: 0,
-        xPercent: -100,
-        ease: Quart.easeInOut,
-        delay: 0.25
+    let t = $(this);
+    let icon = t.find('.animate-svg');
+    let animate = anime({
+      targets: this,
+      translateX: ['-100%', 0],
+      opacity: [0,1],
+      delay: 250,
+      duration: 1000,
+      easing: 'easeInOutQuart',
+      autoplay: false,
+      begin: function(anim) {
+        t.parent().css("overflow", "hidden");
       },
-      {
-        opacity: 1,
-        xPercent: 0,
-        ease: Quart.easeInOut,
-        delay: 0.25,
-        onStart: function(){
-          thisElement.parent().css("overflow", "hidden");
-          drawSvg(icon, 2000)
-        },
-        onComplete: function(){
-          thisElement.parent().css("overflow", "visible");
-        }
-      },
-      0.25, 0 );
+      complete: function(anim) {
+        t.parent().css("overflow", "visible");
+      }
+    });
     let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
+    })
+    .addTo(controller)
+    .on("progress", function (event) {
+      drawSvg(icon, 2000).play();
+      animate.play();
     });
-    scene.setTween(tween)
-    // .setClassToggle(this, 'reveal')
-    // .addIndicators({name: "service "})
-    .addTo(controller);
   });
 
-  // animejs
-  // animate left ro right
-  
 
-  // $('.animate-to-right').each(function(){
-  //   let thisElement = this;
-  //   const lrDelay = 1000
-
-  //   let lrStart = {
-  //     targets: thisElement,
-  //     opacity: 0,
-  //     translateX: '-100%',
-  //     easing: 'easeInOutQuad',
-  //     duration: lrDelay
-  //   };
-  //   let lrEnd = {
-  //     targets: thisElement,
-  //     opacity: 1,
-  //     translateX: 0,
-  //     easing: 'easeInOutQuad',
-  //     duration: lrDelay
-  //   };
-
-  //   anime(
-  //     lrStart
-  //   );
-  //   let scene = new ScrollMagic.Scene({
-  //     triggerElement: this,
-  //     triggerHook: 1
-  //   });
-    
-  //   // .setClassToggle(this, 'reveal')
-  //   // .addIndicators({name: "service "})
-  //   scene.addTo(controller)
-  //         .on("progress", function (event) {
-  //           anime(
-  //             lrEnd
-  //           ).restart();
-  //         })
-  //         .on("leave", function (event) {
-  //           anime(
-  //             lrStart
-  //           ).restart();
-  //         });
-  // });
-
-
-
- 
-
-  
-  // animate-to-top
+  // animate bottom to top
   $('.animate-to-top').each(function(){
-    let tween = TweenMax.staggerFromTo( $(this), 1, 
-    {
-      yPercent: 100,
-      ease: Power2.easeInOut,
-      delay: 0
-    },{
-      yPercent: 0,
-      ease: Power2.easeInOut,
-      delay: 0
-    }, 0.5);
 
+    let t = $(this);
+    let animate = anime({
+      targets: this,
+      translateY: ['100%', 0],
+      opacity: [0,1],
+      delay: 250,
+      duration: 1000,
+      easing: 'easeInOutQuart',
+      autoplay: false,
+      begin: function(anim) {
+        t.parent().css("overflow", "hidden");
+      },
+      complete: function(anim) {
+        t.parent().css("overflow", "visible");
+      }
+    });
     let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
+    })
+    .addTo(controller)
+    .on("progress", function (event) {
+      animate.play();
     });
-
-    scene.setTween(tween)
-          // .addIndicators({name: "text "})
-          .addTo(controller);
   });
 
   // animate-fade-in
   $('.animate-fade-in').each(function(){
-    let tween = TweenMax.staggerFromTo($(this), 1, 
-    {
-      y: 200,
-      autoAlpha: 0,
-      delay: 0,
-      ease: Power2.easeOut
-    },{
-      y: 0,
-      autoAlpha: 1,
-      delay: 0,
-      ease: Power2.easeOut
-    }, .25);
-
+    let t = $(this);
+    let animate = anime({
+      targets: this,
+      opacity: [0,1],
+      delay: 250,
+      duration: 1000,
+      easing: 'linear',
+      autoplay: false
+    });
     let scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 1
+    })
+    .addTo(controller)
+    .on("progress", function (event) {
+      animate.play();
     });
-    scene.setTween(tween)
-          // .addIndicators({name: "opacity "})
-          .addTo(controller);
   });
 
 }

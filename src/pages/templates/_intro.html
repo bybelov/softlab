@@ -20,7 +20,10 @@
         <div class="award">
           <div class="award__title">{{ award.title }}</div>
           <div class="award__body">
-            <div class="award__count"><span>{{ award.count }}</span></div>
+            <div class="award__count">
+              <svg class="svg-icon icon-winner"><use xlink:href="#winner"></use></svg>
+              <span>{{ award.count }}</span>
+            </div>
             <div class="award__picture">
               <img src="{{ award.image }}.png" srcset="{{ award.image }}@2x.png 2x" srcset="{{ award.image }}@3x.png 3x"
                 alt="{{ award.nomination }}">

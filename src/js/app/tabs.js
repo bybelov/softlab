@@ -1,6 +1,3 @@
-// import {TweenMax, EasePack } from "gsap/TweenMax";
-// import $ from 'jquery';
-
 function tabs() {
   let myTabs = document.querySelectorAll(".tabs-nav > li");
 

@@ -1,57 +1,65 @@
-import { TweenLite } from "gsap/TweenMax";
 import $ from 'jquery';
+import anime from 'animejs';
+
 
 function popup() {
 
   function popupOpen(){
-    TweenLite.fromTo(".popup", .4, {
-      display: "none",
-      opacity: 0
-    }, {
-      display: "block",
-      opacity: 1
-    }),
-    TweenLite.fromTo(".popup__inner", .4, {
-      autoAlpha: 0,
-      x: "-64px",
-      scaleX: 0,
-      transformOrigin: "left"
-    }, {
-      autoAlpha: 1,
-      x: "0px",
-      scale: 1,
-      delay: .4,
-      ease: "Power2.easeInOut",
-      onComplete: function () {
+
+    $('.popup').addClass('show');
+    
+    anime({
+      targets: '.popup',
+      opacity: [0 , 1],
+      translateX: ['-100%', 0],
+      easing: 'easeInOutQuart',
+      duration: 1000,
+      delay: 250,
+      loop: false
+    });
+    let animate = anime({
+      targets: '.popup__inner',
+      opacity: [0, 1],
+      translateX: ['-100%', 0],
+      easing: 'easeInOutQuart',
+      duration: 1000,
+      delay: 250,
+      loop: false,
+      complete: function(anim) {
+        $('.popup').css('overflow','auto');
         $('body').addClass('popup-open');
-        $('.popup').addClass('show');
+        // $('.popup').addClass('show');
       }
     });
   }
 
   function popupClose(){
-    TweenLite.fromTo(".popup__inner", .4, {
-      transformOrigin: "right"
-    }, {
-      autoAlpha: 0,
-      scaleX: 0,
-      delay: .5,
-      ease: "Power1.easeIn",
-      onComplete: function () {
+    $('.popup').css('overflow','hidden');
+    
+    anime({
+      targets: '.popup',
+      translateX: [0, '100%'],
+      opacity: [1, 0],
+      easing: 'easeInQuad',
+      duration: 1000,
+      delay: 250,
+      loop: false,
+    });
+    let animate = anime({
+      targets: '.popup__inner',
+      opacity: 0,
+      translateX: '100%',
+      easing: 'easeInQuad',
+      duration: 1000,
+      delay: 250,
+      loop: false,
+      complete: function(anim) {
+       
         $('body').removeClass('popup-open');
         $('.popup').removeClass('show');
       }
-    }),
-    TweenLite.to(".popup", .4, {
-      opacity: 0,
-      delay: .9
-    }),
-    TweenLite.to(".popup", 0, {
-      display: "none",
-      delay: 1.2
     });
   }
-
 
   // popup window animation
   $('.js-hamburger').on('click', function (e) {

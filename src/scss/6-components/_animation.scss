@@ -3,7 +3,6 @@
   display: block;
 }
 
-
 // Покачивание вверх и вниз
 @keyframes swing {
   0% {
@@ -73,4 +72,3 @@
     box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , 0 );
   }
 }
-

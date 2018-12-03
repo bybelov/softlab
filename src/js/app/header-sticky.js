@@ -9,13 +9,12 @@ function HeaderSticky(){
   if(!body.classList.contains('header--sticky')){
     const controller = new ScrollMagic.Controller();
     const scene = new ScrollMagic.Scene({
-                    triggerElement: content,
-                    triggerHook: 0,
-                    offset: 0
-                  })
-          scene.setClassToggle(body, 'header--sticky')
-                // .addIndicators({name: "header"})
-                .addTo(controller);
+      triggerElement: content,
+      triggerHook: 0,
+      offset: 0
+    }).setClassToggle(body, 'header--sticky')
+//  .addIndicators({name: "header"})
+    .addTo(controller);
   }
 
 
