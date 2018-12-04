@@ -1,12 +1,14 @@
 <div class="section">
   <div class="container">
-    <h1>Создаем сайты</h1>
+    <h1><span class="animate-to-top">Создаем сайты</span></h1>
     <div class="sites">
       {% for item in sites %}
         <div class="sites__item">
-          <h4 class="sites__title">{{ item.title }}</h4>
-          <div class="sites__desc">{{ item.desc }}</div>
-          <div class="sites__price">{{ item.price | safe }}</div>
+          <div class="animate-to-right">
+            <h4 class="sites__title">{{ item.title }}</h4>
+            <div class="sites__desc">{{ item.desc }}</div>
+            <div class="sites__price">{{ item.price | safe }}</div>
+          </div>
         </div>
       {% endfor %}
     </div>

@@ -1,0 +1,54 @@
+.step{
+  margin-left: auto;
+  width: 82px;
+  display: flex;
+  justify-content: space-between;
+  &__item{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: $lighter;
+    @for $i from 1 through 8 {
+      &:nth-child( #{$i} ){
+        &:before{
+          animation-delay: #{0.4 * $i}s;
+        }
+      }
+    }
+    &:before{
+      opacity: 0;
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: em(7px);
+      height: em(7px);
+      background-color: #fff;
+      border: 2px solid $pink;
+      border-radius: 50%;
+      transition: 0.2s;
+
+      transform: translate3d(-50%, -50%, 0);
+
+      animation-name: move;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

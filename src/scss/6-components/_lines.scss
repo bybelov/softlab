@@ -130,3 +130,18 @@
     }
   }
 }
+.page-intro{
+  .line{
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .pluses{
+    z-index: 0;
+  }
+  .plus{
+    opacity: 1;
+    &:before,
+    &:after{
+      background-color: #fff
+    }
+  }
+}
