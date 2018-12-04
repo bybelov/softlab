@@ -1,3 +1,14 @@
+.section{
+  .sites{
+    @include media('>sm'){
+      margin-bottom: -40px;
+    }
+    @include media('>lg'){
+      margin-bottom: -60px;
+    }
+  }
+}
+
 .sites{
   display: flex;
   flex-wrap: wrap;
@@ -6,12 +17,12 @@
     @include media('>sm'){
       width: 50%;
       padding-right: 30px;
-      margin-bottom: em(60px);
+      margin-bottom: 40px;
     }
     @include media('>lg'){
       width: 33.33%;
       padding-right: 30px;
-      margin-bottom: em(80px);
+      margin-bottom: 60px;
     }
   }
   &__title{

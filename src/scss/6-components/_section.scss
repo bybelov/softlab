@@ -44,6 +44,7 @@
   }
   // WORK
   &.work{
+    padding-top: 0;
     .row{
       flex-direction: column;
       @include media('>lg'){

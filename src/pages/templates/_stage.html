@@ -9,19 +9,43 @@
               <div class="stage__icon animate-svg">
                 {{ item.icon | safe }}
               </div>
-              <div class="stage__title-wrapper">
+              <div class="stage__name">
                 <span class="stage__number">#{{ item.number }}</span>
                 <h4 class="stage__title">{{ item.title }}</h4>
               </div>
-              <div class="stage__decor step">
-                <span class="step__item"></span>
-                <span class="step__item"></span>
-                <span class="step__item"></span>
-                <span class="step__item"></span>
-                <span class="step__item"></span>
-                <span class="step__item"></span>
-                <span class="step__item"></span>
-                <span class="step__item"></span>
+              <div class="stage__decor">
+                <div class="step">
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                  <span class="step__item"></span>
+                </div>
+                {% if loop.index == 3 %}
+                  <div class="step step--vertical">
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                    <span class="step__item"></span>
+                  </div>
+                {% endif %}
               </div>
             </div>
             <div class="stage__desc">

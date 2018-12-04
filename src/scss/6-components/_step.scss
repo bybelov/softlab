@@ -39,6 +39,39 @@
       animation-timing-function: linear;
     }
   }
+  // VERTICAL
+  &--vertical{
+    position: absolute;
+    right: -1px;
+    flex-direction: column;
+    width: 2px;
+    height: 100%;
+    margin-top: -1px;
+    .step__item{
+      @for $i from 1 through 18 {
+        &:nth-child( #{$i} ){
+          &:before{
+            animation-delay: #{0.4 * $i}s;
+            animation-duration: 4s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stage__item{
+  &:nth-child(n + 4){
+    .step__item{
+      @for $i from 1 through 8 {
+        &:nth-child( #{$i} ){
+          &:before{
+            animation-delay: #{3.2 - 0.4 * $i}s;
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes move {

@@ -1,15 +1,38 @@
+.section{
+  .stage{
+    margin-bottom: -50px;
+    @include media('<md'){
+      margin-bottom: -30px;
+    }
+    @include media('<sm'){
+      margin-bottom: -20px;
+    }
+  }
+}
+
 .stage{
   display: flex;
   flex-wrap: wrap;
   &__item{
     width: 33.33%;
-    margin-bottom: 80px;
-    padding-right: 60px;
+    position: relative;
+    @include media('<lg'){
+      width: 50%;
+    }
+    @include media('<sm'){
+      width: 100%;
+    }
+    &:nth-child(3n + 3){
+      .stage__header{
+        padding-right: 0;
+      }
+    }
   }
   &__header{
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+    padding-right: 60px;
   }
   &__icon{
     margin-right: 20px;
@@ -19,12 +42,6 @@
     line-height: 0;
     @include media('<xs'){
       font-size: 40px;
-    }
-    @include media('<sm'){
-      font-size: 38px;
-      position: absolute;
-      left: 0;
-      top: 0;
     }
     @include media('<lg'){
       font-size: 48px;
@@ -39,8 +56,18 @@
       stroke: inherit;
     }
   }
-  &__wrapper{
-
+  &__desc{
+    padding-right: 60px;
+    padding-bottom: 80px;
+    @include media('<md'){
+      padding-bottom: 60px;
+    }
+    @include media('<sm'){
+      padding-bottom: 40px;
+    }
+  }
+  &__name{
+    flex: 1;
   }
   &__title{
     font-weight: font-weight(bold);
@@ -52,5 +79,11 @@
     color: $light;
     font-size: 1.25rem;
     line-height: 1.7;
+    margin-top: -8px;
+  }
+  &__decor{
+    .step{
+
+    }
   }
 }
