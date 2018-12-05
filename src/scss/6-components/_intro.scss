@@ -1,0 +1,36 @@
+.intro{
+  height: 100vh;
+  // polifill for chrome app
+  height: calc(var(--vh, 1vh) * 100);
+  position: relative;
+  &__bg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 58px 0 0;
+  }
+  &__icon{
+    text-align: center;
+    line-height: 0;
+    margin-bottom: 60px;
+  }
+  &__logo{
+    text-align: center;
+    line-height: 0;
+    margin-bottom: 38px;
+  }
+  &__desc{
+    text-align: center;
+    margin-bottom: 138px;
+  }
+  &__picture{
+    text-align: center;
+    line-height: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(216,216,216,0.1) 100%);
+  }
+}

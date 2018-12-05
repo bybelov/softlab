@@ -1,0 +1,11 @@
+.tags{
+
+}
+.tag-item{
+  color: $light;
+  margin-right: 8px;
+  &:hover{
+    color: $lighter;
+    text-decoration: none;
+  }
+}

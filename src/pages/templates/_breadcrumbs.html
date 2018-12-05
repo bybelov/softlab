@@ -3,12 +3,13 @@
   <ul class="breadcrumb">
   {% for item in page.breadcrumbs %}
     <li class="breadcrumb-item">
-      <a href="{{ item.url }}" class="breadcrumb-item__link">{{ item.title }}</a>
+      <a href="{{ item.url }}" class="breadcrumb-item__link">
+        <svg class="svg-icon icon-back"><use xlink:href="#back"></use></svg>
+        {{ item.title }}
+      </a>
     </li>
   {% endfor %}
-    <li class="breadcrumb-item">
-      {{ page.title }}
-    </li>
+  {# <li class="breadcrumb-item"> {{ page.title }} </li> #}
   </ul>
 </nav>
 {% endif %}

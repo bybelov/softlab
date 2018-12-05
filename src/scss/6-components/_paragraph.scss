@@ -1,0 +1,15 @@
+.paragraph{
+  display: flex;
+  margin-bottom: 100px;
+  &__header{
+    flex-basis: 33.33%;
+    width: 33.33%;
+  }
+  &__title{
+    color: $light;
+  }
+  &__body{
+    flex-basis: 66.67%;
+    width: 66.67%;
+  }
+}

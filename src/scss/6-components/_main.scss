@@ -4,11 +4,15 @@
       padding-top: 170px;
     }
   }
+  .main{
+    padding-top: 0;
+  }
 }
 
 .main{
   flex: 1;
   position: relative;
+  padding-top: 100px;
   &__content{
     z-index: 1;
     position: relative;

@@ -1,7 +1,7 @@
 .breadcrumb{
   list-style: none;
-  padding: .75rem 1rem;
-  margin-bottom: 1rem;
+  margin: 0;
+  padding: 0;
 }
 .breadcrumb-item{
   display: inline-block;
@@ -16,6 +16,17 @@
     }
   }
   &__link{
-
+    transition: all ease 0.25s;
+    color: $headings;
+    &:hover{
+      color: $light;
+      text-decoration: none;
+    }
+    .svg-icon{
+      vertical-align: middle;
+      fill: $lighter;
+      font-size: 15px;
+      margin-right: 14px;
+    }
   }
 }

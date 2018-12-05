@@ -3,9 +3,10 @@ import $ from 'jquery';
 import Tabs from './app/tabs';
 import Slider from './app/slider';
 import Awards from './app/slider-awards';
+import Phones from './app/slider-phones';
 import Popup from './app/popup';
 import Animation from './app/animation';
-import Scroll from './app/scrollbar';
+// import Scroll from './app/scrollbar';
 import HeaderSticky from './app/header-sticky';
 import FormStates from './app/form-states';
 import FormFile from './app/input-file';
@@ -18,7 +19,7 @@ $(document).ready(function () {
 
   VH();
   Preloader();
-  Scroll();
+  // Scroll();
   HeaderSticky();
   Animation();
   Tabs();
@@ -26,6 +27,7 @@ $(document).ready(function () {
   FormStates();
   FormFile(document, window, 0);
   Slider();
+  Phones();
   Awards();
 
   $('[data-scrollto]').click(function(){

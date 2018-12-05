@@ -6,13 +6,20 @@
 		"breadcrumbs" : [
 			{
 				"title" : "Приложения",
-				"url" : "index.html"
+				"url" : "app.html"
 			}
 		],
 		"intro": {
-			"bgColor": "#edf2f5",
-			"bg": "images/demo/mockup"
-		}
+			"bgColor": "#fff",
+			"bg": "",
+			"icon": "images/demo/hive-app-icon.svg",
+			"logo": "images/demo/hive-logo.svg",
+			"desc": "Mеждународный платежный сервис.<br>Позволяет получать различные виды платежных<br>карт системы UnionPay",
+			"picture": "images/demo/intro-phone-xs"
+		},
+		"tags": [
+			"#mobile", "#app", "#bank"
+		]
 	},
 	"features": [
 		{
@@ -31,5 +38,12 @@
 			"title": "Трудоустройство",
 			"body": "Лучшим студентам гарантируем стажировку с возможностью последующего трудоустройства"
 		}
+	],
+	"phones": [
+		"images/demo/1",
+		"images/demo/2",
+		"images/demo/5",
+		"images/demo/3",
+		"images/demo/4"
 	]
 }

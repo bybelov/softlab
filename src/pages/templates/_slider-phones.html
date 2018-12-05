@@ -1,0 +1,15 @@
+<div class="phone-screens" style="background-color: #ffb200">
+  <h2 class="phone-screens__title"><span class="animate-to-top">Создано более 100 экранов</span></h2>
+  <div class="swiper-container js-phone-screens">
+    <div class="swiper-wrapper">
+        {% for item in phones %}
+          <div class="phone-screens__item swiper-slide">
+            <img  src="{{ item }}.png" 
+                  srcset="{{ item }}@2x.png 2x"
+                  srcset="{{ item }}@3x.png 3x"
+                  alt="{{ page.title }}">
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>

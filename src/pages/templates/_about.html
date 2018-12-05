@@ -1,0 +1,38 @@
+{% if about.title %}
+<section class="section about">
+  <div class="container">
+    <h1><span class="animate-to-top">{{ about.title }}</span></h1>
+    <div class="row">
+      <div class="col">
+        <ul class="list-about animate-to-right">
+          {% for list in about.list %}
+          <li>{{ list }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col">
+        {% if about.lead %}
+        <p class="lead"><span class="animate-to-right">{{ about.lead }}</span></p>
+        {% endif %}
+        <div class="animate-to-right">{{ about.body | safe }}</div>
+      </div>
+      <div class="col">
+        <div class="award animate-to-right">
+          <div class="award__title">{{ award.title }}</div>
+          <div class="award__body">
+            <div class="award__count">
+              <svg class="svg-icon icon-winner"><use xlink:href="#winner"></use></svg>
+              <span>{{ award.count }}</span>
+            </div>
+            <div class="award__picture">
+              <img src="{{ award.image }}.png" srcset="{{ award.image }}@2x.png 2x" srcset="{{ award.image }}@3x.png 3x"
+                alt="{{ award.nomination }}">
+            </div>
+            <div class="award__nomination">{{ award.nomination }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

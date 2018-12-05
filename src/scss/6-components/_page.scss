@@ -15,16 +15,3 @@
     font-weight: bold;
   }
 }
-
-// page intro
-.page-intro{
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  position: relative;
-  padding-top: 100px;
-  &__bg{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-}
