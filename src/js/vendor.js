@@ -20,5 +20,6 @@ import 'jquery-validation/dist/jquery.validate.min.js';
 import 'jquery-validation/dist/localization/messages_ru.js';
 import './vendor/jquery-validation/src/additional/minlengthphone.js';
 import './vendor/svg/svg-sprite.js';
+import './vendor/video/jquery.mb.vimeo_player.js';
 
 import './vendor/modernizr-custom';

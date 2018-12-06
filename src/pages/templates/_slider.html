@@ -3,14 +3,34 @@
   {% include "./_pluses4.html" %}
   <div class="swiper-wrapper">
     {% for item in slider %}
-    <div class="swiper-slide {{ item.gradient }}" data-title="{{ item.data }}">
+    <div class="swiper-slide" 
+      {% if item.color %}
+        style="background: {{ item.color }}"
+      {% endif %}
+      data-title="{{ item.data }}" data-video="video-{{ loop.index }}" data-theme="{{ item.theme }}">
       {% if loop.index == 1 %}
         <div id="container"></div>
       {% endif %}
-      <div class="slider__item">
+      <div class="slider__item video-{{ loop.index }}">
+
+        {% if item.vimeoVideo %}
+          <div id="video-{{ loop.index }}" class="js-bg-video player" data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'.video-{{ loop.index }}', showControls:false, fadeTime:1000, autoPlay:true, loop:true, vol:20, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: true}"></div>
+          <script>
+            $(document).ready(function(){
+              var myPlayer = $("#video-{{ loop.index }}").vimeo_player({mobileFallbackImage:"/images/demo/video-fallback.jpg"});
+            });
+          </script>
+        {%  endif %}
+
+
         <div class="container">
           <div class="slider__title">
             {{ item.title | safe }}
+            {% if item.link %}
+              <a href="{{ item.link }}" class="slider__link">
+                <svg class="svg-icon icon-back"><use xlink:href="#back"></use></svg>
+              </a>
+            {% endif %}
           </div>
           <div class="js-slider-pagination swiper-pagination"></div>
         </div>

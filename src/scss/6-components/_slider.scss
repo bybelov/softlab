@@ -2,6 +2,44 @@ $sliderZIndex_1: 1 !default;
 $sliderZIndex_2: 2 !default;
 $sliderZIndex_3: 3 !default;
 
+
+.slider--theme-light{
+  .slider{
+    .slider__title,
+    .swiper-pagination-bullet{
+      color: $headings;
+    }
+  }
+  .slider-scroll{
+    stroke: $headings;
+    &:hover{
+      stroke: $link-hover-color;
+    }
+  }
+  .social-link--light .social-link__item {
+    color: $light;
+    fill: $light;
+  }
+  .hamburger:after, 
+  .hamburger:before, 
+  .hamburger span{
+    background-color: $light;
+  }
+  .logo{
+    .icon-logo{
+      &__1{
+        fill: $headings;
+      }
+      &__3{
+        fill: $headings;
+      }
+      &__4{
+        fill: $headings;
+      }
+    }
+  }
+}
+
 .slider{
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -9,6 +47,9 @@ $sliderZIndex_3: 3 !default;
   .lines,
   .pluses{
     z-index: $sliderZIndex_1;
+  }
+  .swiper-slide{
+    background: $gr-1;
   }
   &__item{
     position: relative;
@@ -37,12 +78,29 @@ $sliderZIndex_3: 3 !default;
           (max-height: 576px) and (max-width:767px){
       font-size: em(40px);
     }
-    a{
-      display: inline-block;
-      border-bottom: em(6px,90px) solid;
-      &:hover{
-        text-decoration: none;
+  }
+  &__link{
+    display: inline-block;
+    vertical-align: middle;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: $pink;
+    line-height: 38px;
+    text-align: center;
+    &:hover{
+      text-decoration: none;
+      .svg-icon{
+        transform: rotate(180deg) scale(1.3);
       }
+    }
+    .svg-icon{
+      transition: all ease 0.25s;
+      fill: #fff;
+      display: inline-block;
+      vertical-align: middle;
+      transform: rotate(180deg);
+      font-size: 15px;
     }
   }
 
@@ -97,7 +155,7 @@ $sliderZIndex_3: 3 !default;
   }
 }
 .slider-scroll{
-  fill: #fff;
+  stroke: #fff;
   font-size: 31px;
   animation-name: swing;
   animation-duration: .8s;
@@ -105,6 +163,6 @@ $sliderZIndex_3: 3 !default;
   cursor: pointer;
   transition: all ease 0.25s;
   &:hover{
-    fill: $pink;
+    stroke: $pink;
   }
 }

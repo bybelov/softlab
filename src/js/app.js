@@ -13,6 +13,7 @@ import FormFile from './app/input-file';
 import Preloader from './app/preloader';
 import VH from './app/polifill-vh';
 import './app/metaballs';
+import vimeo_player from './vendor/video/jquery.mb.vimeo_player';
 // import './app/customballs';
 
 $(document).ready(function () {

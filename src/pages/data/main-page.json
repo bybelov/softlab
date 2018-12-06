@@ -14,22 +14,43 @@
 		{
 			"title": "Softlab — студия<br>креативных решений",
 			"data" : "Студия",
-			"gradient": "gradient-1"
+			"gradient": "",
+			"color": "",
+			"theme": "",
+			"link": ""
 		},
 		{
-			"title": "Сайты",
+			"title": "Создаем сайты,<br>ориентированные<br>на пользователей",
 			"data" : "Сайты",
-			"gradient": "gradient-1"
+			"gradient": "",
+			"color": "#464d53",
+			"theme": "",
+			"link": "/sites.html"
 		},
 		{
-			"title": "Приложения",
+			"title": "Разрабатываем<br>приложения<br>финтех сегмента",
 			"data" : "Приложения",
-			"gradient": "gradient-1"
+			"gradient": "",
+			"color": "#edf2f5",
+			"theme": "light",
+			"link": "#app"
 		},
 		{
-			"title": "Презентации",
+			"title": "Производим<br>потрясающие<br>презентации",
 			"data" : "Презентации",
-			"gradient": "gradient-1"
+			"gradient": "",
+			"color": "#464d53",
+			"theme": "",
+			"vimeoVideo": "276219169",
+			"link": "#video"
+		},
+		{
+			"title": "Брендинг",
+			"data" : "Брендинг",
+			"gradient": "",
+			"color": "#464d53",
+			"theme": "",
+			"link": "#branding"
 		}
 	],
 	"about": {

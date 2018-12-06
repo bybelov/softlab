@@ -1,7 +1,7 @@
 <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="icon/analitycs" stroke-width="2">
-            <g id="Group-40" transform="translate(1.000000, 5.000000)">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke-width="2">
+            <g transform="translate(1.000000, 5.000000)">
                 <path d="M39.8439063,28.03125 L47.6564063,28.03125 C48.5196875,28.03125 49.2189063,27.33125 49.2189063,26.46875 C49.2189063,25.60625 48.5189063,24.90625 47.6564063,24.90625 L39.8439063,24.90625" id="Stroke-15" stroke="#FF1DB0"></path>
                 <polyline id="Stroke-17" stroke="#FF1DB0" points="10.1564063 24.90625 3.12515625 24.90625 1.56265625 26.46875 3.12515625 28.03125 10.1564063 28.03125"></polyline>
                 <path d="M49.2189063,42.09375 L29.6876563,42.09375 L28.1251563,42.875 L21.8751563,42.875 L20.3126563,42.09375 L0.78140625,42.09375 L0.78140625,44.4375 C0.78140625,44.8695313 1.130625,45.21875 1.56265625,45.21875 L48.4376563,45.21875 C48.8689063,45.21875 49.2189063,44.8695313 49.2189063,44.4375 L49.2189063,42.09375 Z" id="Stroke-1" stroke="#885AFA"></path>
