@@ -1,6 +1,26 @@
 .header--sticky{
   .menu{
     display: block;
+    @include media('<sm'){
+      display: none;
+    }
+  }
+}
+
+.popup{
+  .menu{
+    display: none;
+    margin-bottom: 2rem;
+    @include media('<sm'){
+      display: block;
+    }
+  }
+  .menu-item{
+    display: block;
+    margin-right: 0;
+    &__link{
+      padding: 10px 0;
+    }
   }
 }
 

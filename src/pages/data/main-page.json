@@ -181,27 +181,33 @@
 	"awards":[
 		{
 			"image": "images/demo/runet",
-			"title": "23 место в группе<br>Дизайн-студии"
+			"title": "23 место в группе<br>Дизайн-студии",
+			"number" : "16",
+			"desc": "лет на рынке"
 		},
 		{
 			"image": "images/demo/cssdesignawards",
-			"title": "7 наград"
+			"title": "7 наград",
+			"number" : "16",
+			"desc": "лет на рынке"
 		},
 		{
 			"image": "images/demo/ruward",
-			"title": "Digital Design&Creative<br>52 место"
+			"title": "Digital Design&Creative<br>52 место",
+			"number" : "10",
+			"desc": "комплексных решений и больше"
 		},
 		{
 			"image": "images/demo/gold-site",
-			"title": "4 золота, 1 серебро и<br>3 бронзы в 2018 году"
+			"title": "4 золота, 1 серебро и<br>3 бронзы в 2018 году",
+			"number" : "550",
+			"desc": "и более успешных инсталляций"
 		},
 		{
 			"image": "images/demo/gold-app",
-			"title": "2 золота и 1 серебро<br>в 2018 году"
-		},
-		{
-			"image": "images/demo/runet",
-			"title": "23 место в группе<br>Дизайн-студии"
+			"title": "2 золота и 1 серебро<br>в 2018 году",
+			"number" : "1000",
+			"desc": "чашек выпитого кофе"
 		}
 	]
 }

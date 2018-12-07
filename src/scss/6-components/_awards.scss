@@ -16,6 +16,14 @@
   &__picture{
     margin-bottom: 0.5rem;
   }
+  &__number{
+    font-size: 70px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+  }
   &__title{
     line-height: 1.43;
     color: $light;

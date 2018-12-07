@@ -4,27 +4,6 @@
   vertical-align: middle;
 }
 
-// // full logo
-// .icon-logo {
-//   height: 1em;
-//   width: 1.02222em;
-//   &__1 {
-//     fill: #fff;
-//   }
-//   &__2 {
-//     fill: $pink;
-//   }
-//   &__3 {
-//     fill: #fff;
-//   }
-//   &__4 {
-//     fill: $pink;
-//   }
-//   &__5 {
-//     fill: #fff;
-//   }
-// }
-
 // logo only circle
 .icon-logo-circle {
   height: 1em;
@@ -46,7 +25,7 @@
     fill: $headings;
   }
   &__2{
-    fill: url(#logo-gradient);
+    fill: $pink;
   }
   &__3{
     fill: $headings;
@@ -55,28 +34,3 @@
     fill: $headings;
   }
 }
-
-// // logo in popup window
-// .popup{
-//   .icon-logo-circle{
-//     margin-left: 9px;
-//     line-height: 0;
-//     font-size: 64px;
-//     @include media('<md'){
-//       margin-left: 0;
-//       font-size: em(52px);
-//     }
-//     @include media('<xs'){
-//       font-size: em(44px);
-//     }
-//   }
-//   .icon-logo-text{
-//     font-size: 44px;
-//     @include media('<md'){
-//       font-size: 38px;
-//     }
-//     @include media('<xs'){
-//       font-size: 28px;
-//     }
-//   }
-// }

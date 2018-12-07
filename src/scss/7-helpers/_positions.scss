@@ -31,6 +31,9 @@
 }
 .mb-6{
   margin-bottom: 6rem;
+  @include media('<lg'){
+    margin-bottom: 4rem;
+  }
   @include media('<md'){
     margin-bottom: 3rem;
   }

@@ -4,13 +4,18 @@
       <div class="swiper-wrapper">
           {% for item in awards %}
             <div class="awards__item swiper-slide">
+
               <div class="awards__picture">
-                <img  src="{{ item.image }}.png" 
+                {#<img  src="{{ item.image }}.png" 
                       srcset="{{ item.image }}@2x.png 2x"
                       srcset="{{ item.image }}@3x.png 3x"
-                      alt="{{ item.title }}">
+                      alt="{{ item.title }}"> #}
+                <span class="awards__number">
+                  {{ item.number }}
+                </span>
               </div>
-              <div class="awards__title">{{ item.title | safe}}</div>
+              <div class="awards__title">{{ item.desc | safe}}</div>
+              {# <div class="awards__title">{{ item.title | safe}}</div> #}
             </div>
           {% endfor %}
         </div>

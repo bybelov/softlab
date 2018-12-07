@@ -69,8 +69,14 @@
   &__body{
     flex: 1;
     padding-top: 9rem;
+    @include media('<lg'){
+      padding-top: 4rem;
+    }
     @include media('<md'){
       padding-top: 2rem;
+    }
+    @include media('<sm'){
+      padding-top: 3rem;
     }
     @include media('<xs'){
       padding-top: 1.625rem;
@@ -89,28 +95,54 @@
   }
 }
 
-.popup__row{
-  display: flex;
-  flex-wrap: wrap;
-}
-.popup__left{
-  flex: 0 0 66.666667%;
-  max-width: 66.666667%;
-  padding-right: 20px;
-  @include media('<md'){
-    min-width: 100%;
-    flex: 0 0 100%;
-    padding-right: 0;
+.popup{
+  &__row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__left{
+    flex: 0 0 66.67%;
+    width: 66.67%;
+    padding-right: 2rem;
+    @include media('<md'){
+      width: 100%;
+      flex: 0 0 100%;
+      padding-right: 0;
+    }
+    @include media('<sm'){
+      width: 50%;
+      flex: 0 0 50%;
+      padding-right: 1rem;
+    }
+  }
+  &__content{
+    padding-right: 2rem;
+    @include media('<md'){
+      padding-right: 0;
+    }
+    @include media('<sm'){
+      display: none;
+    }
+  }
+  .features{
+    @include media('<sm'){
+      display: none;
+    }
+  }
+  &__right{
+    flex: 0 0 33.33%;
+    width: 33.33%;
+    @include media('<md'){
+      width: 100%;
+      flex: 0 0 100%;
+    }
+    @include media('<sm'){
+      width: 50%;
+      flex: 0 0 50%;
+    }
   }
 }
-.popup__right{
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
-  @include media('<md'){
-    min-width: 100%;
-    flex: 0 0 100%;
-  }
-}
+
 // body
 .popup-open{
   overflow: hidden;

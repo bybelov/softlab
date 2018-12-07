@@ -1,5 +1,8 @@
 .contacts{
   padding-top: 2rem;
+  @include media('<lg'){
+    padding-top: 1.25rem;
+  }
   @include media('<md'){
     padding-top: 1rem;
   }
