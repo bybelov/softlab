@@ -8,6 +8,7 @@ function popup() {
 
     $('.popup').addClass('show');
     
+    let animate;
     anime({
       targets: '.popup',
       opacity: [0 , 1],
@@ -17,7 +18,7 @@ function popup() {
       delay: 250,
       loop: false
     });
-    let animate = anime({
+    animate = anime({
       targets: '.popup__inner',
       opacity: [0, 1],
       translateX: ['-100%', 0],
@@ -25,17 +26,16 @@ function popup() {
       duration: 1000,
       delay: 250,
       loop: false,
-      complete: function(anim) {
+      complete: function() {
         $('.popup').css('overflow','auto');
         $('body').addClass('popup-open');
-        // $('.popup').addClass('show');
       }
     });
   }
 
   function popupClose(){
     $('.popup').css('overflow','hidden');
-    
+    let animate;
     anime({
       targets: '.popup',
       translateX: [0, '100%'],
@@ -45,7 +45,7 @@ function popup() {
       delay: 250,
       loop: false,
     });
-    let animate = anime({
+    animate = anime({
       targets: '.popup__inner',
       opacity: 0,
       translateX: '100%',
@@ -53,7 +53,7 @@ function popup() {
       duration: 1000,
       delay: 250,
       loop: false,
-      complete: function(anim) {
+      complete: function() {
        
         $('body').removeClass('popup-open');
         $('.popup').removeClass('show');

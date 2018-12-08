@@ -6,12 +6,17 @@ function slider() {
 
     let titles = [];
     let themes = [];
+    let videos = [];
+    let videoFallbackImage = [];
+
     $('.js-slider .swiper-slide').each(function() {
       titles.push($(this).data('title'));
-      themes.push($(this).data('theme'));
+      ( $(this).data('theme') ? themes.push($(this).data('theme')) : themes.push('') );
+      ( $(this).data('video') ? videos.push($(this).data('video')) : videos.push('') );
+      ( $(this).data('videofallbackimage') ? videoFallbackImage.push($(this).data('videofallbackimage')) : videoFallbackImage.push('') );
     });
-    // console.log(themes);
-    var slider = new Swiper('.js-slider', {
+
+    let slider = new Swiper('.js-slider', {
       spaceBetween: 0,
       loop: true,
       slidesPerView: 1,
@@ -25,29 +30,30 @@ function slider() {
       },
       on: {
         init: function () {
-          var index = this.activeIndex;
-          var getTheme = themes[index - 1];
+          let index = this.activeIndex;
+          let getTheme = themes[index - 1];
           if(getTheme){
-            // console.log(getTheme);
             $('body').addClass('slider--theme-light');
           }else{
             $('body').removeClass('slider--theme-light');
-            // console.log('false');
           }
         },
       }
     });
     slider.on('slideChange', function () {
-      var index = this.activeIndex;
-      var getTheme = themes[index - 1];
+      let index = this.activeIndex;
+      let getTheme = themes[index - 1];
+      let hasVideo = videos[index - 1];
       if(getTheme){
-        // console.log(getTheme);
         $('body').addClass('slider--theme-light');
       }else{
         $('body').removeClass('slider--theme-light');
-        // console.log('false');
       }
-      
+      if(hasVideo){
+        let player = $("#vimeoVideo-" + (index) ).vimeo_player({
+          mobileFallbackImage: videoFallbackImage[index]
+        });
+      }
     });
 
     return slider;

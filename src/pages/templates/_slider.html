@@ -4,17 +4,27 @@
   <div class="swiper-wrapper">
     {% for item in slider %}
     <div class="swiper-slide" 
-      {% if item.color %}
+      {% if item.vimeoVideo %}data-video="{{ item.vimeoVideo }}"{% endif %}
+      {% if item.videoFallbackImage %}data-videofallbackimage="{{ item.videoFallbackImage }}"{% endif %}
+      data-title="{{ item.data }}" 
+      data-theme="{{ item.theme }}"
+      {% if item.videoFallbackImage %}
+        style="background-image: url({{ item.videoFallbackImage }})"
+      {% elif item.color %}
         style="background: {{ item.color }}"
       {% endif %}
-      data-title="{{ item.data }}" data-theme="{{ item.theme }}">
+    >
 
       {% if item.canvas == true %}
         <div id="container"></div>
       {% endif %}
 
-      <div class="slider__item video-{{ loop.index }}">
-
+      <div class="slider__item {% if item.vimeoVideo %}player{% endif %}"
+      {% if item.vimeoVideo %}
+        id="vimeoVideo-{{ loop.index }}"
+        data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'self', showControls:false, fadeTime:100, autoPlay:true, loop:true, vol:0, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: false}"
+      {% endif %}
+      >
         {% if item.bg %}
           <div class="slider__bg">
             <div class="slider__picture-wrapper">
@@ -22,15 +32,6 @@
             </div>
           </div>
         {% endif %}
-
-        {% if item.vimeoVideo %}
-          <div id="vimeoVideo-{{ loop.index }}" class="js-bg-video player" data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'.video-{{ loop.index }}', showControls:false, fadeTime:1000, autoPlay:false, loop:true, vol:20, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: true}"></div>
-          <script>
-            $(document).ready(function(){
-              var myPlayer = $("#vimeoVideo-{{ loop.index }}").vimeo_player({mobileFallbackImage:"/images/demo/video-fallback.jpg"});
-            });
-          </script>
-        {%  endif %}
 
         <div class="container">
           <div class="slider__title">
