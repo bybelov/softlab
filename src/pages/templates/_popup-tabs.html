@@ -1,0 +1,57 @@
+<div class="popup">
+  <div class="popup__inner">
+    {% include "./_lines.html" %}
+    {% include "./_pluses4.html" %}
+    <div class="popup__header">
+      <div class="container">
+        <a href="/" class="logo">
+          <svg class="svg-icon icon-logo"><use xlink:href="#logo"></use></svg>
+        </a>
+        <button type="button" class="popup__close js-popup-close">
+          <svg class="svg-icon icon-close">
+            <use xlink:href="#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="popup__body">
+      <div class="container">
+        <div class="popup__row">
+          <div class="popup__left">
+
+            {% include './_menu.html' %}
+
+            <div class="popup__content">
+              <p class="lead">Креативное пространство, сочетающее в себе популярные направления digital области — UX/UI, Event, HR и Обучение</p>
+              <p>Знания – самый главный инвестиционный ресурс для реализации успешного будущего человека. Мы обладаем знаниями, обучаем и передаем опыт молодым специалистам, создавая кадровый резерв для развивающегося рынка digital-профессий.</p>
+            </div>
+            {% include './_features.html' %}
+
+          </div>
+          <div class="popup__right">
+            <h3>Будем рады ответить Вам</h3>
+            {% include './_tabs.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup__footer">
+      <div class="container">
+        <div class="social-link">
+          <a href="#" class="social-link__item"><svg class="svg-icon icon-vk">
+              <use xlink:href="#vk"></use>
+            </svg>
+          </a>
+          <a href="#" class="social-link__item"><svg class="svg-icon icon-facebook">
+              <use xlink:href="#facebook"></use>
+            </svg>
+          </a>
+          <a href="#" class="social-link__item"><svg class="svg-icon icon-ok">
+              <use xlink:href="#ok"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

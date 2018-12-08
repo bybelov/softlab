@@ -19,13 +19,13 @@
     background-color: #fff;
     padding: 70px 0 40px 0;
     @include media('<xs'){
-      padding-top: 20px;
+      // padding-top: 20px;
     }
     @include media('<sm'){
       padding-bottom: 20px;
     }
     @include media('<lg'){
-      padding-top: 40px;
+      // padding-top: 40px;
     }
     > .container{
       // display: flex;

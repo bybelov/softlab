@@ -27,8 +27,11 @@ function addFocusActivetoForm() {
       el.style.cssText = 'height:' + el.scrollHeight + 'px';
     }, 0);
   }
-  let textarea = document.querySelector('textarea');
-  textarea.addEventListener('keydown', autosize);
+  let textarea = $('textarea');
+  if(textarea.length > 0){
+    textarea.addEventListener('keydown', autosize);
+  }
+
 }
 
 module.exports = addFocusActivetoForm;

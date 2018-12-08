@@ -83,7 +83,7 @@
     }
     h3{
       @include media('<md'){
-        margin-bottom: 0.175rem;
+        // margin-bottom: 0.175rem;
       }
     }
   }
@@ -103,25 +103,31 @@
   &__left{
     flex: 0 0 66.67%;
     width: 66.67%;
-    padding-right: 2rem;
+    // padding-right: 2rem;
     @include media('<md'){
       width: 100%;
       flex: 0 0 100%;
-      padding-right: 0;
+      // padding-right: 0;
     }
     @include media('<sm'){
       width: 50%;
       flex: 0 0 50%;
-      padding-right: 1rem;
+      // padding-right: 1rem;
     }
   }
   &__content{
     padding-right: 2rem;
+    margin-bottom: 6rem;
+    @include media('<lg'){
+      margin-bottom: 4rem;
+    }
     @include media('<md'){
       padding-right: 0;
+      margin-bottom: 3rem;
     }
     @include media('<sm'){
       display: none;
+      margin-bottom: 2rem;
     }
   }
   .features{
@@ -156,5 +162,28 @@
 .header--sticky{
   .popup__close{
     top: -16px;
+  }
+}
+
+// without tabs
+.popup{
+  &__row{
+    @include media('<sm'){
+      display: block;
+    }
+  }
+  &__left{
+    @include media('<sm'){
+      float: left;
+    }
+    @include media('<460px'){
+      float: none;
+      width: 100%;
+    }
+  }
+  &__right{
+    @include media('<sm'){
+      width: auto;
+    }
   }
 }

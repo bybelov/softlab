@@ -284,7 +284,7 @@ button.swiper-pagination-bullet {
   border: none;
   background: $pink;
   position: relative;
-  @include media('<xs'){
+  @include media('<=xs'){
     &:after{
       content:"";
       position: absolute;

@@ -9,6 +9,9 @@ $sliderZIndex_3: 3 !default;
     .swiper-pagination-bullet{
       color: $headings;
     }
+    .swiper-pagination-bullet{
+      border-color: $light;
+    }
   }
   .slider-scroll{
     stroke: $headings;
@@ -57,6 +60,38 @@ $sliderZIndex_3: 3 !default;
     height: 100%;
     align-items: center;
     z-index: $sliderZIndex_2;
+    overflow: hidden;
+  }
+  &__bg{
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: -1;
+  }
+  &__picture{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    &-wrapper{
+      transition: all ease 0.25s;
+      margin-right: -10%;
+      height: 98%;
+      width: 70%;
+      overflow: hidden;
+      @include media('<md'){
+        width: 100%;
+        margin-right: -30%;
+      }
+      @include media('<sm'){
+        width: 100%;
+        margin-right: -40%;
+      }
+    }
   }
   &__title{
     font-size: em(80px);
@@ -76,18 +111,29 @@ $sliderZIndex_3: 3 !default;
     @media(min-height: 768px) and (max-width: 767px),
           (max-height: 768px) and (max-width: 767px),
           (max-height: 576px) and (max-width:767px){
-      font-size: em(40px);
+      font-size: em(30px);
+      line-height: 1.3;
     }
   }
   &__link{
     display: inline-block;
+    display: inline-flex;
     vertical-align: middle;
+    align-items: center;
+    justify-content: center;
     width: 52px;
     height: 52px;
     border-radius: 50%;
     background-color: $pink;
     line-height: 38px;
     text-align: center;
+    @media(min-height: 768px) and (max-width: 767px),
+    (max-height: 768px) and (max-width: 767px),
+    (max-height: 576px) and (max-width:767px){
+      width: 40px;
+      height: 40px;
+      line-height: 28px;
+    }
     &:hover{
       text-decoration: none;
       .svg-icon{
@@ -101,6 +147,11 @@ $sliderZIndex_3: 3 !default;
       vertical-align: middle;
       transform: rotate(180deg);
       font-size: 15px;
+      @media(min-height: 768px) and (max-width: 767px),
+      (max-height: 768px) and (max-width: 767px),
+      (max-height: 576px) and (max-width:767px){
+        font-size: 14px;
+      }
     }
   }
 
@@ -129,7 +180,7 @@ $sliderZIndex_3: 3 !default;
         background: none;
       }
     }
-    @include media('<xs'){
+    @include media('<=xs'){
       span{
         display: none;
       }

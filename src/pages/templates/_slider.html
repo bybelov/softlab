@@ -7,21 +7,30 @@
       {% if item.color %}
         style="background: {{ item.color }}"
       {% endif %}
-      data-title="{{ item.data }}" data-video="video-{{ loop.index }}" data-theme="{{ item.theme }}">
-      {% if loop.index == 1 %}
+      data-title="{{ item.data }}" data-theme="{{ item.theme }}">
+
+      {% if item.canvas == true %}
         <div id="container"></div>
       {% endif %}
+
       <div class="slider__item video-{{ loop.index }}">
 
+        {% if item.bg %}
+          <div class="slider__bg">
+            <div class="slider__picture-wrapper">
+              <img class="slider__picture" src="{{ item.bg }}.png" srcset="{{ item.bg }}@2x.png 2x" alt="">
+            </div>
+          </div>
+        {% endif %}
+
         {% if item.vimeoVideo %}
-          <div id="video-{{ loop.index }}" class="js-bg-video player" data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'.video-{{ loop.index }}', showControls:false, fadeTime:1000, autoPlay:true, loop:true, vol:20, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: true}"></div>
+          <div id="vimeoVideo-{{ loop.index }}" class="js-bg-video player" data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'.video-{{ loop.index }}', showControls:false, fadeTime:1000, autoPlay:false, loop:true, vol:20, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: true}"></div>
           <script>
             $(document).ready(function(){
-              var myPlayer = $("#video-{{ loop.index }}").vimeo_player({mobileFallbackImage:"/images/demo/video-fallback.jpg"});
+              var myPlayer = $("#vimeoVideo-{{ loop.index }}").vimeo_player({mobileFallbackImage:"/images/demo/video-fallback.jpg"});
             });
           </script>
         {%  endif %}
-
 
         <div class="container">
           <div class="slider__title">
