@@ -41,7 +41,7 @@ function slider() {
       }
     });
     slider.on('slideChange', function () {
-      let index = this.activeIndex;
+      var index = this.activeIndex;
       let getTheme = themes[index - 1];
       let hasVideo = videos[index - 1];
       if(getTheme){
@@ -50,7 +50,10 @@ function slider() {
         $('body').removeClass('slider--theme-light');
       }
       if(hasVideo){
-        let player = $("#vimeoVideo-" + (index) ).vimeo_player({
+        let getSliderItem = this.slides[index].children;
+        let id = getSliderItem[0].id;
+        // console.log(getSliderItem);
+        let player = $('#'+ id).vimeo_player({
           mobileFallbackImage: videoFallbackImage[index]
         });
       }

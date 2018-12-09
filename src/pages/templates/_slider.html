@@ -19,7 +19,7 @@
         <div id="container"></div>
       {% endif %}
 
-      <div class="slider__item {% if item.vimeoVideo %}player{% endif %}"
+      <div class="slider__item"
       {% if item.vimeoVideo %}
         id="vimeoVideo-{{ loop.index }}"
         data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'self', showControls:false, fadeTime:100, autoPlay:true, loop:true, vol:0, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: false}"
