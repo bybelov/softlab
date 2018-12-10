@@ -7,6 +7,12 @@
   @include media('<md'){
     padding: 20px 0;
   }
+  &.fullwidth-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 6rem 0 2rem;
+  }
   // about
   &.about{
     padding-top: 0;

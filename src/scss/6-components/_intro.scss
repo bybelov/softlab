@@ -1,7 +1,4 @@
 .intro{
-  height: 100vh;
-  // polifill for chrome app
-  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   &__bg{
     height: 100%;

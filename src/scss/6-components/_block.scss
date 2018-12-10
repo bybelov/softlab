@@ -1,6 +1,6 @@
 .block{
   display: flex;
-  margin-bottom: 100px;
+  position: relative;
   &-col{
 
   }
@@ -13,4 +13,5 @@
   &-col-3{
     width: 100%;
   }
+
 }
