@@ -1,0 +1,12 @@
+.counter{
+  margin-bottom: 60px;
+  &__number{
+    font-size: 80px;
+    color: $headings;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  &__desc{
+
+  }
+}

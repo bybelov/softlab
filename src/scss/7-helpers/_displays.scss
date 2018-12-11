@@ -19,3 +19,38 @@
     }
   }
 }
+
+.link{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: $body-color;
+  &:hover{
+    text-decoration: none;
+    transition: all ease 0.25s;
+  }
+  .svg-icon{
+    vertical-align: middle;
+    margin-right: 12px;
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+  span{
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.link-app{
+  margin-bottom: 0.05rem;
+  margin-right: 2rem;
+  @include media('<sm'){
+    margin-right: 1rem;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+  .svg-icon{
+    font-size: 40px;
+  }
+}

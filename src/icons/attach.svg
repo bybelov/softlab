@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="11px" viewBox="0 0 21 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-201.000000, -9542.000000)" fill="#000000" fill-rule="nonzero">
+            <g transform="translate(-118.562500, 100.000000)">
+                <g transform="translate(320.375000, 9193.625000)">
+                    <path d="M6,255 L6,253 L14,253 L14,255 L6,255 Z M9,249 L9,251 L5,251 C3.34314575,251 2,252.343146 2,254 C2,255.656854 3.34314575,257 5,257 L9,257 L9,259 L5,259 C2.23857625,259 0,256.761424 0,254 C0,251.238576 2.23857625,249 5,249 L9,249 Z M11,251 L11,249 L15,249 C17.7614237,249 20,251.238576 20,254 C20,256.761424 17.7614237,259 15,259 L11,259 L11,257 L15,257 C16.6568542,257 18,255.656854 18,254 C18,252.343146 16.6568542,251 15,251 L11,251 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

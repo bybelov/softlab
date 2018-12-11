@@ -29,7 +29,7 @@ function addFocusActivetoForm() {
   }
   let textarea = $('textarea');
   if(textarea.length > 0){
-    textarea.addEventListener('keydown', autosize);
+    textarea.on('keydown', autosize);
   }
 
 }
