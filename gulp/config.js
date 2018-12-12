@@ -17,6 +17,7 @@ var config = {
     scss:           srcPath + '/scss',
     js:             srcPath + '/js',
     vendor:         srcPath + '/js/vendor',
+    video:          srcPath + '/video',
     images:         srcPath + '/images',
     demo:           srcPath + '/images/demo',
     favicon:        srcPath + '/images/favicon.png',  // favicon png 256x256
@@ -29,6 +30,7 @@ var config = {
     pages:          destPath,
     css:            destPath + '/css',
     js:             destPath + '/js',
+    video:          destPath + '/video',
     images:         destPath + '/images',
     demo:           destPath + '/images/demo',
     fonts:          destPath + '/fonts'

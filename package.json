@@ -24,7 +24,8 @@
     "jquery.scrollto": "^2.1.2",
     "scrollmagic": "^2.0.6",
     "susy": "^3.0.5",
-    "swiper": "^4.4.2"
+    "swiper": "^4.4.2",
+    "vide": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

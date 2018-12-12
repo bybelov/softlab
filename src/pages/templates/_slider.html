@@ -4,13 +4,9 @@
   <div class="swiper-wrapper">
     {% for item in slider %}
     <div class="swiper-slide" 
-      {% if item.vimeoVideo %}data-video="{{ item.vimeoVideo }}"{% endif %}
-      {% if item.videoFallbackImage %}data-videofallbackimage="{{ item.videoFallbackImage }}"{% endif %}
       data-title="{{ item.data }}" 
       data-theme="{{ item.theme }}"
-      {% if item.videoFallbackImage %}
-        style="background-image: url({{ item.videoFallbackImage }})"
-      {% elif item.color %}
+      {% if item.color %}
         style="background: {{ item.color }}"
       {% endif %}
     >
@@ -20,9 +16,12 @@
       {% endif %}
 
       <div class="slider__item"
-      {% if item.vimeoVideo %}
-        id="vimeoVideo-{{ loop.index }}"
-        data-property="{videoURL:'{{ item.vimeoVideo }}',containment:'self', showControls:false, fadeTime:100, autoPlay:true, loop:true, vol:0, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: false}"
+      {% if item.video %}
+
+        id="video-{{ loop.index }}"
+        data-vide-bg="mp4: {{ item.video }}, webm: {{ item.video }}, ogv: {{ item.video }}, poster: {{ item.videoFallbackImage }}"
+        data-vide-options="loop: true, muted: true"
+
       {% endif %}
       >
         {% if item.bg %}

@@ -19,6 +19,7 @@
 			"theme": "",
 			"link": "",
 			"bg": "",
+			"video": "",
 			"videoFallbackImage":"",
 			"canvas": true
 		},
@@ -29,6 +30,7 @@
 			"color": "#464d53",
 			"theme": "",
 			"link": "/sites.html",
+			"video": "",
 			"videoFallbackImage":"",
 			"bg": "images/demo/slider/site-clay"
 		},
@@ -39,6 +41,7 @@
 			"color": "#edf2f5",
 			"theme": "light",
 			"link": "#app",
+			"video": "",
 			"videoFallbackImage":"",
 			"bg": "images/demo/slider/app-clay"
 		},
@@ -48,8 +51,8 @@
 			"gradient": "",
 			"color": "#464d53",
 			"theme": "",
-			"vimeoVideo": "276219169",
-			"videoFallbackImage": "/images/demo/video-fallback.jpg",
+			"video": "video/1280x720",
+			"videoFallbackImage": "/images/demo/video-fallback",
 			"link": "#video",
 			"bg": ""
 		},
@@ -60,6 +63,7 @@
 			"color": "#464d53",
 			"theme": "",
 			"link": "#branding",
+			"video": "",
 			"videoFallbackImage":"",
 			"bg": ""
 		}

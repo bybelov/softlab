@@ -7,6 +7,7 @@ import 'ScrollMagic';
 import 'debug.addIndicators';
 import 'jquery.scrollto/jquery.scrollTo.min.js';
 
+
 import 'three';
 // import './vendor/Detector';
 // import 'three/examples/js/libs/stats.min.js';
@@ -20,6 +21,6 @@ import 'jquery-validation/dist/jquery.validate.min.js';
 import 'jquery-validation/dist/localization/messages_ru.js';
 import './vendor/jquery-validation/src/additional/minlengthphone.js';
 import './vendor/svg/svg-sprite.js';
-import './vendor/video/jquery.mb.vimeo_player.js';
+import 'vide';
 
 import './vendor/modernizr-custom';

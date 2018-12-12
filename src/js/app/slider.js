@@ -1,19 +1,16 @@
 import $ from 'jquery';
 import Swiper from 'swiper/dist/js/swiper.js';
+import 'vide';
 
 function slider() {
   if( $('.js-slider').length > 0 ){
 
     let titles = [];
     let themes = [];
-    let videos = [];
-    let videoFallbackImage = [];
 
     $('.js-slider .swiper-slide').each(function() {
       titles.push($(this).data('title'));
       ( $(this).data('theme') ? themes.push($(this).data('theme')) : themes.push('') );
-      ( $(this).data('video') ? videos.push($(this).data('video')) : videos.push('') );
-      ( $(this).data('videofallbackimage') ? videoFallbackImage.push($(this).data('videofallbackimage')) : videoFallbackImage.push('') );
     });
 
     let slider = new Swiper('.js-slider', {
@@ -43,19 +40,10 @@ function slider() {
     slider.on('slideChange', function () {
       var index = this.activeIndex;
       let getTheme = themes[index - 1];
-      let hasVideo = videos[index - 1];
       if(getTheme){
         $('body').addClass('slider--theme-light');
       }else{
         $('body').removeClass('slider--theme-light');
-      }
-      if(hasVideo){
-        let getSliderItem = this.slides[index].children;
-        let id = getSliderItem[0].id;
-        // console.log(getSliderItem);
-        let player = $('#'+ id).vimeo_player({
-          mobileFallbackImage: videoFallbackImage[index]
-        });
       }
     });
 
