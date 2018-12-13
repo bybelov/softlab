@@ -36,6 +36,7 @@
 @import "6-components/sprites/img-sprite";
 @import "6-components/sprites/svg-sprite";
 
+@import "6-components/root"; // variables
 @import "6-components/lines";
 @import "6-components/hamburger";
 @import "6-components/page";
@@ -70,7 +71,7 @@
 @import "6-components/tags";
 @import "6-components/paragraph";
 @import "6-components/block";
-@import "6-components/phone-screens";
+@import "6-components/carousel";
 @import "6-components/counter";
 
 /* 7 Helpers */

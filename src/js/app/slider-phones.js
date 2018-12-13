@@ -6,6 +6,8 @@ function slider() {
 
   if($('.js-phone-screens').length > 0 ){
 
+    var width;
+    var sliderMask = $('.js-phone-screens .carousel__mask');
     var slider = new Swiper('.js-phone-screens', {
 
       // nextButton: '.swiper-button-next',
@@ -17,7 +19,6 @@ function slider() {
       centeredSlides: true,
       roundLengths: true,
       loop: true,
-  
       slidesPerView: 5,
       spaceBetween: 0,
       breakpoints: {
@@ -33,8 +34,17 @@ function slider() {
         1200: {
           slidesPerView: 4
         }
+      },
+      on: {
+        init: function () {
+          width = this.slidesSizesGrid[0];
+          sliderMask.width(width);
+        },
+        resize: function () {
+          width = this.slidesSizesGrid[0];
+          sliderMask.width(width);
+        }
       }
-  
     });
   
     var nbSlides = slider.params.slidesPerView;

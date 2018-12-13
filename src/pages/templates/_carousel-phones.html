@@ -1,9 +1,12 @@
-<div class="phone-screens" style="background-color: #ffb200">
-  <h2 class="phone-screens__title"><span class="animate-to-top">Создано более 100 экранов</span></h2>
+<section class="carousel carousel--phones">
+  <h2 class="carousel__title"><span class="animate-to-top">Создано более 100 экранов</span></h2>
   <div class="swiper-container js-phone-screens">
+    <div class="carousel__mask">
+      <svg class="svg-icon icon-iphone-x"><use xlink:href="#iphone-x"></use></svg>
+    </div>
     <div class="swiper-wrapper">
         {% for item in phones %}
-          <div class="phone-screens__item swiper-slide">
+          <div class="carousel__item swiper-slide">
             <img  src="{{ item }}.png" 
                   srcset="{{ item }}@2x.png 2x"
                   srcset="{{ item }}@3x.png 3x"
@@ -12,4 +15,4 @@
         {% endfor %}
       </div>
   </div>
-</div>
+</section>

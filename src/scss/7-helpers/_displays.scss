@@ -34,6 +34,8 @@
     margin-right: 12px;
     font-size: 10px;
     flex-shrink: 0;
+    fill: $link-color;
+    fill: var(--link-color);
   }
   span{
     text-overflow: ellipsis;

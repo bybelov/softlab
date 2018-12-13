@@ -1,6 +1,9 @@
 .block{
   display: flex;
   position: relative;
+  img{
+    object-fit: contain;
+  }
   &-col{
 
   }
@@ -13,5 +16,4 @@
   &-col-3{
     width: 100%;
   }
-
 }

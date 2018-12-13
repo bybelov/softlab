@@ -1,0 +1,25 @@
+<div class="carousel carousel--awards">
+  <div class="container">
+    <div class="swiper-container js-awards">
+      <div class="swiper-wrapper">
+          {% for item in awards %}
+            <div class="swiper-slide">
+              <div class="carousel__item">
+                <div class="carousel__picture">
+                  {#<img  src="{{ item.image }}.png" 
+                        srcset="{{ item.image }}@2x.png 2x"
+                        srcset="{{ item.image }}@3x.png 3x"
+                        alt="{{ item.title }}"> #}
+                  <span class="carousel__number">
+                    {{ item.number }}
+                  </span>
+                </div>
+                <div class="carousel__title">{{ item.desc | safe}}</div>
+                {# <div class="carousel__title">{{ item.title | safe}}</div> #}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>
