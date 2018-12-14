@@ -45,5 +45,21 @@
 		"images/demo/1-noshadow",
 		"images/demo/1-noshadow",
 		"images/demo/1-noshadow"
-	]
+	],
+	"mainFooter": {
+		"count": [
+			{
+				"number": "1 500",
+				"label": "оформленных банковских карт"
+			},
+			{
+				"number" : "10 000",
+				"label": "скачиваний приложения"
+			}
+		],
+		"websiteLabel": "Web банк",
+		"website":"http://hive.card.ru",
+		"ios": "#",
+		"android": "#"
+	}
 }
