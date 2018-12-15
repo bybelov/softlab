@@ -12,7 +12,7 @@
     >
 
       {% if item.canvas == true %}
-        <div id="container"></div>
+        <div id="container-fluid"></div>
       {% endif %}
 
       <div class="slider__item"
@@ -32,7 +32,7 @@
           </div>
         {% endif %}
 
-        <div class="container">
+        <div class="container-fluid">
           <div class="slider__title">
             {{ item.title | safe }}
             {% if item.link %}
@@ -48,7 +48,7 @@
     {% endfor %}
   </div>
   <div class="slider-footer">
-    <div class="container">
+    <div class="container-fluid">
       <div class="slider-scroll" data-scrollTo="#mainContent">
         <svg class="svg-icon icon-mouse"><use xlink:href="#mouse"></use></svg>
       </div>

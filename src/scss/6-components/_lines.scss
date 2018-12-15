@@ -9,7 +9,7 @@
   z-index: 0;
   // padding: 0 20px;
   will-change: transform;
-  .container{
+  .container-fluid{
     height: 100%;
     position: static;
     display: flex;
@@ -51,7 +51,7 @@
   will-change: transform;
   height: 100%;
   z-index: -1;
-  > .container{
+  > .container-fluid{
     display: flex;
     justify-content: space-between;
     flex-direction: column;

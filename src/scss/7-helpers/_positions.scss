@@ -20,9 +20,7 @@
   }
 }
 
-.mt-0{
-  margin-top: 0;
-}
+
 .mb-1{
   margin-bottom: 1rem;
   @include media('<md'){
@@ -57,51 +55,4 @@
   &-b{
     bottom: 0;
   }
-}
-
-// flex
-.flex{
-  display: flex;
-}
-
-// flex direction
-.flex-row{
-  flex-direction: row;
-}
-.flex-column{
-  flex-direction: column;
-}
-
-// justify content
-.justify-content-start{
-  justify-content: flex-start;
-}
-.justify-content-end{
-  justify-content: flex-end;
-}
-.justify-content-center{
-  justify-content: center;
-}
-.justify-content-between{
-  justify-content: space-between;
-}
-.justify-content-around{
-  justify-content: space-around;
-}
-
-// align items
-.align-items-start{
-  align-items: flex-start;
-}
-.align-items-end{
-  align-items: flex-end;
-}
-.align-items-center{
-  align-items: center;
-}
-.align-items-baseline{
-  align-items: baseline;
-}
-.align-items-stretch{
-  align-items: stretch;
 }

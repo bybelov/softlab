@@ -27,7 +27,7 @@
     @include media('<lg'){
       // padding-top: 40px;
     }
-    > .container{
+    > .container-fluid{
       // display: flex;
       // flex-wrap: wrap;
       @include media('>lg'){

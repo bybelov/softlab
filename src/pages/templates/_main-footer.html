@@ -1,7 +1,7 @@
 <section class="section">
-  <div class="container">
-    <div class="block">
-      <div class="block-col-1">
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <div class="col-md-6 col-lg-4">
         <div class="counter">
           <div class="counter__number">{{ mainFooter.count[0].number }}</div>
           <div class="counter__desc">{{ mainFooter.count[0].label }}</div>
@@ -14,7 +14,7 @@
           </a>
         </p>
       </div>
-      <div class="block-col-1">
+      <div class="col-md-6 col-lg-4">
         <div class="counter">
           <div class="counter__number">{{ mainFooter.count[1].number }}</div>
           <div class="counter__desc">{{ mainFooter.count[1].label }}</div>
@@ -29,7 +29,7 @@
           </a>
         </p>
       </div>
-      <div class="block-col-1">
+      <div class="offset-md-3 col-md-6 offset-lg-0 col-lg-4">
         <h3>Хотите с нами работать?</h3>
         {% include './_callback2.html' %}
       </div>

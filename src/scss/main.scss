@@ -70,9 +70,11 @@
 @import "6-components/intro";
 @import "6-components/tags";
 @import "6-components/paragraph";
-@import "6-components/block";
+// @import "6-components/block";
 @import "6-components/carousel";
 @import "6-components/counter";
+
+@import "6-components/grid/grid";
 
 /* 7 Helpers */
 
@@ -81,3 +83,8 @@
 @import "7-helpers/clearfix";
 @import "7-helpers/colors";
 @import "7-helpers/states";
+
+@import "7-helpers/sizing";
+@import "7-helpers/spacing";
+@import "7-helpers/visibility";
+@import "7-helpers/flex";
