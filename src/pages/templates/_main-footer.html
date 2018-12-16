@@ -3,7 +3,7 @@
     <div class="row no-gutters">
       <div class="col-sm-6 col-xl-4">
 
-        <div class="box">
+        <div class="box animate-to-right">
           <div class="counter">
             <div class="counter__number">{{ mainFooter.count[0].number }}</div>
             <div class="counter__desc">{{ mainFooter.count[0].label }}</div>
@@ -22,7 +22,7 @@
       </div>
       <div class="col-sm-6 col-xl-4">
 
-        <div class="box">
+        <div class="box animate-to-right">
           <div class="counter">
             <div class="counter__number">{{ mainFooter.count[1].number }}</div>
             <div class="counter__desc">{{ mainFooter.count[1].label }}</div>
@@ -44,8 +44,10 @@
 
       </div>
       <div class="offset-md-3 col-md-6 offset-xl-0 col-xl-4">
-        <h3>Хотите с нами работать?</h3>
-        {% include './_callback2.html' %}
+        <div class="animate-to-right">
+            <h3>Хотите с нами работать?</h3>
+            {% include './_callback2.html' %}
+        </div>
       </div>
     </div>
   </div>
