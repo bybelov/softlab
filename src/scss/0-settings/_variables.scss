@@ -20,8 +20,8 @@ $warning:      material-color(orange, 500) !default;
 $danger:       material-color(red, 500) !default;
 $light:      #83919c !default;
 $lighter:    #afc3d3 !default;
-$dark:         material-color(blue-grey, 800) !default;
-$muted:        material-color(gray, 600) !default;
+$dark:         #464d53 !default;
+$muted:        $light !default;
 $headings:   #464d53 !default;
 
 $pink: #ff1db0 !default;
@@ -173,7 +173,8 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    5: ($spacer * 3),
+    6: ($spacer * 5)
   ),
   $spacers
 );

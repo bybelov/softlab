@@ -11,7 +11,8 @@
 		],
 		"intro": {
 			"bgColor": "#edf2f5",
-			"bg": "images/demo/mockup"
+			"bg": "images/demo/mockup",
+			"classTheme": "intro--theme-light"
 		}
 	},
 	"features": [

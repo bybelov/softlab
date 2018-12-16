@@ -9,23 +9,32 @@
   }
 }
 
+.intro + .main__content{
+  padding-top: 2rem;
+}
 .main{
   flex: 1;
   position: relative;
   padding-top: 100px;
+  @include media('<md'){
+    padding-top: 70px;
+  }
+  @include media('<xs'){
+    padding-top: 56px;
+  }
   &__content{
     z-index: 1;
     position: relative;
     background-color: #fff;
     padding: 70px 0 40px 0;
-    @include media('<xs'){
-      // padding-top: 20px;
+    @include media('<md'){
+      // padding-top: 40px;
     }
     @include media('<sm'){
       padding-bottom: 20px;
     }
-    @include media('<lg'){
-      // padding-top: 40px;
+    @include media('<xs'){
+      // padding-top: 20px;
     }
     > .container-fluid{
       // display: flex;

@@ -18,6 +18,7 @@
   &__link{
     transition: all ease 0.25s;
     color: $headings;
+    white-space: nowrap;
     &:hover{
       color: $light;
       text-decoration: none;

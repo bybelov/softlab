@@ -1,0 +1,35 @@
+.media{
+  &--bg{
+    background-size: contain;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+  }
+  // image
+  &__image{
+    padding-right: 2rem;
+    @include media('<sm'){
+      padding-right: 0;
+    }
+    img{
+      object-fit: contain;
+      @include media('<sm'){
+        max-height: 80vh;
+      }
+    }
+    &.mr-20{
+      margin-right: calc(-20% - 2rem);
+      @include media('<lg'){
+
+      }
+      @include media('<sm'){
+        margin-right: 0; 
+      }
+    }
+  }
+  // text
+  &__text{
+    &.text-center{
+      padding: 0 20px;
+    }
+  }
+}

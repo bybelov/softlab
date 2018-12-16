@@ -89,7 +89,7 @@ function animation(){
       }
     });
     let scene = new ScrollMagic.Scene({
-      triggerElement: this,
+      triggerElement: this.parentNode,
       triggerHook: 1
     })
     .addTo(controller)

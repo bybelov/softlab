@@ -44,11 +44,20 @@
 }
 
 .link-app{
+  display: inline-block;
+  vertical-align: middle;
   margin-bottom: 0.05rem;
   margin-right: 2rem;
+  margin-bottom: 0.5rem;
   @include media('<sm'){
     margin-right: 1rem;
   }
+  ~ .link-app{
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
   &:hover{
     text-decoration: none;
   }

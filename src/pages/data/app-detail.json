@@ -10,6 +10,7 @@
 			}
 		],
 		"intro": {
+			"classTheme": "intro--theme-light",
 			"bgColor": "#fff",
 			"bg": "",
 			"icon": "images/demo/hive-app-icon.svg",

@@ -34,14 +34,18 @@ h1,
 .h1 {
 	font-size: font-size(h1);
 	margin-bottom: em(90px, font-size(h1));
-	@include media('<xs'){
-		font-size: 24px;
+	@include media('<xlg'){
+		font-size: 50px;
+		margin-bottom: em(60px, font-size(h1));
 	}
 	@include media('<lg'){
 		font-size: 40px;
 	}
-	@include media('<xlg'){
-		font-size: 50px;
+	@include media('<md'){
+		font-size: 34px;
+	}
+	@include media('<xs'){
+		font-size: 24px;
 	}
 }
 
@@ -49,14 +53,18 @@ h2,
 .h2 {
 	font-size: font-size(h2);
 	margin-bottom: 0.9em;
-	@include media('<xs'){
-		font-size: 24px;
-	}
 	// @include media('<sm'){
 	// 	font-size: 30px;
 	// }
 	@include media('<lg'){
-		font-size: 40px;
+		font-size: 34px;
+		margin-bottom: em(20px, 40px);
+	}
+	@include media('<md'){
+		font-size: 30px;
+	}
+	@include media('<xs'){
+		font-size: 24px;
 	}
 }
 

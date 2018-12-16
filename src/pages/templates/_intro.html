@@ -1,12 +1,10 @@
-<div class="intro" style="background-color: {{ page.intro.bgColor }}">
+<div class="intro {{ page.intro.classTheme }}" style="background-color: {{ page.intro.bgColor }}">
   {% include "./_lines.html" %}
   {% include "./_pluses4.html" %}
 
   {% if page.intro.bg %}
-    <img class="intro__bg" src="{{ page.intro.bg }}.png" 
-          srcset="{{ page.intro.bg }}@2x.png 2x"
-          srcset="{{ page.intro.bg }}@3x.png 3x"
-          alt="">
+  <img class="intro__bg" src="{{ page.intro.bg }}.png" srcset="{{ page.intro.bg }}@2x.png 2x" srcset="{{ page.intro.bg }}@3x.png 3x"
+    alt="">
   {% endif %}
   <div class="container-fluid">
     <div class="intro__header">
@@ -14,22 +12,30 @@
       {% include './_tags.html' %}
     </div>
     <div class="intro__icon">
-      <img src="{{ page.intro.icon }}" alt="Иконка {{ page.title }}">
+      <div class="animate-to-right">
+        <img src="{{ page.intro.icon }}" alt="Иконка {{ page.title }}">
+      </div>
     </div>
     <div class="intro__logo">
-      <img src="{{ page.intro.logo }}" alt="Логотип {{ page.title }}">
+      <div class="animate-to-right">
+        <img src="{{ page.intro.logo }}" alt="Логотип {{ page.title }}">
+      </div>
+
     </div>
     <div class="intro__desc">
-      {{ page.intro.desc | safe }}
+      <div class="animate-to-right">
+        {{ page.intro.desc | safe }}
+      </div>
+
     </div>
   </div>
 
   <div class="intro__picture">
     <div class="container-fluid">
-      <img src="{{ page.intro.picture }}.png"
-        srcset="{{ page.intro.picture }}@2x.png 2x"
-        srcset="{{ page.intro.picture }}@3x.png 3x" 
-        alt="{{ page.title }}">
+      <div class="animate-to-top">
+        <img src="{{ page.intro.picture }}.png" srcset="{{ page.intro.picture }}@2x.png 2x" srcset="{{ page.intro.picture }}@3x.png 3x"
+          alt="{{ page.title }}">
+      </div>
     </div>
   </div>
 

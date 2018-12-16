@@ -1,35 +1,49 @@
 <section class="section">
   <div class="container-fluid">
     <div class="row no-gutters">
-      <div class="col-md-6 col-lg-4">
-        <div class="counter">
-          <div class="counter__number">{{ mainFooter.count[0].number }}</div>
-          <div class="counter__desc">{{ mainFooter.count[0].label }}</div>
+      <div class="col-sm-6 col-xl-4">
+
+        <div class="box">
+          <div class="counter">
+            <div class="counter__number">{{ mainFooter.count[0].number }}</div>
+            <div class="counter__desc">{{ mainFooter.count[0].label }}</div>
+          </div>
+          <p class="text-muted">{{ mainFooter.websiteLabel }}:</p>
+          <p>
+            <a href="{{ mainFooter.website }}" class="link">
+              <svg class="svg-icon icon-attach">
+                <use xlink:href="#attach"></use>
+              </svg>
+              <span>{{ mainFooter.website }}</span>
+            </a>
+          </p>
         </div>
-        <p class="text-muted">{{ mainFooter.websiteLabel }}:</p>
-        <p>
-          <a href="{{ mainFooter.website }}" class="link">
-            <svg class="svg-icon icon-attach"><use xlink:href="#attach"></use></svg>
-            <span>{{ mainFooter.website }}</span>
-          </a>
-        </p>
+
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="counter">
-          <div class="counter__number">{{ mainFooter.count[1].number }}</div>
-          <div class="counter__desc">{{ mainFooter.count[1].label }}</div>
+      <div class="col-sm-6 col-xl-4">
+
+        <div class="box">
+          <div class="counter">
+            <div class="counter__number">{{ mainFooter.count[1].number }}</div>
+            <div class="counter__desc">{{ mainFooter.count[1].label }}</div>
+          </div>
+          <p class="text-muted">Мобильное приложение:</p>
+          <p>
+            <a href="{{ mainFooter.ios }}" class="link-app">
+              <svg class="svg-icon icon-app-store">
+                <use xlink:href="#app-store"></use>
+              </svg>
+            </a>
+            <a href="{{ mainFooter.android }}" class="link-app">
+              <svg class="svg-icon icon-google-play">
+                <use xlink:href="#google-play"></use>
+              </svg>
+            </a>
+          </p>
         </div>
-        <p class="text-muted">Мобильное приложение:</p>
-        <p>
-          <a href="{{ mainFooter.ios }}" class="link-app">
-            <svg class="svg-icon icon-app-store"><use xlink:href="#app-store"></use></svg>
-          </a>
-          <a href="{{ mainFooter.android }}" class="link-app">
-            <svg class="svg-icon icon-google-play"><use xlink:href="#google-play"></use></svg>
-          </a>
-        </p>
+
       </div>
-      <div class="offset-md-3 col-md-6 offset-lg-0 col-lg-4">
+      <div class="offset-md-3 col-md-6 offset-xl-0 col-xl-4">
         <h3>Хотите с нами работать?</h3>
         {% include './_callback2.html' %}
       </div>
