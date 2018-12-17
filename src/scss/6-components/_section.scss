@@ -7,6 +7,16 @@
   @include media('<xs'){
     padding: 20px 0;
   }
+  &.bg-color{
+    background-color: var(--section-bg-color);
+  }
+  &.text-color{
+    color: var(--section-text-color);
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h5, .h6{
+      color: var(--section-text-color);
+    }
+  }
   &.fullwidth-bg{
     background-size: cover;
     background-repeat: no-repeat;

@@ -10,10 +10,17 @@
 			}
 		],
 		"intro": {
-			"bgColor": "#edf2f5",
-			"bg": "images/demo/mockup",
-			"classTheme": "intro--theme-light"
-		}
+			"classTheme": "intro--theme-light",
+			"bgColor": "#fff",
+			"bg": "",
+			"icon": "images/demo/hive-app-icon.svg",
+			"logo": "images/demo/hive-logo.svg",
+			"desc": "Mеждународный платежный сервис.<br>Позволяет получать различные виды платежных<br>карт системы UnionPay",
+			"picture": "images/demo/chrome"
+		},
+		"tags": [
+			"#landing", "#cabinet", "#app", "#bank"
+		]
 	},
 	"features": [
 		{

@@ -6,9 +6,9 @@
   }
   // image
   &__image{
-    padding-right: 2rem;
+    // padding-right: 2rem;
     @include media('<sm'){
-      padding-right: 0;
+      // padding-right: 0;
     }
     img{
       object-fit: contain;
@@ -17,12 +17,21 @@
       }
     }
     &.mr-20{
-      margin-right: calc(-20% - 2rem);
+      margin-right: -20%;
       @include media('<lg'){
 
       }
       @include media('<sm'){
         margin-right: 0; 
+      }
+    }
+    &.ml-20{
+      margin-left: -20%;
+      @include media('<lg'){
+
+      }
+      @include media('<sm'){
+        margin-left: 0; 
       }
     }
   }

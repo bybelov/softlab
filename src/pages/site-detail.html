@@ -4,20 +4,23 @@
 
 <!-- begin main -->
 <main class="main" role="main">
-    <div class="intro" style="background-color: {{ page.intro.bgColor }}">
-        {% include "templates/_lines.html" %}
-        {% include "templates/_pluses4.html" %}
-
-        <img class="intro__bg" src="{{ page.intro.bg }}.png" 
-              srcset="{{ page.intro.bg }}@2x.png 2x"
-              srcset="{{ page.intro.bg }}@3x.png 3x"
-              alt="">
-  
-      </div>
+  {% include "templates/_intro.html" %}
   <div class="main__content">
 
     {% include "templates/_lines.html" %}
     {% include "templates/_pluses.html" %}
+
+
+    {% include "templates/site/_task.html" %}
+    {% include "templates/site/_section-1.html" %}
+    {% include "templates/site/_section-2.html" %}
+    {% include "templates/site/_section-3.html" %}
+    {% include "templates/site/_section-4.html" %}
+    {% include "templates/site/_section-5.html" %}
+    {% include "templates/site/_section-6.html" %}
+    {% include "templates/site/_section-7.html" %}
+    {% include "templates/site/_section-8.html" %}
+
 
     {% include "templates/_main-footer.html" %}
 
