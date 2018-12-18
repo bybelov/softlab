@@ -6,4 +6,21 @@
   @include media('<sm'){
     margin-bottom: 2rem;
   }
+
+  &__icon{
+    fill: var(--custom-color);
+    font-size: 36px;
+    margin-bottom: 1rem;
+    line-height: 0;
+  }
+  &__title{
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: font-weight(semibold);
+    margin-bottom: em(8px, 24px);
+  }
+  &__desc{
+    color: #888;
+    padding: 0 2rem;
+  }
 }
