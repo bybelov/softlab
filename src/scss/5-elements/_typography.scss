@@ -152,6 +152,7 @@ blockquote {
 }
 
 .lead {
+	font-family: $font-family-headings;
 	font-size: em(20px);
 	line-height: line-height(lg);
 	color: $light;

@@ -126,7 +126,7 @@
 
 // body
 .popup-open{
-  overflow: hidden;
+  overflow-x: hidden;
   .popup__inner{
     transform-origin: right center;
   }

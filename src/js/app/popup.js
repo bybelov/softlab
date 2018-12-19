@@ -7,7 +7,7 @@ function popup() {
   function popupOpen(){
 
     $('.popup').addClass('show');
-    
+    $('html').css('overflow', 'hidden');
     let animate;
     anime({
       targets: '.popup',
@@ -35,6 +35,7 @@ function popup() {
 
   function popupClose(){
     $('.popup').css('overflow','hidden');
+    $('html').css('overflow', 'auto');
     let animate;
     anime({
       targets: '.popup',
@@ -54,7 +55,6 @@ function popup() {
       delay: 250,
       loop: false,
       complete: function() {
-       
         $('body').removeClass('popup-open');
         $('.popup').removeClass('show');
       }

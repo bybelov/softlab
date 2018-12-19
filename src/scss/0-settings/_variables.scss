@@ -57,7 +57,7 @@ $label-margin-bottom:      .5rem !default;
 
 // FONTS
 
-$font-family-base:      'Source Sans Pro', sans-serif !default;
+$font-family-base:      'Open Sans', sans-serif !default;
 $font-family-headings:  'Source Sans Pro', sans-serif !default;
 $font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
@@ -174,7 +174,9 @@ $spacers: map-merge(
     3: $spacer,
     4: ($spacer * 1.5),
     5: ($spacer * 3),
-    6: ($spacer * 5)
+    6: ($spacer * 5),
+    7: ($spacer * 8),
+    8: ($spacer * 12)
   ),
   $spacers
 );

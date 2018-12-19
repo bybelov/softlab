@@ -1,5 +1,10 @@
 .box{
   margin-bottom: 4rem;
+  + .box{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
   @include media('<lg'){
     margin-bottom: 3rem;
   }
@@ -21,6 +26,6 @@
   }
   &__desc{
     color: #888;
-    padding: 0 2rem;
+    // padding: 0 2rem;
   }
 }
