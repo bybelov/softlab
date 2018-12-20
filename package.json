@@ -23,6 +23,7 @@
     "jquery.maskedinput": "^1.4.1",
     "jquery.scrollto": "^2.1.2",
     "scrollmagic": "^2.0.6",
+    "smooth-scrollbar": "^8.3.1",
     "susy": "^3.0.5",
     "swiper": "^4.4.2",
     "vide": "^0.5.1"

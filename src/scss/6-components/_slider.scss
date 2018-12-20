@@ -217,3 +217,42 @@ $sliderZIndex_3: 3 !default;
     stroke: $pink;
   }
 }
+
+.slider__bg{
+  img{
+    position: absolute;
+    max-width: inherit;
+  }
+  .sl{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .sl{
+    &-1{
+      // transform: translate3d(-34%,-10%,0);
+      right: -34%;
+      top: -10%;
+    }
+    &-2{
+      transform: translate3d(0%,-4%,0);
+    }
+    &-3{
+      transform: translate3d(100%,294%,0);
+    }
+    &-4{
+      transform: translate3d(3%,184%,0);
+    }
+    &-5{
+      transform: translate3d(52%,97%,0);
+    }
+    &-6{
+      transform: translate3d(82%,750%,0);
+    }
+    &-7{
+      transform: translate3d(142%,205%,0);
+    }
+  }
+}

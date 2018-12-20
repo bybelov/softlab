@@ -13,7 +13,10 @@ import FormFile from './app/input-file';
 import Preloader from './app/preloader';
 import VH from './app/polifill-vh';
 import './app/metaballs';
+
 // import './app/customballs';
+
+
 
 $(document).ready(function () {
 
@@ -29,6 +32,8 @@ $(document).ready(function () {
   Slider();
   Phones();
   Awards();
+
+
 
   $('[data-scrollto]').click(function(){
     $.scrollTo( $(this).attr('data-scrollto'), 1000);

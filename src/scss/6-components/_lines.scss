@@ -8,7 +8,7 @@
   height: 100%;
   z-index: 0;
   // padding: 0 20px;
-  will-change: transform;
+  // will-change: transform;
   .container-fluid{
     height: 100%;
     position: static;
@@ -48,7 +48,7 @@
   width: 100%;
   z-index: 0;
   padding: 0;
-  will-change: transform;
+  // will-change: transform;
   height: 100%;
   z-index: -1;
   > .container-fluid{

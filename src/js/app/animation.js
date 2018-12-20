@@ -119,6 +119,23 @@ function animation(){
     });
   });
 
+
+  $('.animate-angle-left-to-right').each(function(){
+    let t = $(this);
+    let animate = anime({
+      targets: this,
+      delay: 3000,
+      duration: 2000,
+      easing: 'linear',
+      translateX: [t.data('x') * -100 + '%', t.data('x') + '%'],
+      translateY: [t.data('y') * 3 + '%', t.data('y') + '%'],
+      loop: false,
+      // direction: 'reverse',
+      autoplay: true
+    });
+    console.log(t.data('x'), t.data('y'));
+  });
+
 }
 
 module.exports = animation;

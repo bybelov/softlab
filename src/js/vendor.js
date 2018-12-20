@@ -13,7 +13,7 @@ import 'three';
 // import 'three/examples/js/libs/stats.min.js';
 // import 'three/examples/js/libs/dat.gui.min.js';
 import 'three/examples/js/MarchingCubes.js';
-import 'three/examples/js/controls/OrbitControls.js';
+// import 'three/examples/js/controls/OrbitControls.js';
 
 import 'jquery-mousewheel';
 import 'jquery.maskedinput/src/jquery.maskedinput.js';
