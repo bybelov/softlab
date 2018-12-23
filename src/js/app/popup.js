@@ -2,13 +2,41 @@ import $ from 'jquery';
 import anime from 'animejs';
 
 
-function popup() {
+export default class Popup{
+  constructor(){
 
-  function popupOpen(){
+    this.open(this.openPopup);
+    this.close(this.closePopup);
+    this.closeESC(this.closePopup);
 
+  }
+
+  open(event){
+    $('.js-hamburger').on('click', function (e) {
+      e.preventDefault();
+      event();
+    });
+  }
+
+  close(event){
+    $('.js-popup-close').on('click', function (e) {
+      e.preventDefault();
+      event();
+    });
+  }
+
+  closeESC(event){
+    document.onkeydown = function(evt) {
+      var evt = evt || window.event;
+      if (evt.keyCode === 27) {
+        event();
+      }
+    };
+  }
+
+  openPopup(){
     $('.popup').addClass('show');
     $('html').css('overflow', 'hidden');
-    let animate;
     anime({
       targets: '.popup',
       opacity: [0 , 1],
@@ -18,7 +46,7 @@ function popup() {
       delay: 250,
       loop: false
     });
-    animate = anime({
+     anime({
       targets: '.popup__inner',
       opacity: [0, 1],
       translateX: ['-100%', 0],
@@ -33,10 +61,9 @@ function popup() {
     });
   }
 
-  function popupClose(){
+  closePopup(){
     $('.popup').css('overflow','hidden');
     $('html').css('overflow', 'auto');
-    let animate;
     anime({
       targets: '.popup',
       translateX: [0, '100%'],
@@ -46,7 +73,7 @@ function popup() {
       delay: 250,
       loop: false,
     });
-    animate = anime({
+    anime({
       targets: '.popup__inner',
       opacity: 0,
       translateX: '100%',
@@ -61,24 +88,4 @@ function popup() {
     });
   }
 
-  // popup window animation
-  $('.js-hamburger').on('click', function (e) {
-    e.preventDefault();
-    popupOpen();
-  });
-
-  $('.js-popup-close').on('click', function (e) {
-    e.preventDefault();
-    popupClose();
-  });
-
-  document.onkeydown = function(evt) {
-    var evt = evt || window.event;
-    if (evt.keyCode === 27) {
-      popupClose();
-    }
-  };
-
 }
-
-module.exports = popup;

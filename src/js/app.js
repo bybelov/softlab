@@ -1,17 +1,16 @@
 import './vendor';
 import $ from 'jquery';
-// import Tabs from './app/tabs';
-import Slide from './app/slider';
-// import Awards from './app/slider-awards';
-// import Phones from './app/slider-phones';
-// import Popup from './app/popup';
-// import Animation from './app/animation';
-// import Scroll from './app/scrollbar';
-// import HeaderSticky from './app/header-sticky';
-// import FormStates from './app/form-states';
-// import FormFile from './app/input-file';
-// import Preloader from './app/preloader';
-// import VH from './app/polifill-vh';
+import Tabs from './app/tabs';
+import Slider from './app/slider';
+import HeaderSticky from './app/header-sticky';
+import SliderAwards from './app/slider-awards';
+import SliderPhones from './app/slider-phones';
+import Popup from './app/popup';
+import Animation from './app/animation';
+import FormClassStates from './app/form-states';
+import CustomInputFile from './app/input-file';
+import Preloader from './app/preloader';
+import PolifillVh from './app/polifill-vh';
 import './app/metaballs.js';
 
 // import './app/customballs';
@@ -20,21 +19,17 @@ import './app/metaballs.js';
 
 $(document).ready(function () {
 
-  // VH();
-  // Preloader();
-  // Scroll();
-  // HeaderSticky();
-  // Animation();
-  // Tabs();
-  // Popup();
-  // FormStates();
-  // FormFile(document, window, 0);
-  new Slide();
-
-
-  // Phones();
-  // Awards();
-
+  new PolifillVh();
+  new Animation();
+  new Preloader();
+  new Tabs();
+  new Popup();
+  new FormClassStates();
+  new CustomInputFile('.file-input');
+  new HeaderSticky();
+  new Slider('.js-slider');
+  new SliderAwards('.js-awards');
+  new SliderPhones('.js-phone-screens');
 
 
   $('[data-scrollto]').click(function(){

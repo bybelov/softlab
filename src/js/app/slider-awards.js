@@ -1,9 +1,8 @@
-import $ from 'jquery';
 import Swiper from 'swiper/dist/js/swiper.js';
 
-function slider() {
-  if( $('.js-awards').length > 0 ){
-    var slider = new Swiper('.js-awards', {
+export default class SliderAwards{
+  constructor(selector){
+    this.slider = new Swiper( selector , {
       slidesPerView: 5,
       spaceBetween: 0,
       breakpoints: {
@@ -21,10 +20,5 @@ function slider() {
         }
       }
     });
-    return slider;
-  } else{
-    return false;
   }
-
 }
-module.exports = slider;

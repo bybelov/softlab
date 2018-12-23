@@ -2,12 +2,19 @@ import $ from 'jquery';
 import ScrollMagic from 'ScrollMagic';
 import anime from 'animejs';
 
-function animation(){
 
-  let controller = new ScrollMagic.Controller();
+export default class Animation{
+  constructor(){
+    this.controller = new ScrollMagic.Controller();
 
-  // draw svg icon
-  function drawSvg(element, time = 2000){
+    this.hoverSvg(this.drawSvg);
+    this.animateLeftToRight(this.controller, this.drawSvg);
+    this.animateBottomToTop(this.controller);
+    this.animateFadeIn(this.controller);
+    this.animateAngleLeftToTight();
+  }
+
+  drawSvg(element, time = 2000){
     // obj for array svg paths
     let obj = [];
     let paths = $(element).find('path');
@@ -30,112 +37,113 @@ function animation(){
     return lineDrawing;
   }
 
-  // hover animation
-  $('.animate-svg').hover(function(){
-    let thisElement = $(this);
-    drawSvg(thisElement, 500).play();
-  }, function(){
-
-  });
-
-  // animate left ro right
-  $('.animate-to-right').each(function(){
-    let t = $(this);
-    let icon = t.find('.animate-svg');
-    let animate = anime({
-      targets: this,
-      translateX: ['-100%', 0],
-      opacity: [0,1],
-      delay: 250,
-      duration: 1000,
-      easing: 'easeInOutQuart',
-      autoplay: false,
-      begin: function(anim) {
-        t.parent().css("overflow", "hidden");
-      },
-      complete: function(anim) {
-        t.parent().css("overflow", "visible");
-      }
+  hoverSvg(draw){
+    $('.animate-svg').hover(function(){
+      let thisElement = $(this);
+      draw(thisElement, 500).play();
     });
-    let scene = new ScrollMagic.Scene({
-      triggerElement: this,
-      triggerHook: 1
-    })
-    .addTo(controller)
-    .on("progress", function (event) {
-      drawSvg(icon, 2000).play();
-      animate.play();
-    });
-  });
+  }
 
+  animateLeftToRight(controller, draw){
+    $('.animate-to-right').each(function(){
+      let t = $(this);
+      let icon = t.find('.animate-svg');
+      let animate = anime({
+        targets: this,
+        translateX: ['-100%', 0],
+        opacity: [0,1],
+        delay: 250,
+        duration: 1000,
+        easing: 'easeInOutQuart',
+        autoplay: false,
+        begin: function(anim) {
+          t.parent().css("overflow", "hidden");
+        },
+        complete: function(anim) {
+          t.parent().css("overflow", "visible");
+        }
+      });
+      let scene = new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 1
+      })
+      .addTo(controller)
+      .on("progress", function (event) {
 
-  // animate bottom to top
-  $('.animate-to-top').each(function(){
+        draw(icon, 2000).play();
+        animate.play();
+      });
+    });
+  }
 
-    let t = $(this);
-    let animate = anime({
-      targets: this,
-      translateY: ['100%', 0],
-      opacity: [0,1],
-      delay: 250,
-      duration: 1000,
-      easing: 'easeInOutQuart',
-      autoplay: false,
-      begin: function(anim) {
-        t.parent().css("overflow", "hidden");
-      },
-      complete: function(anim) {
-        t.parent().css("overflow", "visible");
-      }
-    });
-    let scene = new ScrollMagic.Scene({
-      triggerElement: this.parentNode,
-      triggerHook: 1
-    })
-    .addTo(controller)
-    .on("progress", function (event) {
-      animate.play();
-    });
-  });
+  animateBottomToTop(controller){
+    $('.animate-to-top').each(function(){
 
-  // animate-fade-in
-  $('.animate-fade-in').each(function(){
-    let t = $(this);
-    let animate = anime({
-      targets: this,
-      opacity: [0,1],
-      delay: 250,
-      duration: 1000,
-      easing: 'linear',
-      autoplay: false
+      let t = $(this);
+      let animate = anime({
+        targets: this,
+        translateY: ['100%', 0],
+        opacity: [0,1],
+        delay: 250,
+        duration: 1000,
+        easing: 'easeInOutQuart',
+        autoplay: false,
+        begin: function(anim) {
+          t.parent().css("overflow", "hidden");
+        },
+        complete: function(anim) {
+          t.parent().css("overflow", "visible");
+        }
+      });
+      let scene = new ScrollMagic.Scene({
+        triggerElement: this.parentNode,
+        triggerHook: 1
+      })
+      .addTo(controller)
+      .on("progress", function (event) {
+        animate.play();
+      });
     });
-    let scene = new ScrollMagic.Scene({
-      triggerElement: this,
-      triggerHook: 1
-    })
-    .addTo(controller)
-    .on("progress", function (event) {
-      animate.play();
-    });
-  });
+  }
 
-
-  $('.animate-angle-left-to-right').each(function(){
-    let t = $(this);
-    let animate = anime({
-      targets: this,
-      delay: 3000,
-      duration: 2000,
-      easing: 'linear',
-      translateX: [t.data('x') * -100 + '%', t.data('x') + '%'],
-      translateY: [t.data('y') * 3 + '%', t.data('y') + '%'],
-      loop: false,
-      // direction: 'reverse',
-      autoplay: true
+  animateFadeIn(controller){
+    $('.animate-fade-in').each(function(){
+      let t = $(this);
+      let animate = anime({
+        targets: this,
+        opacity: [0,1],
+        delay: 250,
+        duration: 1000,
+        easing: 'linear',
+        autoplay: false
+      });
+      let scene = new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 1
+      })
+      .addTo(controller)
+      .on("progress", function (event) {
+        animate.play();
+      });
     });
-    console.log(t.data('x'), t.data('y'));
-  });
+  }
+
+  animateAngleLeftToTight(){
+    $('.animate-angle-left-to-right').each(function(){
+      let t = $(this);
+      let animate = anime({
+        targets: this,
+        delay: 3000,
+        duration: 2000,
+        easing: 'linear',
+        translateX: [t.data('x') * -100 + '%', t.data('x') + '%'],
+        translateY: [t.data('y') * 3 + '%', t.data('y') + '%'],
+        loop: false,
+        // direction: 'reverse',
+        autoplay: true
+      });
+      console.log(t.data('x'), t.data('y'));
+    });
+  }
 
 }
-
-module.exports = animation;

@@ -1,14 +1,12 @@
 import $ from 'jquery';
 import Swiper from 'swiper/dist/js/swiper.js';
 
-function slider() {
+export default class SliderPhone{
+  constructor(selector){
 
-
-  if($('.js-phone-screens').length > 0 ){
-
-    var width;
-    var sliderMask = $('.js-phone-screens .carousel__mask');
-    var slider = new Swiper('.js-phone-screens', {
+    this.width;
+    let sliderMask = $( selector + ' .carousel__mask');
+    this.slider = new Swiper(selector, {
 
       // nextButton: '.swiper-button-next',
       // prevButton: '.swiper-button-prev',
@@ -37,31 +35,28 @@ function slider() {
       },
       on: {
         init: function () {
-          width = this.slidesSizesGrid[0];
-          sliderMask.width(width);
+          this.width = this.slidesSizesGrid[0];
+          sliderMask.width(this.width);
+
+          this.slideTo(Math.floor( this.params.slidesPerView / 2 ));
         },
         resize: function () {
-          width = this.slidesSizesGrid[0];
-          sliderMask.width(width);
+          this.width = this.slidesSizesGrid[0];
+          sliderMask.width(this.width);
         }
       }
     });
   
-    var nbSlides = slider.params.slidesPerView;
-        slider.slideTo(Math.floor(nbSlides / 2));
-    
-    $('.js-phone-screens .swiper-slide').on('click', function(e){
+    this.next(this.slider, selector);
+
+  }
+
+  next(slider, selector){
+    $(selector + ' .swiper-slide').on('click', function(e){
       e.preventDefault();
-      // console.log($(this).index());
       slider.slideTo($(this).index());
       return false;
     });
-
-    return slider;
-
-  } else{
-    return false;
   }
 
 }
-module.exports = slider;

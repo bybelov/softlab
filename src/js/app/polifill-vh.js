@@ -1,15 +1,16 @@
-function polifillVh() {
-  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-  let vh = window.innerHeight * 0.01;
-  // Then we set the value in the --vh custom property to the root of the document
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+export default class PolifillVh{
+  constructor(){
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    this.vh = window.innerHeight * 0.01;
+    this.addVh = document.documentElement.style.setProperty('--vh', `${this.vh}px`);
+  }
 
-  // We listen to the resize event
-  window.addEventListener('resize', () => {
-    // We execute the same script as before
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
+  resize(){
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      this.vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${this.vh}px`);
+    });
+  }
 }
-
-module.exports = polifillVh;

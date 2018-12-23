@@ -1,10 +1,8 @@
 import $ from 'jquery';
 
-function preloader() {
-    
-    $(".preloader").delay(4000).fadeOut(1000);
-    $('.loader').delay(2000).fadeOut(500);
-    
+export default class Preloader{
+    constructor(){
+        this.preloader = $(".preloader").delay(4000).fadeOut(1000);
+        this.loader = $('.loader').delay(2000).fadeOut(500);
+    }
 }
-
-module.exports = preloader;

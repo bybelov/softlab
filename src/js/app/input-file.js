@@ -1,32 +1,28 @@
 import $ from 'jquery';
 
-function customFile(document, window, index) {
+export default class customInputFile{
+  constructor(selector){
+    this.custom(selector);
+  }
 
-  var inputs = $('.file-input');
-  if(inputs){
-    $.each(inputs, function(input){
+  custom(selector){
+    $(selector).each(function(){
 
-      var input = $(this);
-      var elFileName = input.parent().parent().find('.file-name');
+      let elFileName = $(this).parent().parent().find('.file-name');
   
-      input.on('change', function (e) {
+      $(this).on('change', function (e) {
   
-        var fileName = '';
+        let fileName = '';
         if (this.files && this.files.length > 1) {
           fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
         } else {
           fileName = e.target.value.split('\\').pop();
         }
-  
-        if (fileName) {
-          elFileName.val(fileName);
-        } else {
-          elFileName.val("");
-        }
+        
+        (fileName ? elFileName.val(fileName) : elFileName.val(""));
   
       });
     });
   }
-}
 
-module.exports = customFile;
+}
