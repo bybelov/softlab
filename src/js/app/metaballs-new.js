@@ -71,7 +71,7 @@ export default class Metaballs {
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.container = document.getElementById(selector);
-    this.container.appendChild(this.renderer.domElement);
+    (this.container ? this.container.appendChild(this.renderer.domElement) : false );
     this.camera = new THREE.PerspectiveCamera(
       45,
       window.innerWidth / window.innerHeight,

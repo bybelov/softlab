@@ -13,28 +13,14 @@
       <div class="slider__item" {% if item.video %} id="video-{{ loop.index }}" data-vide-bg="mp4: {{ item.video }}, webm: {{ item.video }}, ogv: {{ item.video }}, poster: {{ item.videoFallbackImage }}"
         data-vide-options="loop: true, muted: true" {% endif %}>
 
-        {% if loop.index == 2 %}
-        <div class="slider__bg">
-          <div class="sl">
-            <img class="sl-7" src="images/demo/slider/ipad-1.png" alt="">
-            <img class="sl-1" src="images/demo/slider/macbook-1.png" alt="">
-            <img class="sl-2" src="images/demo/slider/imac.png" alt="">
-            <img class="sl-3" src="images/demo/slider/iphone-1.png" alt="">
-            <img class="sl-4 animate-angle-left-to-right" src="images/demo/slider/ipad.png" data-x="3" data-y="184" alt="">
-            <img class="sl-5" src="images/demo/slider/macbook.png" alt="">
-            <img class="sl-6" src="images/demo/slider/iphone.png" alt="">
 
+          {% if item.bg %}
+          <div class="slider__bg">
+            <div class="slider__picture-wrapper">
+              <img class="slider__picture" src="{{ item.bg }}.png" srcset="{{ item.bg }}@2x.png 2x" alt="">
+            </div>
           </div>
-        </div>
-        {% else %}
-        {% if item.bg %}
-        <div class="slider__bg">
-          <div class="slider__picture-wrapper">
-            <img class="slider__picture" src="{{ item.bg }}.png" srcset="{{ item.bg }}@2x.png 2x" alt="">
-          </div>
-        </div>
-        {% endif %}
-        {% endif %}
+          {% endif %}
 
         <div class="container-fluid">
           <div class="slider__title">
