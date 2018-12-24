@@ -3,6 +3,7 @@ export default class PolifillVh{
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     this.vh = window.innerHeight * 0.01;
     this.addVh = document.documentElement.style.setProperty('--vh', `${this.vh}px`);
+    this.resize();
   }
 
   resize(){

@@ -3,6 +3,64 @@ import * as THREE from 'three';
 
 export default class Metaballs {
   constructor(selector) {
+
+    this.metaController = {
+
+      axes : false,
+      //Metaball simulation
+      speed : 1,
+      numBlobs : 8,
+      resolution : 70,
+      isolation : 140,
+      positionX : 1,
+      positionY : 0,
+      positionZ : 0,
+  
+      //Metaball material
+      metaColor : "#ff00e5",
+      metaSpec : "#090909",
+      metaShine : 160,
+  
+      // Camera position
+      cameraPositionX : 0,
+      cameraPositionY : 0,
+      cameraPositionZ : 3,
+  
+      // Lights
+      // Ambient Color light
+      ambientColor : "#080808",
+      ambientIntensity : 1,
+  
+      // SpotLight
+      spotColor : "#ffffff",
+      spotPositionX : 1,
+      spotPositionY : -370,
+      spotPositionZ : 55,
+      spotRotationX : 0,
+      spotRotationY : 1,
+      spotRotationZ : 2,
+      spotVisible : false,
+      spotHelperVisible : false,
+  
+      //Point light color
+      pointVisible : true,
+      pointIntensity : 1,
+      pointDistance : 0,
+      pointPositionX : 0,
+      pointPositionY : 0,
+      pointPositionZ : 3,
+      lhue : 1,
+      lsaturation : 0.9,
+      llightness : 0.55,
+  
+      //Directional light orientation
+      dLightVisible : true,
+      dLightIntensity : 1,
+      dLightX : -1,
+      dLightY : 1,
+      dLightZ : 1
+    };
+
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer({
       alpha: true
@@ -12,7 +70,7 @@ export default class Metaballs {
     this.renderer.setSize(window.innerWidth, window.innerWidth);
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    this.container = document.getElementById('container');
+    this.container = document.getElementById(selector);
     this.container.appendChild(this.renderer.domElement);
     this.camera = new THREE.PerspectiveCamera(
       45,
@@ -38,64 +96,6 @@ export default class Metaballs {
     this.resize();
     this.addObjects();
     this.animate();
-  }
-
-  metaController() {
-
-    this.axes = false;
-
-    //Metaball simulation
-    this.speed = 1;
-    this.numBlobs = 8;
-    this.resolution = 70;
-    this.isolation = 140;
-    this.positionX = 1;
-    this.positionY = 0;
-    this.positionZ = 0;
-
-    //Metaball material
-    this.metaColor = "#ff00e5";
-    this.metaSpec = "#090909";
-    this.metaShine = 160;
-
-    // Camera position
-    this.cameraPositionX = 0;
-    this.cameraPositionY = 0;
-    this.cameraPositionZ = 3;
-
-    // Lights
-    // Ambient Color light
-    this.ambientColor = "#080808";
-    this.ambientIntensity = 1;
-
-    // SpotLight
-    this.spotColor = "#ffffff";
-    this.spotPositionX = 1;
-    this.spotPositionY = -370;
-    this.spotPositionZ = 55;
-    this.spotRotationX = 0;
-    this.spotRotationY = 1;
-    this.spotRotationZ = 2;
-    this.spotVisible = false;
-    this.spotHelperVisible = false;
-
-    //Point light color
-    this.pointVisible = true;
-    this.pointIntensity = 1;
-    this.pointDistance = 0;
-    this.pointPositionX = 0;
-    this.pointPositionY = 0;
-    this.pointPositionZ = 3;
-    this.lhue = 1;
-    this.lsaturation = 0.9;
-    this.llightness = 0.55;
-
-    //Directional light orientation
-    this.dLightVisible = true;
-    this.dLightIntensity = 1;
-    this.dLightX = -1;
-    this.dLightY = 1;
-    this.dLightZ = 1;
   }
 
   setupResize() {
@@ -173,6 +173,8 @@ export default class Metaballs {
     );
     this.pointLight.visible = this.metaController.pointVisible;
     this.scene.add(this.pointLight);
+
+
 
     // metaball
     let metaMat = new THREE.MeshPhongMaterial({

@@ -11,7 +11,7 @@ import FormClassStates from './app/form-states';
 import CustomInputFile from './app/input-file';
 import Preloader from './app/preloader';
 import PolifillVh from './app/polifill-vh';
-import './app/metaballs.js';
+import Metaballs from './app/metaballs-new.js';
 
 // import './app/customballs';
 
@@ -19,6 +19,7 @@ import './app/metaballs.js';
 
 $(document).ready(function () {
 
+  new Metaballs('container');
   new PolifillVh();
   new Animation();
   new Preloader();
@@ -31,11 +32,9 @@ $(document).ready(function () {
   new SliderAwards('.js-awards');
   new SliderPhones('.js-phone-screens');
 
-
   $('[data-scrollto]').click(function(){
     $.scrollTo( $(this).attr('data-scrollto'), 1000);
   });
-  
 
   // phone mask
   $(".tel").mask("+7 (999) 999-99-99");

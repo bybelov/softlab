@@ -56,19 +56,19 @@ export default class Animation{
         duration: 1000,
         easing: 'easeInOutQuart',
         autoplay: false,
-        begin: function(anim) {
+        begin: function() {
           t.parent().css("overflow", "hidden");
         },
-        complete: function(anim) {
+        complete: function() {
           t.parent().css("overflow", "visible");
         }
       });
-      let scene = new ScrollMagic.Scene({
+      new ScrollMagic.Scene({
         triggerElement: this,
         triggerHook: 1
       })
       .addTo(controller)
-      .on("progress", function (event) {
+      .on("progress", function () {
 
         draw(icon, 2000).play();
         animate.play();
@@ -88,19 +88,19 @@ export default class Animation{
         duration: 1000,
         easing: 'easeInOutQuart',
         autoplay: false,
-        begin: function(anim) {
+        begin: function() {
           t.parent().css("overflow", "hidden");
         },
-        complete: function(anim) {
+        complete: function() {
           t.parent().css("overflow", "visible");
         }
       });
-      let scene = new ScrollMagic.Scene({
+      new ScrollMagic.Scene({
         triggerElement: this.parentNode,
         triggerHook: 1
       })
       .addTo(controller)
-      .on("progress", function (event) {
+      .on("progress", function () {
         animate.play();
       });
     });
@@ -108,7 +108,6 @@ export default class Animation{
 
   animateFadeIn(controller){
     $('.animate-fade-in').each(function(){
-      let t = $(this);
       let animate = anime({
         targets: this,
         opacity: [0,1],
@@ -117,12 +116,12 @@ export default class Animation{
         easing: 'linear',
         autoplay: false
       });
-      let scene = new ScrollMagic.Scene({
+      new ScrollMagic.Scene({
         triggerElement: this,
         triggerHook: 1
       })
       .addTo(controller)
-      .on("progress", function (event) {
+      .on("progress", function () {
         animate.play();
       });
     });
@@ -131,7 +130,7 @@ export default class Animation{
   animateAngleLeftToTight(){
     $('.animate-angle-left-to-right').each(function(){
       let t = $(this);
-      let animate = anime({
+      anime({
         targets: this,
         delay: 3000,
         duration: 2000,
@@ -142,7 +141,7 @@ export default class Animation{
         // direction: 'reverse',
         autoplay: true
       });
-      console.log(t.data('x'), t.data('y'));
+      // console.log(t.data('x'), t.data('y'));
     });
   }
 
