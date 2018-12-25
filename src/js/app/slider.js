@@ -1,19 +1,20 @@
 import $ from 'jquery';
 import Swiper from 'swiper/dist/js/swiper.js';
-
+import Metaballs from './metaballs-new';
 export default class Slider{
   constructor(selector){
 
     let titles = new Array();
     let themes = new Array();
+    this.meta = new Metaballs('container');
 
     this.createArray(titles, themes, selector);
 
     this.slider = new Swiper( selector , {
       spaceBetween: 0,
-      loop: true,
+      loop: false,
       slidesPerView: 1,
-      effect: 'slide',
+      effect: 'fade',
       pagination: {
         el: '.js-slider-pagination',
         clickable: true,
@@ -47,6 +48,10 @@ export default class Slider{
 
   slideChange(themes){
     this.slider.on('slideChange', function () {
+      // console.log(balls.meta);
+      // balls.meta.matrixAutoUpdate  = false;
+      // balls.meta.updateMatrix();
+
       let index = this.activeIndex;
       let getTheme = themes[index - 1];
       (getTheme ? $('body').addClass('slider--theme-light') : $('body').removeClass('slider--theme-light'));

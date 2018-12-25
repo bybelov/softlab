@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ru" class="no-js">
+
 <head>
   <meta charset="utf-8">
   <title>{% if page.title %}{{ page.title }}{% else %}Template{% endif %}</title>
@@ -15,17 +16,22 @@
   <script src="js/vendor.js?v2"></script>
   <script src="js/app.js?v2"></script>
 </head>
-<body class="{{ page.classes }}">
-<!-- BEGIN page -->
-<div class="page">
-  {% include "templates/_header.html" %}
-  {% block content %}{% endblock %}
-  {% include "templates/_footer.html" %}
-  {% include "templates/_popup.html" %}
-</div>
 
-<!-- END page -->
-{% include "templates/_preloader.html" %}
-<script>loadSVG('images/svg-sprite.svg', 1)</script>
+<body class="{{ page.classes }}">
+  <!-- BEGIN page -->
+
+  <div class="page">
+    {% include "templates/_header.html" %}
+    {% block content %}{% endblock %}
+    {% include "templates/_footer.html" %}
+    {% include "templates/_popup.html" %}
+  </div>
+
+  <!-- END page -->
+  {% include "templates/_preloader.html" %}
+  <script>
+    loadSVG('images/svg-sprite.svg', 1)
+  </script>
 </body>
+
 </html>

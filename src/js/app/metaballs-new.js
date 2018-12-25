@@ -200,9 +200,9 @@ export default class Metaballs {
     let lightness = 70;
 
     if (mx <= 0) {
-      hue = mx * 90 + 350;
+      hue = mx * 90 + 330;
     } else {
-      hue = 350 - mx * 90;
+      hue = 330 - mx * 90;
     }
     let newColor = String("hsl(" + (Math.abs(Math.round(hue))) + "," + saturate + "%" + "," + lightness + "%" + ")");
     // console.log(newColor);
@@ -222,8 +222,8 @@ export default class Metaballs {
     strength = 2 / ((Math.sqrt(numblobs) - 1) / 4 + 1);
 
     for (i = 0; i < numblobs; i++) {
-      ballx = Math.sin(i + 1.26 * time / 1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.34 + 0.5;
-      bally = Math.sin(Math.sin(i + 3.52 * time / 1.5 * Math.sin(1.22 + 0.1424 * i))) * my * 0.43 + 0.5;
+      ballx = Math.sin(i + 1.26 * time / 1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * (Math.cos(mx) - .1) * 0.3 + 0.5;
+      bally = Math.sin(Math.sin(i + 3.52 * time / 1.5 * Math.sin(1.22 + 0.1424 * i))) * (Math.cos(my) - 0.2) * 0.43 + 0.5;
       ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
       this.colorChanger(mx, object);
       object.addBall(ballx, bally, ballz, strength, subtract);
@@ -264,8 +264,8 @@ export default class Metaballs {
       this.meta,
       this.time,
       this.metaController.numBlobs,
-      this.mouse.x,
-      this.mouse.y
+      this.mouse.x/1.2,
+      this.mouse.y/1.2
     );
 
     this.renderer.clear();
