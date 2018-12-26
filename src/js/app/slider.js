@@ -11,6 +11,7 @@ export default class Slider{
     this.createArray(titles, themes, selector);
 
     this.slider = new Swiper( selector , {
+      parallax:true,
       spaceBetween: 0,
       loop: false,
       slidesPerView: 1,
@@ -25,7 +26,8 @@ export default class Slider{
       on: {
         init: function () {
           let index = this.activeIndex;
-          let getTheme = themes[index - 1];
+          // let getTheme = themes[index - 1];
+          let getTheme = themes[index];
           (getTheme ? $('body').addClass('slider--theme-light') : $('body').removeClass('slider--theme-light'));
         },
       }
@@ -53,7 +55,8 @@ export default class Slider{
       // balls.meta.updateMatrix();
 
       let index = this.activeIndex;
-      let getTheme = themes[index - 1];
+      // let getTheme = themes[index - 1];
+      let getTheme = themes[index];
       (getTheme ? $('body').addClass('slider--theme-light') : $('body').removeClass('slider--theme-light'));
     });
   }

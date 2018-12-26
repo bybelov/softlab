@@ -55,17 +55,6 @@
 			"videoFallbackImage": "/images/demo/video-fallback",
 			"link": "#video",
 			"bg": ""
-		},
-		{
-			"title": "Брендинг",
-			"data" : "Брендинг",
-			"gradient": "",
-			"color": "#464d53",
-			"theme": "",
-			"link": "#branding",
-			"video": "",
-			"videoFallbackImage":"",
-			"bg": ""
 		}
 	],
 	"about": {
