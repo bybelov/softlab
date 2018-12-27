@@ -34,6 +34,7 @@ export default class Slider{
     });
 
     this.slideChange(themes);
+    this.resize();
   
   }
 
@@ -59,6 +60,62 @@ export default class Slider{
       let getTheme = themes[index];
       (getTheme ? $('body').addClass('slider--theme-light') : $('body').removeClass('slider--theme-light'));
     });
+  }
+
+  resize(){
+    this.slider.on('resize', function(){
+      let ratio = 0;
+      let maxWidth = 1903;
+      let maxHeight = 969;
+
+      let currentWidth,
+          currentHeight;
+
+      let index = this.activeIndex;
+      let width = this.width;
+      let height = this.height;
+      let sl = this.slides[index].getElementsByClassName('sl');
+      if(sl.length > 0){
+
+        if(width < maxWidth){
+          ratio =  width / maxWidth
+
+          currentWidth = maxWidth * ratio;
+          currentHeight = maxHeight * ratio;
+
+        }
+        if(height < maxHeight){
+          ratio =  height / maxHeight; // get ratio for scaling image
+          
+          currentWidth = maxWidth * ratio;
+          currentHeight = maxHeight * ratio;
+        }
+
+        console.log("currentWidth = " + currentWidth + 
+                    "/ currentHeight = " + currentHeight,
+                    " width = " + width + " height = " + height + " / " + 
+                    " scale = " + ratio );
+        
+
+        // let max = Math.max(width, height);
+
+        // if(width > height){
+        //   scale = scale * K / (width/height);
+        // }
+        // else{
+        //   scale = scale * (width/height) / K;
+        // }
+
+        let styles = sl[0].style;
+        styles.transform = "scale(" + ratio + ")";
+        // styles.right = "-" + translateX + "px";
+
+        // console.log(styles);
+        // console.log(scale);
+      }
+      // let sl = this.find('.slider__bg .sl');
+
+    })
   }
 
 }
