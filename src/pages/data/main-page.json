@@ -32,7 +32,79 @@
 			"link": "/sites.html",
 			"video": "",
 			"videoFallbackImage":"",
-			"bg": "images/demo/slider/site-clay"
+			"bg": "images/demo/slider/site-clay",
+			"images": [
+				{
+					"zIndex": 0,
+					"right": -76,
+					"top": 514,
+					"parallaxX": "-100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/ipad-1.png"
+				},
+				{
+					"zIndex": 1,
+					"right": -190,
+					"top": -28,
+					"parallaxX": "-50%",
+					"parallaxY": "50%",
+					"opacity": 0,
+					"duration": 1500,
+					"image": "images/demo/slider/imac.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 584,
+					"top": 308,
+					"parallaxX": "-300%",
+					"parallaxY": "300%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/iphone-1.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 494,
+					"top": 472,
+					"parallaxX": "100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1400,
+					"image": "images/demo/slider/ipad.png"
+				},
+				{
+					"zIndex": 2,
+					"right": 208,
+					"top": 486,
+					"parallaxX": "-100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1200,
+					"image": "images/demo/slider/macbook.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 636,
+					"top": 784,
+					"parallaxX": "100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1300,
+					"image": "images/demo/slider/iphone.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 572,
+					"top": -50,
+					"parallaxX": "200%",
+					"parallaxY": "-200%",
+					"opacity": 0,
+					"duration": 1200,
+					"image": "images/demo/slider/macbook-1.png"
+				}
+			]
 		},
 		{
 			"title": "Разрабатываем<br>приложения<br>финтех сегмента",
@@ -43,7 +115,129 @@
 			"link": "#app",
 			"video": "",
 			"videoFallbackImage":"",
-			"bg": "images/demo/slider/app-clay"
+			"bg": "images/demo/slider/app-clay",
+			"images": [
+				{
+					"zIndex": 1,
+					"right": 548,
+					"top": 180,
+					"parallaxX": "0",
+					"parallaxY": "100%",
+					"opacity": 0,
+					"duration": 1500,
+					"image": "images/demo/slider/1.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 274,
+					"top": 336,
+					"parallaxX": "100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/2.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 444,
+					"top": 520,
+					"parallaxX": "100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1200,
+					"image": "images/demo/slider/3.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 272,
+					"top": 700,
+					"parallaxX": "100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/4.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 284,
+					"top": 52,
+					"parallaxX": "-100%",
+					"parallaxY": "100%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/5.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 590,
+					"top": 154,
+					"parallaxX": "100%",
+					"parallaxY": "100%",
+					"opacity": 0,
+					"duration": 1200,
+					"image": "images/demo/slider/6.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 584,
+					"top": 798,
+					"parallaxX": "100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1500,
+					"image": "images/demo/slider/7.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 100,
+					"top": 518,
+					"parallaxX": "-100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1200,
+					"image": "images/demo/slider/9.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 598,
+					"top": -48,
+					"parallaxX": "100%",
+					"parallaxY": "100%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/10.png"
+				},
+				{
+					"zIndex": 0,
+					"right": 107,
+					"top": 156,
+					"parallaxX": "-100%",
+					"parallaxY": "100%",
+					"opacity": 0,
+					"duration": 1200,
+					"image": "images/demo/slider/11.png"
+				},
+				{
+					"zIndex": 0,
+					"right": -68,
+					"top": 338,
+					"parallaxX": "-100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1000,
+					"image": "images/demo/slider/12.png"
+				},
+				{
+					"zIndex": 0,
+					"right": -76,
+					"top": 702,
+					"parallaxX": "-100%",
+					"parallaxY": "-100%",
+					"opacity": 0,
+					"duration": 1500,
+					"image": "images/demo/slider/13.png"
+				}
+			]
 		},
 		{
 			"title": "Производим<br>потрясающие<br>презентации",
@@ -178,7 +372,7 @@
 	],
 	"award":{
 		"title": "Награды",
-		"image": "images/combined-shape",
+		"image": "images/demo/combined-shape",
 		"count": "12",
 		"nomination": "Site of the Day"
 	},

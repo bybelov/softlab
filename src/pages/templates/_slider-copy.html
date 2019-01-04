@@ -1,0 +1,91 @@
+<div class="swiper-container slider js-slider">
+  {% include "./_lines.html" %}
+  {% include "./_pluses4.html" %}
+  <div class="swiper-wrapper">
+    {% for item in slider %}
+    <div class="swiper-slide" data-title="{{ item.data }}" data-theme="{{ item.theme }}" {% if item.color %} style="background: {{ item.color }}"
+      {% endif %}>
+      {% if item.canvas == true %}
+      <div id="container"></div>
+      {% endif %}
+      <div class="slider__item" {% if item.video %} id="video-{{ loop.index }}" data-vide-bg="mp4: {{ item.video }}, webm: {{ item.video }}, ogv: {{ item.video }}, poster: {{ item.videoFallbackImage }}"
+        data-vide-options="loop: true, muted: true" {% endif %}>
+        {% if loop.index == 2 %}
+        <div class="slider__bg">
+          <div class="sl">
+            <img class="sl-1" src="images/demo/slider/ipad-1.png" alt="" 
+              data-swiper-parallax-x="-100%" 
+              data-swiper-parallax-y="-100%" 
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1000">
+            <img class="sl-2" src="images/demo/slider/imac.png" alt="" 
+              data-swiper-parallax-x="-50%" 
+              data-swiper-parallax-y="50%"
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1500">
+            <img class="sl-3" src="images/demo/slider/iphone-1.png" alt="" 
+              data-swiper-parallax-x="-300%" 
+              data-swiper-parallax-y="300%" 
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1000">
+            <img class="sl-4" src="images/demo/slider/ipad.png" alt="" 
+              data-swiper-parallax-x="100%" 
+              data-swiper-parallax-y="-100%%" 
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1400">
+            <img class="sl-5" src="images/demo/slider/macbook.png" alt="" 
+              data-swiper-parallax-x="-100%" 
+              data-swiper-parallax-y="-100%" 
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1200">
+            <img class="sl-6" src="images/demo/slider/iphone.png" alt="" 
+              data-swiper-parallax-x="100%" 
+              data-swiper-parallax-y="-100%" 
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1300">
+            <img class="sl-7" src="images/demo/slider/macbook-1.png" alt="" 
+              data-swiper-parallax-x="200%" 
+              data-swiper-parallax-y="-200%" 
+              data-swiper-parallax-opacity="0" 
+              data-swiper-parallax-duration="1200">
+          </div>
+        </div>
+        {% else %}
+          {% if item.bg %}
+          <div class="slider__bg">
+            <div class="slider__picture-wrapper">
+              <img class="slider__picture" src="{{ item.bg }}.png" srcset="{{ item.bg }}@2x.png 2x" alt="">
+            </div>
+          </div>
+          {% endif %}
+        {% endif %}
+
+        <div class="container-fluid">
+          <div class="slider__title" data-swiper-parallax="-100"data-swiper-parallax-opacity="0"  data-swiper-parallax-duration="600">
+            {{ item.title | safe }}
+            {% if item.link %}
+            <a href="{{ item.link }}" class="slider__link" data-swiper-parallax="-100"data-swiper-parallax-opacity="0"  data-swiper-parallax-duration="600">
+              <svg class="svg-icon icon-back">
+                <use xlink:href="#back"></use>
+              </svg>
+            </a>
+            {% endif %}
+          </div>
+          <div class="js-slider-pagination swiper-pagination" data-swiper-parallax-opacity="0"></div>
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="slider-footer">
+    <div class="container-fluid">
+      <div class="slider-scroll" data-scrollTo="#mainContent">
+        <svg class="svg-icon icon-mouse">
+          <use xlink:href="#mouse"></use>
+        </svg>
+      </div>
+      {% include './_social-link.html' %}
+    </div>
+  </div>
+</div>

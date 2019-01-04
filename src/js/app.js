@@ -1,6 +1,7 @@
 import './vendor';
 import $ from 'jquery';
 import Init from './app/init';
+import './app/slider';
 
 $(document).ready(function () {
 

@@ -1,257 +1,278 @@
 import * as THREE from 'three';
+//let OrbitControls = require('three-orbit-controls')(THREE);
 
-// import {settingGui} from './metaball-gui';
+export default class Metaballs {
+  constructor(selector) {
 
-var SCREEN_WIDTH = window.innerWidth;
-var SCREEN_HEIGHT = window.innerHeight;
-var container;
-var camera, scene, renderer;
-var spotLight, light, pointLight, ambientLight;
-var meta, metaMat, resolution, numBlobs;
-var time = 0;
+    this.metaController = {
 
-// объект отслеживания времени
-var clock = new THREE.Clock();
-var mouse = new THREE.Vector2();
-
-// SETTINGS DEFAULT
-var metaController = new function(){
-  // Axes
-  this.axes = false;
-
-  //Metaball simulation
-	this.speed = 1;
-	this.numBlobs = 8;
-	this.resolution = 70;
-  this.isolation = 140;
-  this.positionX = 1;
-  this.positionY = 0;
-  this.positionZ = 0;
-
-  //Metaball material
-  this.metaColor = "#ff00e5";
-  this.metaSpec = "#090909";
-  this.metaShine = 160;
-
-  // Camera position
-  this.cameraPositionX = 0;
-  this.cameraPositionY = 0;
-  this.cameraPositionZ = 3;
-
-  // Lights
-  // Ambient Color light
-  this.ambientColor = "#080808";
-  this.ambientIntensity = 1;
-
-  // SpotLight
-  this.spotColor = "#ffffff";
-  this.spotPositionX = 1;
-  this.spotPositionY = -370;
-  this.spotPositionZ = 55;
-  this.spotRotationX = 0;
-  this.spotRotationY = 1;
-  this.spotRotationZ = 2;
-  this.spotVisible = false;
-  this.spotHelperVisible = false;
-
-  //Point light color
-  this.pointVisible = true;
-  this.pointIntensity = 1;
-  this.pointDistance = 0;
-  this.pointPositionX = 0;
-  this.pointPositionY = 0;
-  this.pointPositionZ = 3;
-  this.lhue = 1;
-  this.lsaturation =  0.9;
-  this.llightness = 0.55;
-
-  //Directional light orientation
-  this.dLightVisible = true;
-  this.dLightIntensity = 1;
-  this.dLightX = -1;
-  this.dLightY = 1;
-  this.dLightZ = 1;
-}
-
-window.onload = function () {
-  init();
-}
-
-
-
-function init() {
-
-  container = document.getElementById('container');
-
-  // SCENE
-  scene = new THREE.Scene();
-
-
-  // CAMERA
-  camera = new THREE.PerspectiveCamera(45, SCREEN_WIDTH / SCREEN_HEIGHT, 0.1, 3000);
-  camera.position.set( metaController.cameraPositionX, metaController.cameraPositionY, metaController.cameraPositionZ);
-	camera.lookAt(scene.position);
-
-  // LIGHTS
-
-  // Глобальный свет
-  ambientLight = new THREE.AmbientLight(metaController.ambientColor, metaController.ambientIntensity);
-  scene.add(ambientLight);
-
-	// Источник света (прожектор)
-  spotLight = new THREE.SpotLight(metaController.spotColor);
-  spotLight.position.set( metaController.spotPositionX, metaController.spotPositionY, metaController.spotPositionZ);
-  spotLight.visible = metaController.spotVisible;
-  scene.add(spotLight);
-
-  // Солнечный свет, бесконечный
-  light = new THREE.DirectionalLight(0xffffff, metaController.dLightIntensity);
-  light.position.set(metaController.dLightX, metaController.dLightY, metaController.dLightZ);
-  scene.add(light);
-
-  // Точечный свет 
-  pointLight = new THREE.PointLight( 0xff3300 );
-  pointLight.position.set( metaController.pointPositionX, metaController.pointPositionY, metaController.pointPositionZ );
-  pointLight.visible = metaController.pointVisible;
-  scene.add( pointLight );
-
-  // METABALLS
-  // Материал для шариков
-  metaMat = new THREE.MeshPhongMaterial({
-              color: metaController.metaColor,
-              specular: metaController.metaSpec,
-              shininess: metaController.metaShine
-            });
-  meta = new THREE.MarchingCubes(300, metaMat, true, true);
-
-  meta.position.set(metaController.positionX, metaController.positionY, metaController.positionZ);
-  // meta.scale.set(100, 100, 100);
-  scene.add(meta);
-
-  // RENDERER
-  renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setClearColor(0xffffff, 0);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-  // Скажим рендереру, что мы хотим использовать тени на сцене
-	renderer.shadowMap.enabled = true;
-	// Добавим мягкости теням
-	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  // добавим канвас рендерер в наш контейнер #container
-  if(container){
-    container.appendChild(renderer.domElement);
-  }
+      axes : false,
+      //Metaball simulation
+      speed : 1,
+      numBlobs : 8,
+      resolution : 70,
+      isolation : 140,
+      positionX : 1,
+      positionY : 0,
+      positionZ : 0,
   
-
-  var axes = new THREE.AxesHelper( 200, 200, 200 );
-      axes.visible = metaController.axes;
-  scene.add(axes);
-
-  animate();
-
-  // EVENTS
-  window.addEventListener( 'mousemove', onMouseMove, false );
-  document.addEventListener( 'touchmove', onTouchMove, false );
-  window.addEventListener('resize', onWindowResize, false);
-
-  // SETTINGS
-  // settingGui(metaController);
-}
-
-function onWindowResize(event) {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-var colorChanger = function colorChangerF(mx, object) {
-  var hue;
-  var saturate = 100;
-  var lightness = 70;
-
-  if(mx <= 0){
-    hue = mx * 90 + 350;
-  }
-  else{
-    hue = 350 - mx * 90;
-  }
-  var newColor = String("hsl(" + ( Math.abs(Math.round(hue))) + "," + saturate + "%" + "," + lightness + "%" + ")");
-  // console.log(newColor);
-  object.material = new THREE.MeshPhongMaterial( { color: newColor } );
-}
-
-// this controls content of marching cubes voxel field
-function updateCubes(object, time, numblobs, mx, my) {
-
-  object.reset();
-
-  // fill the field with some metaballs
-  var i, ballx, bally, ballz, subtract, strength;
-  subtract = 12;
-  strength = 2 / ((Math.sqrt(numblobs) - 1) / 4 + 1);
-
-  for (i = 0; i < numblobs; i++) {
-
-    mx = mouse.x;
-    my = mouse.y;
-
-    ballx = Math.sin(i + 1.26 * time/1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * mx * 0.34 + 0.5;
-    bally = Math.sin(Math.sin(i + 3.52 * time/1.5 * Math.sin(1.22 + 0.1424 * i))) * my * 0.43 + 0.5;
-    ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
-
-    colorChanger(mouse.x, object);
-    object.addBall(ballx, bally, ballz, strength, subtract);
-
-  }
-}
-
-// ANIMATE
-function animate() {
-  requestAnimationFrame(animate);
-  render();
-}
-
-// RENDER
-function render() {
-
-  // изменение в секундах Текущее минус oldTime (обычно равно около 0.015 )
-  var delta = clock.getDelta(); 
-
-  time += delta * metaController.speed * 0.5;
-
-  pointLight.position.x = mouse.x * 3;
-  pointLight.position.y = mouse.y * 3;
-
-  // Metaball simulation GUI
-  resolution = metaController.resolution;
-  meta.init(Math.floor(resolution));
+      //Metaball material
+      metaColor : "#ff00e5",
+      metaSpec : "#090909",
+      metaShine : 160,
   
-  // position metaballs
-  // meta.position.set(metaController.positionX, metaController.positionY, metaController.positionZ);
+      // Camera position
+      cameraPositionX : 0,
+      cameraPositionY : 0,
+      cameraPositionZ : 3,
+  
+      // Lights
+      // Ambient Color light
+      ambientColor : "#080808",
+      ambientIntensity : 1,
+  
+      // SpotLight
+      spotColor : "#ffffff",
+      spotPositionX : 1,
+      spotPositionY : -370,
+      spotPositionZ : 55,
+      spotRotationX : 0,
+      spotRotationY : 1,
+      spotRotationZ : 2,
+      spotVisible : false,
+      spotHelperVisible : false,
+  
+      //Point light color
+      pointVisible : true,
+      pointIntensity : 1,
+      pointDistance : 0,
+      pointPositionX : 0,
+      pointPositionY : 0,
+      pointPositionZ : 3,
+      lhue : 1,
+      lsaturation : 0.9,
+      llightness : 0.55,
+  
+      //Directional light orientation
+      dLightVisible : true,
+      dLightIntensity : 1,
+      dLightX : -1,
+      dLightY : 1,
+      dLightZ : 1
+    };
 
-  // lights
-  light.position.set( metaController.dLightX, metaController.dLightY, metaController.dLightZ );
-  light.position.normalize();
+    this.scene = new THREE.Scene();
+    this.renderer = new THREE.WebGLRenderer({
+      alpha: true
+    });
+    this.renderer.setClearColor(0xffffff, 0);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(window.innerWidth, window.innerWidth);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.container = document.getElementById(selector);
+    (this.container ? this.container.appendChild(this.renderer.domElement) : false );
+    this.camera = new THREE.PerspectiveCamera(
+      45,
+      window.innerWidth / window.innerHeight,
+      0.01, 3000
+    );
+    this.camera.position.set(
+      this.metaController.cameraPositionX,
+      this.metaController.cameraPositionY,
+      this.metaController.cameraPositionZ
+    );
 
-  pointLight.color.setHSL( metaController.lhue, metaController.lsaturation, metaController.llightness );
+    // объект отслеживания времени
+    this.clock = new THREE.Clock();
+    this.mouse = new THREE.Vector2();
+    // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.time = 0;
 
-  updateCubes(meta, time, metaController.numBlobs, mouse.x, mouse.y);
+    this.setupResize();
+    this.setupMouseMove();
+    // this.setupTouchMove();
 
-  renderer.clear();
-  renderer.render(scene, camera);
+    this.resize();
+    this.addObjects();
+    this.animate();
+  }
 
-}
+  setupResize() {
+    window.addEventListener('resize', this.resize.bind(this));
+  }
 
-function onMouseMove( event ) {
-	// calculate mouse position in normalized device coordinates
-	// (-1 to +1) for both components
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-}
-function onTouchMove( event ) {
-  if ( event.touches.length === 1 ) {
-    event.preventDefault();
-    mouse.x = event.touches[ 0 ].pageX - window.innerWidth/2;
-    mouse.y = event.touches[ 0 ].pageY - window.innerHeight/2;
+  setupMouseMove() {
+    window.addEventListener('mousemove', this.onMouseMove.bind(this), false);
+  }
+
+  setupTouchMove() {
+    window.addEventListener('touchmove', this.onTouchMove.bind(this), false);
+  }
+
+  resize() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    this.renderer.setSize(w, h);
+    this.camera.aspect = w / h;
+    this.camera.updateProjectionMatrix();
+  }
+
+  onMouseMove(event) {
+    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  }
+
+  onTouchMove(event) {
+    if (event.touches.length === 1) {
+      event.preventDefault();
+      this.mouse.x = event.touches[0].pageX - window.innerWidth / 2;
+      this.mouse.y = event.touches[0].pageY - window.innerHeight / 2;
+    }
+  }
+
+  render() {
+    this.renderer.render(this.scene, this.camera);
+  }
+
+  addObjects() {
+
+    // lights
+    // global light
+    this.ambientLight = new THREE.AmbientLight(
+      this.metaController.ambientColor,
+      this.metaController.ambientIntensity
+    );
+    this.scene.add(this.ambientLight);
+
+    // spot light
+    this.spotLight = new THREE.SpotLight(this.metaController.spotColor);
+    this.spotLight.position.set(
+      this.metaController.spotPositionX,
+      this.metaController.spotPositionY,
+      this.metaController.spotPositionZ
+    );
+    this.spotLight.visible = this.metaController.spotVisible;
+    this.scene.add(this.spotLight);
+
+    // sun light
+    this.light = new THREE.DirectionalLight(0xffffff, this.metaController.dLightIntensity);
+    this.light.position.set(
+      this.metaController.dLightX,
+      this.metaController.dLightY,
+      this.metaController.dLightZ
+    );
+    this.scene.add(this.light);
+
+    // point light
+    this.pointLight = new THREE.PointLight(0xff3300);
+    this.pointLight.position.set(
+      this.metaController.pointPositionX,
+      this.metaController.pointPositionY,
+      this.metaController.pointPositionZ
+    );
+    this.pointLight.visible = this.metaController.pointVisible;
+    this.scene.add(this.pointLight);
+
+
+
+    // metaball
+    let metaMat = new THREE.MeshPhongMaterial({
+      color: this.metaController.metaColor,
+      specular: this.metaController.metaSpec,
+      shininess: this.metaController.metaShine
+    });
+    this.meta = new THREE.MarchingCubes(300, metaMat, true, true);
+
+    this.meta.position.set(
+      this.metaController.positionX,
+      this.metaController.positionY,
+      this.metaController.positionZ
+    );
+    // meta.scale.set(100, 100, 100);
+    this.scene.add(this.meta);
+
+  }
+
+  colorChanger(mx, object) {
+    let hue;
+    let saturate = 100;
+    let lightness = 70;
+
+    if (mx <= 0) {
+      hue = mx * 90 + 330;
+    } else {
+      hue = 330 - mx * 90;
+    }
+    let newColor = String("hsl(" + (Math.abs(Math.round(hue))) + "," + saturate + "%" + "," + lightness + "%" + ")");
+    // console.log(newColor);
+    object.material = new THREE.MeshPhongMaterial({
+      color: newColor
+    });
+  }
+
+  // this controls content of marching cubes voxel field
+  updateCubes(object, time, numblobs, mx, my) {
+
+    object.reset();
+
+    // fill the field with some metaballs
+    let i, ballx, bally, ballz, subtract, strength;
+    subtract = 12;
+    strength = 2 / ((Math.sqrt(numblobs) - 1) / 4 + 1);
+
+    for (i = 0; i < numblobs; i++) {
+      ballx = Math.sin(i + 1.26 * time / 1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * (Math.cos(mx) - .1) * 0.3 + 0.5;
+      bally = Math.sin(Math.sin(i + 3.52 * time / 1.5 * Math.sin(1.22 + 0.1424 * i))) * (Math.cos(my) - 0.2) * 0.43 + 0.5;
+      ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
+      this.colorChanger(mx, object);
+      object.addBall(ballx, bally, ballz, strength, subtract);
+    }
+  }
+
+  animate() {
+
+    // изменение в секундах Текущее минус oldTime (обычно равно около 0.015 )
+    let delta = this.clock.getDelta();
+
+    this.time += delta * this.metaController.speed * 0.5;
+
+    this.pointLight.position.x = this.mouse.x * 3;
+    this.pointLight.position.y = this.mouse.y * 3;
+
+    // Metaball simulation GUI
+    this.meta.init(Math.floor(this.metaController.resolution));
+
+    // position metaballs
+    // meta.position.set(metaController.positionX, metaController.positionY, metaController.positionZ);
+
+    // lights
+    this.light.position.set(
+      this.metaController.dLightX,
+      this.metaController.dLightY,
+      this.metaController.dLightZ
+    );
+    this.light.position.normalize();
+
+    this.pointLight.color.setHSL(
+      this.metaController.lhue,
+      this.metaController.lsaturation,
+      this.metaController.llightness
+    );
+
+    this.updateCubes(
+      this.meta,
+      this.time,
+      this.metaController.numBlobs,
+      this.mouse.x/1.2,
+      this.mouse.y/1.2
+    );
+
+    this.renderer.clear();
+
+    requestAnimationFrame(this.animate.bind(this));
+    this.render();
   }
 }
+
+// new Metaballs('container');
