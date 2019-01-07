@@ -33,6 +33,12 @@
     }
   }
 }
+.popup{
+  .social-link__item{
+    color: $lighter;
+    fill: $lighter;
+  }
+}
 .footer{
   .social-link__item{
     color: $tag-color;
