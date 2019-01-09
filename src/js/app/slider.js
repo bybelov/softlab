@@ -3,20 +3,20 @@ import Swiper from 'swiper/dist/js/swiper.js';
 import Metaballs from './metaballs';
 
 
-// if (window.matchMedia('(-webkit-min-device-pixel-ratio: 2)').matches || window.matchMedia('(min-resolution: 192dpi)').matches) {
-//   var retina = true;
-// }
+if (window.matchMedia('(-webkit-min-device-pixel-ratio: 2)').matches || window.matchMedia('(min-resolution: 192dpi)').matches) {
+  var retina = true;
+}
 
 let resize = function (el, index, width, height){
 
   let ratio = 1;
-  // let reta = 1;
-
-  // if(retina === true){
-  //   reta = 2;
-  // }
+  if(retina === true){
+    // ratio = 1.5;
+  }
   
   let maxWidth, maxHeight;      
+  // let screenX = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+  // let screenY = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
 
   let sliderWrapperBg = el.slides[index].getElementsByClassName('slider__bg');
   let sl = el.slides[index].getElementsByClassName('sl');
@@ -26,18 +26,21 @@ let resize = function (el, index, width, height){
     let startScreenX = sliderWrapperBg[0].getAttribute("data-swiper-screen-x");
     let startScreenY = sliderWrapperBg[0].getAttribute("data-swiper-screen-y");
     // console.log(startScreenX, startScreenY);
+    // console.log(screenX, screenY);
+    console.log(width, height);
 
     if(startScreenX && startScreenY){
       maxWidth = startScreenX;
       maxHeight = startScreenY;
 
-      if(width <= maxWidth){
-        ratio = width / maxWidth;
-      }
+      // if(width <= maxWidth){
+      //   ratio = width / maxWidth * 1.5;
+      // }
 
-      if(height <= maxHeight){
+      // if(height <= maxHeight){
         ratio =  height / maxHeight;
-      }
+      // }
+
       // console.log(ratio);
     }else{
       console.log('Attributes data-swiper-screen-x, data-swiper-screen-y is empty!');
@@ -86,6 +89,9 @@ class Slider{
       loop: false,
       slidesPerView: 1,
       effect: 'fade',
+      mousewheel: {
+        releaseOnEdges: true
+      },
       pagination: {
         el: '.js-slider-pagination',
         clickable: true,

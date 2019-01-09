@@ -36,7 +36,7 @@
                 data-swiper-parallax-y="{{ picture.parallaxY }}" 
                 data-swiper-parallax-opacity="{{ picture.opacity }}"
                 data-swiper-parallax-duration="{{ picture.duration }}">
-                <img src="{{ picture.image }}" alt="">
+                <img src="{{ picture.image }}.png" srcset="{{ picture.image }}@2x.png 2x" alt="">
               </div>
             {% endfor %}
           </div>
