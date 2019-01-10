@@ -1,8 +1,16 @@
 import $ from 'jquery';
-
-export default class Preloader{
+class Preloader{
     constructor(){
-        this.preloader = $(".preloader").delay(4000).fadeOut(1000);
-        this.loader = $('.loader').delay(2000).fadeOut(500);
+        this.onready = document.addEventListener("DOMContentLoaded", this.ready );
+    }
+
+    ready(){
+        $(".preloader").delay(3500).fadeOut(1000);
+        $('.loader').delay(2000).fadeOut(500, function(){
+            $('body').addClass('loaded');
+        });
+        
     }
 }
+
+new Preloader();

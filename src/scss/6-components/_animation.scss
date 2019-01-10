@@ -61,6 +61,30 @@
   }
 }
 
+@keyframes scale{
+  to{
+    font-size: 50em;
+  }
+}
+
+@keyframes loaderCircle{
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
+    width: 150vw;
+    height: 150vw;
+  }
+  100% {
+    opacity: 1;
+    width: 300vw;
+    height: 300vw;
+  }
+}
+
 @keyframes press {
   0% {
     box-shadow: 0 0 0 0 lighten($primary, 10%);

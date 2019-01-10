@@ -8,11 +8,27 @@
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 900;
+  z-index: 900; 
   background-color: #fff;
+  &:before{
+    content: '';
+    position: fixed;
+    background-color: $primary;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    // transform: translate3d(50%, 50%);
+    transform-origin: 50% 50%;
+    animation-delay: 2s;
+    animation-name: loaderCircle;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
+    // animation-iteration-count: infinite;
+  }
   .line{
+    background-color: hsla(0,0%,100%,.2);
     height: 0;
-    background-color: rgba(175, 195, 211,.6);
     animation-delay: 2.5s;
     animation-name: linesHeight;
     animation-duration: 2s;
@@ -21,14 +37,22 @@
   .plus{
     &:before,
     &:after{
-      background-color: #afc3d3
+      background-color: rgba(255,255,255,0.5);
     }
   }
 }
 
 .loader{
+  // position: relative;
   font-size: 10em;
   line-height: 0;
+  
+  transform-origin: 50% 50%;
+  animation-delay: 2s;
+  animation-name: scale;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  // animation-iteration-count: infinite;
   .icon-logo-circle__1{
     animation-direction: alternate-reverse;
     transform-origin: 50% 50%;

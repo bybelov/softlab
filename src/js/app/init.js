@@ -6,14 +6,12 @@ import Popup from './popup';
 import Animation from './animation';
 import FormClassStates from './form-states';
 import CustomInputFile from './input-file';
-import Preloader from './preloader';
 import PolifillVh from './polifill-vh';
 
 export default class Init{
   constructor(){
     new PolifillVh();
     new Animation();
-    new Preloader();
     new Tabs();
     new Popup();
     new FormClassStates();

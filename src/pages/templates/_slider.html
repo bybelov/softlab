@@ -1,6 +1,4 @@
 <div class="swiper-container slider js-slider">
-  {% include "./_lines.html" %}
-  {% include "./_pluses4.html" %}
   <div class="swiper-wrapper">
     {% for item in slider %}
     <div class="swiper-slide" 
@@ -64,8 +62,9 @@
           </div>
           <div class="js-slider-pagination swiper-pagination" data-swiper-parallax-opacity="0"></div>
         </div>
-
       </div>
+      {% include "./_lines.html" %}
+      {% include "./_pluses4.html" %}
     </div>
     {% endfor %}
   </div>

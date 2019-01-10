@@ -47,9 +47,13 @@ $sliderZIndex_3: 3 !default;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
+  [data-vide-bg] ~ .lines,
+  [data-vide-bg] ~ .pluses {
+    z-index: 2;
+  }
   .lines,
   .pluses{
-    z-index: $sliderZIndex_1;
+    z-index: -1;
   }
   .swiper-slide{
     background: $gr-1;
@@ -202,7 +206,7 @@ $sliderZIndex_3: 3 !default;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  z-index: -1;
+  z-index: 0;
   img{
     width: 100%;
     max-width: 100%;

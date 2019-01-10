@@ -2,6 +2,7 @@ import './vendor';
 import $ from 'jquery';
 import Init from './app/init';
 import './app/slider';
+import './app/preloader';
 
 $(document).ready(function () {
 
