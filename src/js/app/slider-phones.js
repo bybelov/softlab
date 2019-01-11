@@ -17,20 +17,20 @@ export default class SliderPhone{
       centeredSlides: true,
       roundLengths: true,
       loop: true,
-      slidesPerView: 5,
+      slidesPerView: 6,
       spaceBetween: 0,
       breakpoints: {
-        400: {
-          slidesPerView: 1
-        },
-        600: {
-          slidesPerView: 3
+        576: {
+          slidesPerView: 2
         },
         768: {
           slidesPerView: 3
         },
         1200: {
           slidesPerView: 4
+        },
+        2048: {
+          slidesPerView: 5
         }
       },
       on: {
