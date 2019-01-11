@@ -8,11 +8,8 @@
         {% for item in phones %}
           <div class="carousel__item swiper-slide">
             <img  src="{{ item }}.png" 
-
+                  srcset="{{ item }}@2x.png 2x, {{ item }}@3x.png 3x"
                   alt="{{ page.title }}">
-
-                  <!--                   srcset="{{ item }}@2x.png 2x"
-                  srcset="{{ item }}@3x.png 3x"-->
           </div>
         {% endfor %}
       </div>
