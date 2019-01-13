@@ -11,21 +11,35 @@
 }
 
 .stage{
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
+  font-size: 0;
+  @include clearfix();
   &__item{
+    font-size: font-size(base);
     width: 33.33%;
     position: relative;
+    vertical-align: top;
+    display: inline-block;
+    @include media('<md'){
+      font-size: 0.875 * font-size(base);
+    }
+    &:nth-child(3),
+    &:nth-child(4){
+      .stage__header{
+        padding-right: 0;
+      }
+    }
+    &:nth-child(n + 4){
+      @include media('>lg'){
+        float: right;
+      }
+    }
     @include media('<lg'){
       width: 50%;
     }
     @include media('<sm'){
       width: 100%;
-    }
-    &:nth-child(3n + 3){
-      .stage__header{
-        padding-right: 0;
-      }
     }
   }
   &__header{
@@ -33,6 +47,9 @@
     align-items: center;
     margin-bottom: 30px;
     padding-right: 60px;
+    @include media('<md'){
+      margin-bottom: 20px;
+    }
   }
   &__icon{
     margin-right: 20px;
@@ -73,6 +90,9 @@
     font-weight: font-weight(bold);
     font-size: 1.125rem;
     margin: 0;
+    @include media('<xs'){
+      font-size: 16px;
+    }
   }
   &__number{
     display: block;
@@ -80,8 +100,14 @@
     font-size: 1.25rem;
     line-height: 1.7;
     margin-top: -8px;
+    @include media('<xs'){
+      font-size: 16px;
+    }
   }
   &__decor{
+    @include media('<lg'){
+      display: none;
+    }
     .step{
 
     }

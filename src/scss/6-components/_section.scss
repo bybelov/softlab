@@ -7,6 +7,12 @@
   @include media('<xs'){
     padding: 20px 0;
   }
+  &__title{
+    margin-bottom: 40px;
+    @include media('<sm'){
+      margin-bottom: 30px;
+    }
+  }
   &.bg-color{
     background-color: var(--custom-color);
   }
@@ -22,6 +28,18 @@
     background-repeat: no-repeat;
     background-position: center center;
     padding: 6rem 0 2rem;
+  }
+  // stages
+  &.stages{
+    .section__title{
+      margin-bottom: 60px;
+      @include media('<lg'){
+        margin-bottom: 40px;
+      }
+      @include media('<sm'){
+        margin-bottom: 30px;
+      }
+    }
   }
   // about
   &.about{

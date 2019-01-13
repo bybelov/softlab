@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="27px" viewBox="0 0 26 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="file" stroke="#FF1DB0" stroke-width="2">
+            <path d="M12.4583333,23.5 L1,23.5 L1,1 L11,1 L17.6666667,7.66666667 L17.6666667,12.6666667 M11,1 L11,7.66666667 L17.6666667,7.66666667 M17.6666667,26 C21.348565,26 24.3333333,23.0152317 24.3333333,19.3333333 C24.3333333,15.651435 21.348565,12.6666667 17.6666667,12.6666667 C13.9847683,12.6666667 11,15.651435 11,19.3333333 C11,23.0152317 13.9847683,26 17.6666667,26 Z M17.6666667,16 L17.6666667,22.6666667 M20.1666667,20.1666667 L17.6666667,22.6666667 L15.1666667,20.1666667" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
