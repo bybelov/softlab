@@ -1,3 +1,15 @@
+.home{
+  .preloader{
+    &:before{
+      background-color: $primary;
+      background-image: $gr-1;
+    }
+    .line{
+      background-color: hsla(0,0%,100%,.2);
+    }
+  }
+}
+
 .preloader{
   align-items: center;
   // cursor: none;
@@ -13,7 +25,7 @@
   &:before{
     content: '';
     position: fixed;
-    background-color: $primary;
+    background-color: #fff;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -27,7 +39,7 @@
     // animation-iteration-count: infinite;
   }
   .line{
-    background-color: hsla(0,0%,100%,.2);
+    background-color: rgba(0, 0, 0, 0.1);
     height: 0;
     animation-delay: 2.5s;
     animation-name: linesHeight;
