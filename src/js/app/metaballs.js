@@ -113,6 +113,13 @@ export default class Metaballs {
   resize() {
     var w = window.innerWidth;
     var h = window.innerHeight;
+
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      this.camera.position.x = 1;
+    }else{
+      this.camera.position.x = this.metaController.cameraPositionX;
+    }
+
     this.renderer.setSize(w, h);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();

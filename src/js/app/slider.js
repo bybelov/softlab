@@ -33,20 +33,20 @@ let resize = function (el, index, width, height){
       maxWidth = startScreenX;
       maxHeight = startScreenY;
 
-      // if(width <= maxWidth){
-      //   ratio = width / maxWidth * 1.5;
-      // }
-
-      // if(height <= maxHeight){
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        ratio =  width / maxWidth * 1.6;
+      }else{
         ratio =  height / maxHeight;
-      // }
+      }
 
-      // console.log(ratio);
+      console.log(ratio);
     }else{
       console.log('Attributes data-swiper-screen-x, data-swiper-screen-y is empty!');
     }
 
     if(sl.length > 0){
+
+      // ratio = ratio * 5.3;
 
       for(let i = 0; i < sl.length; i++){
 
