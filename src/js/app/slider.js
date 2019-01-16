@@ -27,7 +27,7 @@ let resize = function (el, index, width, height){
     let startScreenY = sliderWrapperBg[0].getAttribute("data-swiper-screen-y");
     // console.log(startScreenX, startScreenY);
     // console.log(screenX, screenY);
-    console.log(width, height);
+    // console.log(width, height);
 
     if(startScreenX && startScreenY){
       maxWidth = startScreenX;
@@ -38,8 +38,6 @@ let resize = function (el, index, width, height){
       }else{
         ratio =  height / maxHeight;
       }
-
-      console.log(ratio);
     }else{
       console.log('Attributes data-swiper-screen-x, data-swiper-screen-y is empty!');
     }
