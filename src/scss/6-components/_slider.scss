@@ -101,6 +101,10 @@ $sliderZIndex_3: 3 !default;
       font-size: em(30px);
       line-height: 1.4;
     }
+    @include media('height<=xs', 'landscape'){
+      font-size: em(30px);
+      line-height: 1.4;
+    }
 
   }
   &__link{

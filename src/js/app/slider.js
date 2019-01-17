@@ -30,6 +30,7 @@ let resize = function (el, index, width, height){
     // console.log(width, height);
 
     if(startScreenX && startScreenY){
+
       maxWidth = startScreenX;
       maxHeight = startScreenY;
 
@@ -38,6 +39,15 @@ let resize = function (el, index, width, height){
       }else{
         ratio =  height / maxHeight;
       }
+
+      let ratioWH = width/height;
+      if(  ratioWH < 1.6 && ratioWH >= 0.976){
+        ratio = ratio * ratioWH * 0.6;
+      }
+      else if( ratioWH < 0.55){
+        ratio = ratio * ratioWH * 2.8;
+      }
+
     }else{
       console.log('Attributes data-swiper-screen-x, data-swiper-screen-y is empty!');
     }
