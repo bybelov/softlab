@@ -50,8 +50,8 @@ export default class Animation{
       let icon = t.find('.animate-svg');
       let animate = anime({
         targets: this,
-        translateX: ['-100%', 0],
-        opacity: [0,1],
+        // translateX: ['-100%', 0],
+        // opacity: [0,1],
         delay: 250,
         duration: 1000,
         easing: 'easeInOutQuart',
@@ -60,6 +60,7 @@ export default class Animation{
           t.parent().css("overflow", "hidden");
         },
         complete: function() {
+          t.addClass('animated');
           t.parent().css("overflow", "visible");
         }
       });

@@ -11,9 +11,9 @@ export default class HeaderSticky{
     if(!this.body.classList.contains('header--sticky')){
       let controller = new ScrollMagic.Controller();
       new ScrollMagic.Scene({
-        triggerElement: this.content,
+        triggerElement: this.body,
         triggerHook: 0,
-        offset: 0
+        offset: 100
       }).setClassToggle( this.body, 'header--sticky')
       .addTo(controller);
     }
