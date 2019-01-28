@@ -1,0 +1,18 @@
+.alert{
+  margin: 0 0 1rem;
+  border-radius: 4px;
+  border: 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  &-danger{
+    background-color: material-color(red, 300);
+  }
+  &-success{
+    background-color: material-color(green, 300);
+  }
+  &-warning{
+    background-color: material-color(orange, 300);
+  }
+}

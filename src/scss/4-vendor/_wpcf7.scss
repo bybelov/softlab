@@ -1,7 +1,6 @@
-
 .form-group{
   &.active {
-    .checkbox__label{
+    .wpcf7-list-item-label{
       color: $body-color;
       bottom: auto !important;
       font-size: 16px;
@@ -9,22 +8,31 @@
   }
 }
 
-// checkbox
-.checkbox{
-  margin-bottom: 0;
-  padding-left: 30px;
-  color: $body-color;
-  margin-top: 0;
-  cursor: pointer;
-  position: relative;
-  text-transform: none;
-  &__input{
-    position: absolute;
-    left: -9999px;
-    appearance: none;
+.screen-reader-response {
+  display: none;
+}
+span.wpcf7-list-item{
+  margin: 0;
+}
+
+// acceptance
+.wpcf7-acceptance{
+  .wpcf7-list-item{
+    margin: 0;
+  }
+  label{
+    margin-bottom: 0;
+    padding-left: 30px;
+    color: $body-color;
+    margin-top: 0;
+    cursor: pointer;
+    position: relative;
+    text-transform: none;
+  }
+  .checkbox__input{
     // checked
     &:checked {
-      ~ .checkbox__label {
+      ~ .wpcf7-list-item-label {
         &:before {
           border-width: 0;
           background-color: $primary;
@@ -34,7 +42,7 @@
     }
     // focus
     &:focus {
-      ~ .checkbox__label {
+      ~ .wpcf7-list-item-label {
         &:after {
           content: "";
           position: absolute;
@@ -49,14 +57,14 @@
     }
     // disabled
     &:disabled {
-      ~ .checkbox__label {
+      ~ .wpcf7-list-item-label {
         &:before {
           cursor: not-allowed;
           border-color: $input-disabled;
         }
       }
       &:checked {
-        ~ .checkbox__label {
+        ~ .wpcf7-list-item-label {
           cursor: not-allowed;
           &:before {
             background-color: $input-disabled;
@@ -66,10 +74,9 @@
       }
     }
   }
-  &__label{
+  .wpcf7-list-item-label{
     display: block;
     font-size: 16px;
-    // line-height: line-height(base);
     &:before{
       content: "";
       position: absolute;
@@ -87,19 +94,5 @@
       background-size: 18px 18px;
       transition: all ease 0.25s;
     }
-  }
-}
-
-@keyframes press {
-  0% {
-    box-shadow: 0 0 0 0 lighten($primary, 10%);
-  }
-
-  50% {
-    box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , .35 );
-  }
-
-  100% {
-    box-shadow: 0 0 0 15px rgba( lighten($primary, 10%) , 0 );
   }
 }
