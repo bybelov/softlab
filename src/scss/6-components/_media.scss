@@ -40,6 +40,9 @@
   &__text{
     &.text-center{
       padding: 0 20px;
+      @include media('<xs'){
+        padding: 0;
+      }
     }
   }
 }
