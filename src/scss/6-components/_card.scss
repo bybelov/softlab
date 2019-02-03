@@ -1,0 +1,34 @@
+.card{
+  border-radius: 8px;
+  box-shadow: 0 13px 54px 0 rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 40px;
+  height: calc(100% - 40px);
+  &__icon{
+    stroke: $primary;
+    stroke: var(--custom-color);
+    font-size:45px;
+    line-height: 0;
+    margin-bottom: 1rem;
+    .icon-coins{
+      fill: $primary;
+      fill: var(--custom-color);
+      stroke: none;
+    }
+  }
+  &__title{
+    font-size: 1.5rem;
+    font-weight: font-weight(semibold);
+    line-height: 1.25;
+    font-family: $font-family-base;
+    margin-bottom: .5em;
+    @include media('<md'){
+      font-size: 1.25rem;
+    }
+  }
+  &__desc{
+    color: $gray-500;
+    font-size: 0.875rem;
+    line-height: 1.35;
+  }
+}
