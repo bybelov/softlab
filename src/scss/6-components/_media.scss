@@ -61,9 +61,63 @@
     }
   }
 }
+.abs--left-2{
+  left: 16.67%;
+  right: -16.67%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
+.abs--right-2{
+  right: 16.67%;
+  left: -16.67%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
+.abs--left-3{
+  left: 25%;
+  right: -25%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
+.abs--right-3{
+  right: 25%;
+  left: -25%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
+.abs--left-4{
+  left: 33.33%;
+  right: -33.33%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
 .abs--right-4{
   right: 33.33%;
   left: -33.33%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
+.abs--left-5{
+  left: 41.67%;
+  right: -41.67%;
   @include media('<md'){
     position: relative;
     right: 0;
@@ -79,7 +133,21 @@
     left: 0;
   }
 }
+.abs--left-6{
+  left: 50%;
+  right: -50%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+}
 .abs--right-6{
   right: 50%;
   left: -50%;
+  @include media('<md'){
+    position: relative;
+    right: 0;
+    left: 0;
+  }
 }

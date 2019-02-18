@@ -9,9 +9,9 @@ export default class Animation{
 
     this.hoverSvg(this.drawSvg);
     this.animateLeftToRight(this.controller, this.drawSvg);
+    this.animateRightToLeft(this.controller, this.drawSvg);
     this.animateBottomToTop(this.controller);
     this.animateFadeIn(this.controller);
-    this.animateAngleLeftToTight();
   }
 
   drawSvg(element, time = 2000){
@@ -69,7 +69,37 @@ export default class Animation{
       })
       .addTo(controller)
       .on("progress", function () {
+        draw(icon, 2000).play();
+        animate.play();
+      });
+    });
+  }
 
+  animateRightToLeft(controller, draw){
+    $('.animate-to-left').each(function(){
+      let t = $(this);
+      let icon = t.find('.animate-svg');
+      let animate = anime({
+        targets: this,
+        translateX: ['100%', 0],
+        opacity: [0,1],
+        delay: 250,
+        duration: 1000,
+        easing: 'easeInOutQuart',
+        autoplay: false,
+        begin: function() {
+          t.parent().css("overflow", "hidden");
+        },
+        complete: function() {
+          t.parent().css("overflow", "visible");
+        }
+      });
+      new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 1
+      })
+      .addTo(controller)
+      .on("progress", function () {
         draw(icon, 2000).play();
         animate.play();
       });
@@ -124,24 +154,6 @@ export default class Animation{
       .on("progress", function () {
         animate.play();
       });
-    });
-  }
-
-  animateAngleLeftToTight(){
-    $('.animate-angle-left-to-right').each(function(){
-      let t = $(this);
-      anime({
-        targets: this,
-        delay: 3000,
-        duration: 2000,
-        easing: 'linear',
-        translateX: [t.data('x') * -100 + '%', t.data('x') + '%'],
-        translateY: [t.data('y') * 3 + '%', t.data('y') + '%'],
-        loop: false,
-        // direction: 'reverse',
-        autoplay: true
-      });
-      // console.log(t.data('x'), t.data('y'));
     });
   }
 
