@@ -32,9 +32,16 @@
     background-position: right center;
     transition: all .4s ease-in-out;
   }
+  &:disabled{
+    opacity: 0.65;
+    cursor: default;
+  }
 }
 
 .btn-primary{
   background-size: 100% auto;
   background-image: linear-gradient(to right, $btn-start 0%, $btn-end 100%);
+  &:disabled{
+    background-image: linear-gradient(to right, $gray-500 0%, $gray-400 100%);
+  }
 }
