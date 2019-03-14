@@ -3,16 +3,16 @@ import Swiper from 'swiper/dist/js/swiper.js';
 import Metaballs from './metaballs';
 
 
-if (window.matchMedia('(-webkit-min-device-pixel-ratio: 2)').matches || window.matchMedia('(min-resolution: 192dpi)').matches) {
-  var retina = true;
-}
+// if (window.matchMedia('(-webkit-min-device-pixel-ratio: 2)').matches || window.matchMedia('(min-resolution: 192dpi)').matches) {
+//   var retina = true;
+// }
 
 let resize = function (el, index, width, height){
 
   let ratio = 1;
-  if(retina === true){
+  // if(retina === true){
     // ratio = 1.5;
-  }
+  // }
   
   let maxWidth, maxHeight;      
   // let screenX = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
@@ -87,9 +87,11 @@ class Slider{
 
     let titles = new Array();
     let themes = new Array();
+    let videos = new Array();
+
     this.meta = new Metaballs('container');
 
-    this.createArray(titles, themes, selector);
+    this.createArray(titles, themes, videos, selector);
 
     this.slider = new Swiper( selector, {
       parallax:true,
@@ -116,6 +118,19 @@ class Slider{
           // let getTheme = themes[index - 1];
           let getTheme = themes[index];
           (getTheme ? $('body').addClass('slider--theme-light') : $('body').removeClass('slider--theme-light'));
+
+          let getVideo = videos[index];
+          if(getVideo){
+            let instance = slides.slides[index].getElementsByClassName('slider__item')[0];
+            let instanceObj = $(instance).data('vide').getVideoObject();
+            let play = instanceObj.play();
+          }else{
+            $('.slider__item').each(function () {
+              if($(this).data('vide')){
+                $(this).data('vide').getVideoObject().pause();
+              }
+            });
+          }
 
           resize(slides, index, width, height);
           
@@ -145,18 +160,35 @@ class Slider{
       // let getTheme = themes[index - 1];
       let getTheme = themes[index];
       (getTheme ? $('body').addClass('slider--theme-light') : $('body').removeClass('slider--theme-light'));
+
+      let getVideo = videos[index];
+      if(getVideo){
+        let instance = slides.slides[index].getElementsByClassName('slider__item')[0];
+        let instanceObj = $(instance).data('vide').getVideoObject();
+        let play = instanceObj.play();
+      }else{
+        $('.slider__item').each(function () {
+          if($(this).data('vide')){
+            $(this).data('vide').getVideoObject().pause();
+          }
+        });
+      }
     });
 
   }
 
-  createArray(titles, themes, selector){
+  createArray(titles, themes, videos, selector){
     $(selector + ' .swiper-slide').each(function() {
       let title = $(this).data('title');
       let theme = $(this).data('theme');
+      let video = $(this).data("video");
+
       (title ? title : 'слайд');
       (theme ? theme : '');
+      (video ? video : '');
       titles.push(title);
       themes.push(theme);
+      videos.push(video);
     });
   }
 

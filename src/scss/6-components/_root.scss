@@ -1,5 +1,7 @@
 :root{
-  --custom-color: #ffb200;
+  --custom-color: #{$primary};
   --section-text-color: #ffffff;
-  --shadow-color-images: rgba(216,151,0,0.6);
+  --shadow-color-images: rgba( #{$primary} ,0.6);
+  --breadcrumbs-color: #{$gray-600};
+  --color-intro-text: #{$body-color};
 }

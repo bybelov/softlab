@@ -8,6 +8,7 @@ import 'debug.addIndicators';
 import 'jquery.scrollto/jquery.scrollTo.min.js';
 
 import 'three';
+
 // import './vendor/Detector';
 // import 'three/examples/js/libs/stats.min.js';
 // import 'three/examples/js/libs/dat.gui.min.js';

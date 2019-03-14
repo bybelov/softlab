@@ -4,6 +4,11 @@
     <div class="swiper-slide" 
       data-title="{{ item.data }}"
       data-theme="{{ item.theme }}"
+      {% if item.video %}
+        data-video="1"
+      {% else %}
+        data-video="0"
+      {% endif %}
       {% if item.color %} style="background: {{ item.color }}"{% endif %}
     >
       {% if item.canvas == true %}
@@ -17,7 +22,7 @@
             webm: {{ item.video }},
             ogv: {{ item.video }},
             poster: {{ item.videoFallbackImage }}"
-          data-vide-options="loop: true, muted: true"
+          data-vide-options="loop: true, muted: true, autoplay: false, posterType: jpg"
         {% endif %}
         >
 

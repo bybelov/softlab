@@ -23,6 +23,7 @@
     "scrollmagic": "^2.0.6",
     "susy": "^3.0.5",
     "swiper": "^4.4.2",
+    "three": "^0.98.0",
     "vide": "^0.5.1"
   },
   "devDependencies": {
@@ -83,7 +84,6 @@
     "postcss-easings": "^2.0.0",
     "require-dir": "^1.1.0",
     "run-sequence": "^2.2.1",
-    "three": "^0.98.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.24.0",
     "webpack-bundle-analyzer": "^3.0.3",

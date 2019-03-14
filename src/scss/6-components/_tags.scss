@@ -3,6 +3,7 @@
 }
 .tag-item{
   color: $light;
+  color: var(--breadcrumbs-color);
   margin-right: 8px;
   &:hover{
     color: $lighter;

@@ -18,6 +18,7 @@
   &__link{
     transition: all ease 0.25s;
     color: $headings;
+    color: var(--breadcrumbs-color);
     white-space: nowrap;
     &:hover{
       color: $light;
@@ -26,6 +27,7 @@
     .svg-icon{
       vertical-align: middle;
       fill: $lighter;
+      fill: var(--breadcrumbs-color);
       font-size: 15px;
       margin-right: 14px;
     }

@@ -1,0 +1,60 @@
+{
+	"page" : {
+		"title" : "Айдентика Hive Landing",
+		"url"   : "site-detail.html",
+		"classes": "header--sticky",
+		"breadcrumbs" : [
+			{
+				"title" : "Айдентика",
+				"url" : "site-detail.html"
+			}
+		],
+		"intro": {
+			
+			"classTheme": "intro--theme-light",
+			"bgColor": "#fff",
+			"bg": "images/demo/mockup",
+			"icon": "images/demo/hive-app-icon.svg",
+			"logo": "images/demo/hive-logo.svg",
+			"desc": "Mеждународный платежный сервис.<br>Позволяет получать различные виды платежных<br>карт системы UnionPay",
+			"picture": "images/demo/chrome"
+		},
+		"tags": [
+			"#landing", "#cabinet", "#app", "#bank"
+		]
+	},
+	"features": [
+		{
+			"title": "Профессионализм",
+			"body": "Запускаем самые амбициозные проекты на рынке IT-технологий в России"
+		},
+		{
+			"title": "Уникальные программы",
+			"body": "Обучаем только востребованным и высокооплачиваемым профессиям"
+		},
+		{
+			"title": "Комплекс услуг",
+			"body": "Последовательная работа над продуктом от создания бренда до запуска проекта"
+		},
+		{
+			"title": "Трудоустройство",
+			"body": "Лучшим студентам гарантируем стажировку с возможностью последующего трудоустройства"
+		}
+	],
+	"mainFooter": {
+		"count": [
+			{
+				"number": "1 500",
+				"label": "оформленных банковских карт"
+			},
+			{
+				"number" : "10 %",
+				"label": "конверсия лендинга"
+			}
+		],
+		"websiteLabel": "Web банк",
+		"website":"http://hive.card.ru",
+		"ios": "#",
+		"android": "#"
+	}
+}
