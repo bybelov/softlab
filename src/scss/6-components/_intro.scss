@@ -1,14 +1,16 @@
 .intro{
   position: relative;
-  min-height: 924px;
-  @include media('<lg'){
-    min-height: 640px;
-  }
-  @include media('<md'){
-    min-height: 540px;
-  }
-  @include media('<sm'){
-    min-height: 400px;
+  &.has-bg-image{
+    min-height: 924px;
+    @include media('<lg'){
+      min-height: 640px;
+    }
+    @include media('<md'){
+      min-height: 540px;
+    }
+    @include media('<sm'){
+      min-height: 400px;
+    }
   }
   &__bg{
     height: 100%;
