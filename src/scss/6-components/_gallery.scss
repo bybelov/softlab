@@ -1,0 +1,28 @@
+.gallery{
+  position: relative;
+  &__row{
+    flex-direction: row;
+    display: flex;
+    margin: 0 -10px;
+    @include media('<xs'){
+      flex-direction: column;
+    }
+    &:last-child{
+      .gallery__item{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__item{
+    padding: 0 10px;
+    margin-bottom: 20px;
+    z-index: 1;
+    img{
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      @include media('<xs'){
+        width: 100%;
+      }
+    }
+  }
+}
