@@ -19,7 +19,6 @@
     z-index: 1;
     img{
       object-fit: cover;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       @include media('<xs'){
         width: 100%;
       }

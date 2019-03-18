@@ -65,10 +65,11 @@ export default class Animation{
       });
       new ScrollMagic.Scene({
         triggerElement: this,
-        triggerHook: 1
+        triggerHook: 1,
+        reverse: false
       })
       .addTo(controller)
-      .on("progress", function () {
+      .on("enter", function () {
         draw(icon, 2000).play();
         animate.play();
       });
@@ -96,10 +97,11 @@ export default class Animation{
       });
       new ScrollMagic.Scene({
         triggerElement: this,
-        triggerHook: 1
+        triggerHook: 1,
+        reverse: false
       })
       .addTo(controller)
-      .on("progress", function () {
+      .on("enter", function () {
         draw(icon, 2000).play();
         animate.play();
       });
@@ -127,10 +129,11 @@ export default class Animation{
       });
       new ScrollMagic.Scene({
         triggerElement: this.parentNode,
-        triggerHook: 1
+        triggerHook: 1,
+        reverse: false
       })
       .addTo(controller)
-      .on("progress", function () {
+      .on("enter", function () {
         animate.play();
       });
     });
@@ -148,10 +151,11 @@ export default class Animation{
       });
       new ScrollMagic.Scene({
         triggerElement: this,
-        triggerHook: 1
+        triggerHook: 1,
+        reverse: false
       })
       .addTo(controller)
-      .on("progress", function () {
+      .on("enter", function () {
         animate.play();
       });
     });

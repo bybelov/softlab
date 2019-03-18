@@ -1,7 +1,19 @@
 .animate-to-right,
 .animate-to-left,
+.animate-fade-in,
 .animate-to-top{
   display: block;
+  opacity: 0;
+}
+
+.no-js{
+  .animate-to-right,
+  .animate-to-left,
+  .animate-fade-in,
+  .animate-to-top{
+    display: block;
+    opacity: 1;
+  }
 }
 
 // Покачивание вверх и вниз

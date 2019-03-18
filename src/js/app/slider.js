@@ -99,9 +99,9 @@ class Slider{
       loop: false,
       slidesPerView: 1,
       effect: 'fade',
-      mousewheel: {
-        releaseOnEdges: true
-      },
+      // mousewheel: {
+      //   releaseOnEdges: true
+      // },
       pagination: {
         el: '.js-slider-pagination',
         clickable: true,
