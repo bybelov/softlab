@@ -28,6 +28,8 @@
   &:hover{
     text-decoration: none;
     transition: all ease 0.25s;
+    color: $link-hover-color;
+    color: var(--custom-color);
   }
   .svg-icon{
     vertical-align: middle;
