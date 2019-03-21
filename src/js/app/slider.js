@@ -96,8 +96,13 @@ class Slider{
     this.slider = new Swiper( selector, {
       parallax:true,
       spaceBetween: 0,
+      preloadImages: false,
       loop: false,
+      lazy: {
+        loadPrevNext: true,
+      },
       slidesPerView: 1,
+      watchSlidesVisibility: true,
       effect: 'fade',
       // mousewheel: {
       //   releaseOnEdges: true

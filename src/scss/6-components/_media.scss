@@ -13,8 +13,9 @@
     }
     img{
       object-fit: contain;
+      height: 100%;
       @include media('<sm'){
-        max-height: 80vh;
+        // max-height: 80vh;
       }
     }
     &.mr-20{
