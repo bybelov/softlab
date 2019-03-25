@@ -1,0 +1,29 @@
+.title-fonts-loaded .menu-item__link,
+.title-fonts-loaded .tabs-nav>li>a,
+.title-fonts-loaded .h1,
+.title-fonts-loaded .h2,
+.title-fonts-loaded .h3,
+.title-fonts-loaded .h4,
+.title-fonts-loaded h5,
+.title-fonts-loaded .h6,
+.title-fonts-loaded h1,
+.title-fonts-loaded h2,
+.title-fonts-loaded h3,
+.title-fonts-loaded h4,
+.title-fonts-loaded h5,
+.title-fonts-loaded h6,
+.title-fonts-loaded .lead{
+  font-family: $font-family-headings;
+}
+.fonts-loaded body,
+.fonts-loaded .card__title{
+	font-family: $font-family-base;
+}
+
+body,
+.card__title,
+.menu-item__link,
+.tabs-nav>li>a,
+.lead{
+  font-family: Arial, sans-serif;
+}

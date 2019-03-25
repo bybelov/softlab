@@ -1,5 +1,4 @@
 // HEADINGS
-
 h1,
 h2,
 h3,
@@ -13,7 +12,7 @@ h6,
 .h5,
 .h6 {
 	margin-bottom: $headings-margin-bottom;
-	font-family: $font-family-headings;
+	font-family: Tahoma, sans-serif;
 	font-weight: font-weight(headings);
 	line-height: line-height(headings);
 	color: $headings;
@@ -152,7 +151,7 @@ blockquote {
 }
 
 .lead {
-	font-family: $font-family-headings;
+	// font-family: $font-family-headings;
 	font-size: em(20px);
 	line-height: line-height(lg);
 	color: $light;
