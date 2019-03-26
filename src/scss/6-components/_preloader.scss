@@ -32,16 +32,16 @@
     transform: translate3d(-50%, -50%, 0);
     // transform: translate3d(50%, 50%);
     transform-origin: 50% 50%;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-name: loaderCircle;
-    animation-duration: 2.5s;
+    animation-duration: 2s;
     animation-timing-function: ease-out;
     // animation-iteration-count: infinite;
   }
   .line{
     background-color: rgba(0, 0, 0, 0.1);
     height: 0;
-    animation-delay: 2.5s;
+    animation-delay: 1s;
     animation-name: linesHeight;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -60,9 +60,9 @@
   line-height: 0;
   
   transform-origin: 50% 50%;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-name: scale;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-out;
   // animation-iteration-count: infinite;
   .icon-logo-circle__1{

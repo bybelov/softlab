@@ -1,10 +1,12 @@
 /* yandex map */
 .ymap-container {
+  background: url('/wp-content/themes/softlab/assets/images/map.jpg') #ffffff no-repeat;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   background-position: center center;
   background-size: cover;
+  height: 100%;
 }
 
 #map-yandex {

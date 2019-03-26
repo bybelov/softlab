@@ -1,6 +1,25 @@
-html, body{
+html,
+body {
   height: 100%;
 }
+
+
+html.js {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  bottom: 0 !important;
+  top: auto !important;
+}
+
+.lazyloading {
+  background: #f7f7f7 url(/wp-content/themes/softlab/assets/images/loader.gif) no-repeat center;
+  min-height: 60px;
+}
+
+
+
 
 /* fonts loaded */
 .menu-item__link,
@@ -17,12 +36,13 @@ h3,
 h4,
 h5,
 h6,
-.lead{
+.lead {
   font-family: Tahoma, sans-serif;
 }
+
 .body,
-.card__title{
-	font-family: Arial, sans-serif;
+.card__title {
+  font-family: Arial, sans-serif;
 }
 
 .title-fonts-loaded .menu-item__link,
@@ -39,15 +59,16 @@ h6,
 .title-fonts-loaded h4,
 .title-fonts-loaded h5,
 .title-fonts-loaded h6,
-.title-fonts-loaded .lead{
+.title-fonts-loaded .lead {
   font-family: Source Sans Pro, sans-serif;
 }
+
 .fonts-loaded .body,
-.fonts-loaded .card__title{
-	font-family: Open Sans, sans-serif;
+.fonts-loaded .card__title {
+  font-family: Open Sans, sans-serif;
 }
 
-.page{
+.page {
   min-height: 100%;
 }
 

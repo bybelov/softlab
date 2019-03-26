@@ -1,6 +1,11 @@
-@include font-face("rouble", "../fonts/rouble");
+@include font-face("rouble", "./rouble");
 
 // Example:
 // @include font-face("FuturaPT", "../fonts/FuturaPT-Medium", 500);
 
-@include font-face("vimeo", "../fonts/vimeo", 400);
+@include font-face("Open Sans", "./opensans-regular", 400);
+@include font-face("Open Sans", "./opensans-bold", 700);
+@include font-face("Source Sans Pro", "./sourcesanspro-regular", 400);
+@include font-face("Source Sans Pro", "./sourcesanspro-bold", 700);
+
+@include font-face("vimeo", "./vimeo", 400);
