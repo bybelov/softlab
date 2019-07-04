@@ -4,7 +4,7 @@ var gulp        = require('gulp'),
 
 function build(cb) {
   runSequence(
-    'clean',
+    // 'clean',
     'generate-favicon',
     'picture',
     'svg',

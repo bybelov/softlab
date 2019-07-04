@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import Swiper from 'swiper/dist/js/swiper.js';
-import Metaballs from './metaballs';
+// import Metaballs from './metaballs';
 
 
 // if (window.matchMedia('(-webkit-min-device-pixel-ratio: 2)').matches || window.matchMedia('(min-resolution: 192dpi)').matches) {
@@ -89,7 +89,7 @@ class Slider{
     let themes = new Array();
     let videos = new Array();
 
-    this.meta = new Metaballs('container');
+    // this.meta = new Metaballs('container');
 
     this.createArray(titles, themes, videos, selector);
 

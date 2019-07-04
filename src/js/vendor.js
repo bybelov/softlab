@@ -12,7 +12,8 @@ import 'three';
 // import './vendor/Detector';
 // import 'three/examples/js/libs/stats.min.js';
 // import 'three/examples/js/libs/dat.gui.min.js';
-import 'three/examples/js/MarchingCubes.js';
+import  'three/examples/jsm/objects/MarchingCubes.js';
+// import 'three/examples/js/MarchingCubes.js';
 // import 'three/examples/js/controls/OrbitControls.js';
 
 import 'jquery-mousewheel';

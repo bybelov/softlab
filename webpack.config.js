@@ -69,7 +69,7 @@ function createConfig(env) {
       ],
       alias: {
         'vendor': path.resolve(__dirname, `/${config.src.vendor}`),
-        'Three': 'three/build/three.min.js',
+        'Three': 'three/build/three.module.js',
         'TweenLite': 'gsap/src/minified/TweenLite.min.js',
         'TweenMax': 'gsap/src/minified/TweenMax.min.js',
         'TimelineLite': 'gsap/src/minified/TimelineLite.min.js',
