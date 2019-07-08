@@ -11,7 +11,8 @@ import CustomInputFile from './app/input-file';
 import PolifillVh from './app/polifill-vh';
 import './app/slider';
 import './app/preloader';
-import './app/meta';
+// import './app/meta';
+import Metaballs from './app/metaballs/index';
 
 $(document).ready(function () {
 
@@ -24,7 +25,7 @@ $(document).ready(function () {
   new HeaderSticky();
   new SliderAwards('.js-awards');
   new SliderPhones('.js-phone-screens');
-  // new Metaballs('container');
+  new Metaballs('container').init();
 
   $('[data-scrollto]').click(function(){
     $.scrollTo( $(this).attr('data-scrollto'), 1000);

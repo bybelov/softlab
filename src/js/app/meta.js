@@ -83,11 +83,17 @@ function init() {
   // EVENTS
   window.addEventListener( 'resize', onWindowResize, false );
   window.addEventListener('mousemove', onMouseMove.bind(this), false);
-  window.addEventListener('touchmove', onTouchMove.bind(this), false);
+  // window.addEventListener('touchmove', onTouchMove.bind(this), false);
 
 }
 
 function onWindowResize() {
+
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    camera.position.x = 1;
+  }else{
+    camera.position.x = - 500;
+  }
 
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
@@ -238,7 +244,7 @@ function updateColorHue(mx){
     }
   });
 
-  console.log(obj.hue);
+  // console.log(obj.hue);
   
   return obj.hue;
 
@@ -287,13 +293,13 @@ function onMouseMove(event) {
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 }
 
-function onTouchMove(event) {
-  if (event.touches.length === 1) {
-    event.preventDefault();
-    mouse.x = event.touches[0].pageX - window.innerWidth / 2;
-    mouse.y = event.touches[0].pageY - window.innerHeight / 2;
-  }
-}
+// function onTouchMove(event) {
+//   if (event.touches.length === 1) {
+//     event.preventDefault();
+//     mouse.x = event.touches[0].pageX - window.innerWidth / 2;
+//     mouse.y = event.touches[0].pageY - window.innerHeight / 2;
+//   }
+// }
 
 //
 
