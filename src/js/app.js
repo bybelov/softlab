@@ -11,7 +11,6 @@ import CustomInputFile from './app/input-file';
 import PolifillVh from './app/polifill-vh';
 import './app/slider';
 import './app/preloader';
-// import './app/meta';
 import Metaballs from './app/metaballs/index';
 
 $(document).ready(function () {
