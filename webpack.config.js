@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const config = require('./gulp/config');
 const ThreeWebpackPlugin = require('@wildpeaks/three-webpack-plugin');
@@ -25,7 +25,7 @@ function createConfig(env) {
       app: './app.js',
     },
     devtool: isProduction ?
-      false : 'cheap-module-eval-source-map',
+      '#source-map' : 'cheap-module-eval-source-map',
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, config.dest.js),
@@ -46,14 +46,15 @@ function createConfig(env) {
 
     plugins: [
       // Минификация JS файлов
-      new UglifyJsPlugin(),
+      // new UglifyJsPlugin(),
       // Визуализирует размер js файлов подключенных к проекту
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         analyzerPort: 4000,
         openAnalyzer: false,
       }),
-      new ThreeWebpackPlugin()
+      new ThreeWebpackPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
     ],
 
     resolve: {
@@ -101,7 +102,6 @@ function createConfig(env) {
           exclude: [
             /node_modules/,
             /bower_components/,
-            /archives/,
             /vendor/,
           ],
           loader: 'eslint-loader',
@@ -110,7 +110,8 @@ function createConfig(env) {
             cache: true,
             camelcase: true,
             emitErrors: false,
-            failOnHint: false
+            failOnHint: false,
+            ignorePattern: __dirname + '/src/js/vendor/'
           },
         },
         // Позволяет выгрузить в глобальную область видимости

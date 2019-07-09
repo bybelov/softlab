@@ -10,7 +10,6 @@ var gulp          = require('gulp'),
 
 var processors = [
   autoprefixer({
-    browsers: ['last 4 versions'],
     cascade: false
   }),
   easings(),
