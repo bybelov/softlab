@@ -101,6 +101,7 @@ function createConfig(env) {
           exclude: [
             /node_modules/,
             /bower_components/,
+            /archives/,
             /vendor/,
           ],
           loader: 'eslint-loader',

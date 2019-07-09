@@ -24,9 +24,9 @@ export default class Balls {
   updateColors(mx){
     let x;
     if (mx <= 0) {
-      x = mx * 40 + 320;
+      x = mx * 30 + 320;
     } else {
-      x = 320 - mx * 40;
+      x = 320 - mx * 30;
     }
     let hue = Math.abs(x / 360).toFixed(2);
     return hue;
@@ -37,10 +37,17 @@ export default class Balls {
     var i, ballx, bally, ballz, subtract, strength;
     subtract = 12;
     strength = 1.2 / ( ( Math.sqrt( numblobs ) - 1 ) / 4 + 1 );
+
+
+    let mouseX = Math.abs(mx);
+    let mouseY = Math.abs(my);
+
     for ( i = 0; i < numblobs; i ++ ) {
-      ballx = Math.sin(i + 1.26 * time / 1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * (Math.cos(mx) - .1) * 0.3 + 0.5;
-      bally = Math.sin(Math.sin(i + 3.52 * time / 1.5 * Math.sin(1.22 + 0.1424 * i))) * (Math.cos(my) - 0.2) * 0.43 + 0.5;
+
+      ballx = Math.sin(i + 1.26 * time / 1.5 * (1.03 + 0.5 * Math.sin(0.21 * i))) * (Math.cos(mouseX) - .1) * 0.3 + 0.5;
+      bally = Math.sin(Math.sin(i + 3.52 * time / 1.5 * Math.sin(1.22 + 0.1424 * i))) * (Math.cos(mouseY) - 0.2) * 0.43 + 0.5;
       ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin((0.92 + 0.53 * i))) * 0.27 + 0.5;
+
       this.balls.material.color.setHSL(
         this.updateColors(mx),
         1.0,

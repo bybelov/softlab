@@ -128,7 +128,7 @@ class Slider{
           if(getVideo){
             let instance = slides.slides[index].getElementsByClassName('slider__item')[0];
             let instanceObj = $(instance).data('vide').getVideoObject();
-            let play = instanceObj.play();
+            instanceObj.play();
           }else{
             $('.slider__item').each(function () {
               if($(this).data('vide')){
@@ -170,7 +170,7 @@ class Slider{
       if(getVideo){
         let instance = slides.slides[index].getElementsByClassName('slider__item')[0];
         let instanceObj = $(instance).data('vide').getVideoObject();
-        let play = instanceObj.play();
+        instanceObj.play();
       }else{
         $('.slider__item').each(function () {
           if($(this).data('vide')){

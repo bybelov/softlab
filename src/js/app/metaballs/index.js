@@ -1,8 +1,8 @@
 import * as THREE from 'three/build/three.module';
-import Stats from 'three/examples/jsm/libs/stats.module.js';
+// import Stats from 'three/examples/jsm/libs/stats.module.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { MarchingCubes } from 'three/examples/jsm/objects/MarchingCubes';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+// import { MarchingCubes } from 'three/examples/jsm/objects/MarchingCubes';
 import Balls from './marchingcubes'
 
 export default class MetaBalls {
@@ -14,31 +14,42 @@ export default class MetaBalls {
   setup() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    this.stats = new Stats();
+    // this.stats = new Stats();
     this.time = 0;
     this.speed = 1;
     this.clock = new THREE.Clock();
     this.mouse = new THREE.Vector2();
-    this.pointLight = new THREE.PointLight( 0xff3300, 0.8);
+
+    // this.raycaster = new THREE.Raycaster();
+    // this.pointOfIntersection = new THREE.Vector3();
+
+    this.pointLight = new THREE.PointLight( 0x080808, 0.5);
     this.numblobs = 8;
     this.metaBalls = new Balls();
+
+    // this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 600);
   }
 
-  addControls(){
-    this.controls = new OrbitControls( this.camera, this.renderer.domElement );
-  }
+  // addAxes(){
+  //   const axesHelper = new THREE.AxesHelper( 1000 );
+  //   this.scene.add( axesHelper );
+  // }
 
-  addStats(){
-    this.container.appendChild( this.stats.dom );
-  }
+  // addControls(){
+  //   this.controls = new OrbitControls( this.camera, this.renderer.domElement );
+  // }
 
-  updateStats(){
-   this.stats.update();
-  }
+  // addStats(){
+  //   this.container.appendChild( this.stats.dom );
+  // }
+
+  // updateStats(){
+  //  this.stats.update();
+  // }
   
-  addGui(){
+  // addGui(){
 
-  }
+  // }
 
   createScene() {
     this.scene = new THREE.Scene();
@@ -66,7 +77,7 @@ export default class MetaBalls {
 
   addDirectionalLight(){
     const light = new THREE.DirectionalLight( 0xffffff );
-    light.position.set( -0.9, 0.85, 0.85 );
+    light.position.set( -1, 0.85, 0.85 );
     this.scene.add( light );
   }
 
@@ -93,8 +104,9 @@ export default class MetaBalls {
       this.createScene();
       this.createCamera();
   
+      // this.addAxes();
       // this.addControls(); // helper - orbit controls
-      this.addStats(); // helper - add statistics
+      // this.addStats(); // helper - add statistics
       // this.addGui(); // helper - add GUI panel
   
       this.addDirectionalLight();
@@ -133,6 +145,10 @@ export default class MetaBalls {
     event.preventDefault();
     this.mouse.x = (event.clientX / this.width) * 2 - 1;
     this.mouse.y = -(event.clientY / this.height) * 2 + 1;
+
+    // this.raycaster.setFromCamera( this.mouse, this.camera);
+    // this.raycaster.ray.intersectPlane( this.plane, this.pointOfIntersection);
+    // this.metaBalls.balls.lookAt(this.pointOfIntersection);
   }
 
   draw() {
@@ -153,6 +169,6 @@ export default class MetaBalls {
     this.renderer.render(this.scene, this.camera);
 
     requestAnimationFrame(this.animate.bind(this));
-    this.updateStats();
+    // this.updateStats();
   }
 }
